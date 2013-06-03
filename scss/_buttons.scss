@@ -10,6 +10,7 @@ $btn-border-radius: 4px !default;
     @include box-shadow(0 0 4px 1px black);
   border: 1px solid $btn-border-color;
   border-bottom: 1px solid rgb(43, 43, 43);
+  color: white;
 
   &.pressed {
     @include background-image(linear-gradient(#202020, #1b1b1b, #151515));

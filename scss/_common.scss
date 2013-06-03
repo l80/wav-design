@@ -1,12 +1,10 @@
 @import "compass";
+@import "vars";
+@import "custom-search";
 @import "buttons";
 @import "app-menu";
 @import "menu/*.png";
 @import "sprites/menu"; //http://www.pfvdw.com/blog/compass-sprites-and-background-repeat-x trick
-
-$margin: 10px;
-$nav-height: 50px;
-$font-color-grey: #686868;
 
 %position-absolute {
   position: absolute;
@@ -185,6 +183,8 @@ header {
     margin: $margin;
     @include display-box;
 
+    position: relative;
+
     .menu-top-movies {
       @include box-flex(6);
     }
@@ -204,6 +204,69 @@ header {
     .menu-sorting {
       @include box-flex(1);
       @include hide-text;
+    }
+
+    .sort-container {
+      $selected-image: "selected.png";
+      $item-height: image-height($selected-image);
+
+      @include border-radius($btn-border-radius);
+      min-width: 150px;
+
+      %sort-item {
+        height: $item-height;
+        line-height: $item-height;
+        padding: $margin $margin/2;
+        border-bottom: 1px solid #494748;
+      }
+
+      .title {
+        @extend %sort-item;
+        color: $font-color-grey;
+      }
+
+      label {
+        @extend %sort-item;
+        display: block;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      input {
+        height: $item-height;
+        @include appearance(none);
+        margin: 0;
+        display: block;
+        float: right;
+        visibility: hidden;
+
+        &:checked {
+          @include replace-text-with-dimensions("selected.png");
+          visibility: visible;
+        }
+      }
+
+      //animation settings
+      @include transition(height 0.3s linear, top 0.3s linear, bottom 0.3s linear);
+
+      position: absolute;
+      top: 100%;
+      right: 0;
+      height: 0;
+      overflow: hidden;
+      z-index: 9999;
+      background: #1d1d1d;
+
+      .sort {
+        @include transition(top 0.3s linear);
+
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -100%;
+      }
     }
   }
 

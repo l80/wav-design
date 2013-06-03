@@ -2,9 +2,12 @@
 <html>
 <head>
     <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
     <link rel="stylesheet" href="./css/reset.css"/>
     <link rel="stylesheet" href="./scss/list.css"/>
+    <script type="text/javascript" src="./js/jquery.1.7.2.js"></script>
+    <script type="text/javascript" src="./js/sort.js"></script>
 </head>
 <body>
 
@@ -20,7 +23,27 @@
             </div>
         </header>
 
-        <div id="content">
+        <div id="content" class="custom-search-opened-1">
+            <div class="custom-search-container">
+                <div class="custom-search">
+                    <ul>
+                        <li class="item">Movie length
+                            <select name="custom-filter-scope" class="value" id="custom-filter-scope">
+                                <option value="all" selected="selected">全て</option>
+                                <option value="ja">日本人</option>
+                                <option value="en">その他</option>
+                            </select>
+                        </li>
+                        <li class="item">Age <span class="value">Today</span></li>
+                        <li class="item">Show only <span class="value">All</span></li>
+                        <li class="item">Sites</li>
+                    </ul>
+                    <button class="do-search">Search</button>
+                </div>
+            </div>
+
+
+
             <div class="my-ad1"></div>
             <nav>
                 <ul class="main-navigation">
@@ -29,6 +52,15 @@
                     <li class="btn-inline menu-tags">Tags</li>
                     <li class="btn-inline menu-sites">Sites</li>
                     <li class="btn-inline-right menu-sorting">Sorting</li>
+
+                    <li class="sort-container">
+                        <div class="sort">
+                            <div class="title">Sort by:</div>
+                            <label for="date" onclick="">Date<input type="radio" id="date" name="group1" value="Milk"></label>
+                            <label for="views" onclick="">Views<input type="radio" id="views" name="group1" value="Milk"></label>
+                            <label for="popularity" onclick="">Popularity<input type="radio" id="popularity" name="group1" value="Milk"></label>
+                        </div>
+                    </li>
                 </ul>
             </nav>
 
