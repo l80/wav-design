@@ -1,0 +1,52 @@
+@import "common";
+
+#content {
+  padding-bottom: 20px;
+
+  @include movies;
+  
+  .filters {
+    @include pie-clearfix;
+    margin: $margin;
+
+    .filter {
+      $filter-height: 49px;
+      display: block;
+      float: left;
+      height: $filter-height;
+
+      .left, .right, .label {
+        float: left;
+        height: $filter-height;
+      }
+
+      @mixin filter($left, $right) {
+        .left {
+          @include replace-text-with-dimensions("filter/#{$left}.png");
+        }
+
+        .right {
+          @include replace-text-with-dimensions("filter/#{$right}.png");
+        }
+      }
+
+      @include filter(filter-open-prev, filter-close-next);
+
+      .label {
+        background: url("../img/filter/filter-bg.png") repeat-x;
+      }
+
+      &:first-child  {
+        @include filter(filter-open, filter-close-next);
+      }
+      
+      &:last-child {
+        @include filter(filter-open-prev, filter-close);
+      }
+
+      &:first-child:last-child {
+        @include filter(filter-open, filter-close);
+      }
+    }
+  }
+}

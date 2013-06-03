@@ -1,0 +1,116 @@
+@import "compass/utilities/sprites/base";
+
+// General Sprite Defaults
+// You can override them before you import this file.
+$menu-sprite-base-class: ".menu-sprite" !default;
+$menu-sprite-dimensions: false !default;
+$menu-position: 0% !default;
+$menu-spacing: 0 !default;
+$menu-repeat: no-repeat !default;
+$menu-prefix: '' !default;
+$menu-clean-up: true !default;
+$menu-layout:vertical !default;
+$menu-inline: false !default;
+
+  
+ // These variables control the generated sprite output
+ // You can override them selectively before you import this file.
+ 
+   $menu-favorites-icon-position: $menu-position !default;
+   $menu-favorites-icon-spacing:  $menu-spacing !default;
+   $menu-favorites-icon-repeat:   $menu-repeat !default;
+ 
+   $menu-logo-position: $menu-position !default;
+   $menu-logo-spacing:  $menu-spacing !default;
+   $menu-logo-repeat:   $menu-repeat !default;
+ 
+   $menu-pattern-position: $menu-position !default;
+   $menu-pattern-spacing:  $menu-spacing !default;
+   $menu-pattern-repeat:   repeat-x;
+ 
+   $menu-search-icon-position: $menu-position !default;
+   $menu-search-icon-spacing:  $menu-spacing !default;
+   $menu-search-icon-repeat:   $menu-repeat !default;
+ 
+   $menu-trigger-position: $menu-position !default;
+   $menu-trigger-spacing:  $menu-spacing !default;
+   $menu-trigger-repeat:   $menu-repeat !default;
+ 
+
+ $menu-sprites: sprite-map("menu/*.png",
+ 
+   $menu-favorites-icon-position: $menu-favorites-icon-position, 
+   $menu-favorites-icon-spacing:  $menu-favorites-icon-spacing, 
+   $menu-favorites-icon-repeat:   $menu-favorites-icon-repeat,
+ 
+   $menu-logo-position: $menu-logo-position, 
+   $menu-logo-spacing:  $menu-logo-spacing, 
+   $menu-logo-repeat:   $menu-logo-repeat,
+ 
+   $menu-pattern-position: $menu-pattern-position, 
+   $menu-pattern-spacing:  $menu-pattern-spacing, 
+   $menu-pattern-repeat:   $menu-pattern-repeat,
+ 
+   $menu-search-icon-position: $menu-search-icon-position, 
+   $menu-search-icon-spacing:  $menu-search-icon-spacing, 
+   $menu-search-icon-repeat:   $menu-search-icon-repeat,
+ 
+   $menu-trigger-position: $menu-trigger-position, 
+   $menu-trigger-spacing:  $menu-trigger-spacing, 
+   $menu-trigger-repeat:   $menu-trigger-repeat,
+ 
+ $layout: $menu-layout,
+ $cleanup: $menu-clean-up
+ );
+
+
+// All sprites should extend this class
+// The menu-sprite mixin will do so for you.
+@if $menu-inline {
+  #{$menu-sprite-base-class} {
+    background-image: inline-sprite($menu-sprites);
+  } 
+} @else {
+  #{$menu-sprite-base-class} {
+    background: $menu-sprites no-repeat;
+  }
+}
+//sass functions to return the dimensions of a sprite image as units
+
+  @function menu-sprite-width($name) {
+    $file: sprite_file($menu-sprites, $name);
+    @return image-width($file);
+  }
+
+  @function menu-sprite-height($name) {
+    $file: sprite_file($menu-sprites, $name);
+    @return image-height($file);
+  }
+
+
+// Use this to set the dimensions of an element
+// based on the size of the original image.
+@mixin menu-sprite-dimensions($name) {
+  @include sprite-dimensions($menu-sprites, $name)
+}
+
+// Move the background position to display the sprite.
+@mixin menu-sprite-position($name, $offset-x: 0, $offset-y: 0) {
+  @include sprite-background-position($menu-sprites, $name, $offset-x, $offset-y)
+}
+
+// Extends the sprite base class and set the background position for the desired sprite.
+// It will also apply the image dimensions if $dimensions is true.
+@mixin menu-sprite($name, $dimensions: $menu-sprite-dimensions, $offset-x: 0, $offset-y: 0) {
+  @extend #{$menu-sprite-base-class};
+  @include sprite($menu-sprites, $name, $dimensions, $offset-x, $offset-y)
+}
+
+@mixin menu-sprites($sprite-names, $dimensions: $menu-sprite-dimensions, $prefix: sprite-map-name($menu-sprites), $offset-x: 0, $offset-y: 0) {
+  @include sprites($menu-sprites, $sprite-names, $menu-sprite-base-class, $dimensions, $prefix, $offset-x, $offset-y)
+}
+
+// Generates a class for each sprited image.
+@mixin all-menu-sprites($dimensions: $menu-sprite-dimensions, $prefix: sprite-map-name($menu-sprites), $offset-x: 0, $offset-y: 0) {
+  @include menu-sprites(favorites-icon logo pattern search-icon trigger, $dimensions, $prefix, $offset-x, $offset-y);
+}

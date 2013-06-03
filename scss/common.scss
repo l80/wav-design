@@ -1,0 +1,221 @@
+@import "compass";
+@import "buttons";
+@import "app-menu";
+@import "menu/*.png";
+@import "sprites/menu"; //http://www.pfvdw.com/blog/compass-sprites-and-background-repeat-x trick
+
+$margin: 10px;
+$nav-height: 50px;
+$font-color-grey: #686868;
+
+%position-absolute {
+  position: absolute;
+  z-index: 5;
+}
+
+@mixin border-box {
+  @include box-sizing(border-box);
+}
+
+@mixin relative-thumbnail {
+  .thumbnail {
+    position: relative;
+
+    .thumbnail-stub {
+      width: 100%;
+    }
+
+    .thumbnail-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+}
+
+@mixin columns-gap($gap: 2px) {
+//add gap between movies
+  @include border-box;
+  &:nth-child(odd) {
+    padding-right: $gap/2;
+  }
+
+  &:nth-child(even) {
+    padding-left: $gap/2;
+  }
+//end add gap
+}
+
+@mixin movies {
+  .movies {
+    @include pie-clearfix;
+    margin: $margin;
+
+    .movie {
+      width: 50%;
+      position: relative;
+      float: left;
+      @include columns-gap;
+      @include relative-thumbnail;
+
+      .thumbnail {
+        .movie-info {
+          %movie-thumbnail-btn {
+            @include border-radius($btn-border-radius);
+            background-color: rgba(0, 0, 0, 0.75);
+            width: $btn-width;
+            height: $btn-height;
+            display: block;
+          }
+
+          .site-logo {
+            @extend %position-absolute;
+            top: 2px;
+            left: 2px;
+
+            max-width: 35%;
+
+            img {
+              max-width: 100%;
+            }
+          }
+
+          .duration {
+            @extend %position-absolute;
+            bottom: 4px;
+            right: 4px;
+
+            width: $btn-width;
+            padding: 5px 0;
+            background-color: rgba(0, 0, 0, 0.75);
+            color: white;
+          }
+
+          .btn-container {
+            @extend %position-absolute;
+            top: 4px;
+            right: 4px;
+
+            .add-to-favorites {
+              @extend %movie-thumbnail-btn;
+            }
+
+            .add-to-later {
+              @extend %movie-thumbnail-btn;
+
+              margin-top: 4px;
+            }
+          }
+        }
+      }
+
+      .title {
+        margin: $margin;
+      }
+
+      .added {
+        margin: $margin;
+        color: $font-color-grey
+      }
+    }
+  }
+}
+
+html {
+  height: 100%;
+  color: white;
+}
+
+body {
+  height: 100%;
+}
+
+.stp-content {
+  background: inline-image("background.png") repeat;
+}
+
+
+
+header {
+  height: 60px; //default iphone navbar height
+  margin-bottom: $margin;
+  @include display-box;
+  @include box-align(center);
+
+  @include menu-sprite(pattern);
+
+  background-repeat: repeat-x;
+
+  .menu-trigger {
+    @include sprite-replace-text-with-dimensions($menu-sprites, trigger);
+  }
+
+  .logo {
+    @include sprite-replace-text-with-dimensions($menu-sprites, logo);
+  }
+
+  .right {
+    @include box-flex(1);
+    @include display-box;
+    @include box-pack(end);
+
+    .later {
+      @include sprite-replace-text-with-dimensions($menu-sprites, favorites-icon);
+    }
+
+    .favorites {
+      @include sprite-replace-text-with-dimensions($menu-sprites, favorites-icon);
+    }
+
+    .search {
+      @include sprite-replace-text-with-dimensions($menu-sprites, search-icon);
+    }
+  }
+}
+
+.my-ad1, .my-ad2 {
+  background: lightgoldenrodyellow;
+  height: 30px;
+}
+
+#content {
+  .main-navigation {
+    height: $nav-height;
+    margin: $margin;
+    @include display-box;
+
+    .menu-top-movies {
+      @include box-flex(6);
+    }
+
+    .menu-actresses {
+      @include box-flex(5);
+    }
+
+    .menu-tags {
+      @include box-flex(3);
+    }
+
+    .menu-sites {
+      @include box-flex(3);
+    }
+
+    .menu-sorting {
+      @include box-flex(1);
+      @include hide-text;
+    }
+  }
+
+  .pagination {
+    margin: $margin;
+    @include display-box;
+    @include box-pack(center);
+  }
+
+  .total-displayed-info {
+    margin: $margin*2;
+    color: $font-color-grey;
+    text-align: center;
+  }
+}
