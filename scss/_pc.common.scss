@@ -13,6 +13,11 @@ body {
   vertical-align: middle;
 }
 
+@mixin left-and-right-ads-gap {
+  margin-left: $left-ads-width;
+  margin-right: $right-ads-width;
+}
+
 header {
   $header-height: image-height("pc/logo.png");
 
@@ -102,6 +107,10 @@ $nav-collapsed-width: 50px;
         background: inline-image("pc/menu/close.png") no-repeat 50% 50% #1e1e20;
       }
     }
+  }
+
+  .main-content {
+    margin-left: $nav-collapsed-width;
   }
 }
 

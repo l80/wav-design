@@ -1,5 +1,5 @@
 /* line 8, _buttons.scss */
-.btn-combined, .btn-combined-left, .btn-combined-right, .btn, .btn-s, #content .pagination .step {
+.btn-combined, .btn-combined-left, .btn-combined-right, .btn, .btn-s, .main-movie .info-and-actions .actions .add-to-later, .main-movie .info-and-actions .actions .add-to-favorites {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #373739), color-stop(35%, #202020), color-stop(80%, #0a0a0a), color-stop(100%, #0b0b0b));
   background-image: -webkit-linear-gradient(#373739, #202020 35%, #0a0a0a 80%, #0b0b0b);
   background-image: -moz-linear-gradient(#373739, #202020 35%, #0a0a0a 80%, #0b0b0b);
@@ -13,7 +13,7 @@
   color: white;
 }
 /* line 15, _buttons.scss */
-.pressed.btn-combined, .pressed.btn-combined-left, .drop-down-wrapper.drop-down-displayed .btn-combined-left.drop-down-trigger, .pressed.btn-combined-right, .drop-down-wrapper.drop-down-displayed .btn-combined-right.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .btn-combined.drop-down-trigger, .pressed.btn, .pressed.btn-s, .drop-down-wrapper.drop-down-displayed .btn-s.drop-down-trigger, .drop-down-wrapper.drop-down-displayed #content .pagination .drop-down-trigger.step, #content .pagination .drop-down-wrapper.drop-down-displayed .drop-down-trigger.step, #content .pagination .pressed.step, .drop-down-wrapper.drop-down-displayed .btn.drop-down-trigger {
+.pressed.btn-combined, .pressed.btn-combined-left, .drop-down-wrapper.drop-down-displayed .btn-combined-left.drop-down-trigger, .pressed.btn-combined-right, .drop-down-wrapper.drop-down-displayed .btn-combined-right.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .btn-combined.drop-down-trigger, .pressed.btn, .pressed.btn-s, .drop-down-wrapper.drop-down-displayed .btn-s.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .btn.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .main-movie .info-and-actions .actions .drop-down-trigger.add-to-later, .main-movie .info-and-actions .actions .drop-down-wrapper.drop-down-displayed .drop-down-trigger.add-to-later, .drop-down-wrapper.drop-down-displayed .main-movie .info-and-actions .actions .drop-down-trigger.add-to-favorites, .main-movie .info-and-actions .actions .drop-down-wrapper.drop-down-displayed .drop-down-trigger.add-to-favorites, .main-movie .info-and-actions .actions .pressed.add-to-later, .main-movie .info-and-actions .actions .pressed.add-to-favorites {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #202020), color-stop(50%, #1b1b1b), color-stop(100%, #151515));
   background-image: -webkit-linear-gradient(#202020, #1b1b1b, #151515);
   background-image: -moz-linear-gradient(#202020, #1b1b1b, #151515);
@@ -57,7 +57,7 @@
 }
 
 /* line 43, _buttons.scss */
-.btn, .btn-s, #content .pagination .step {
+.btn, .btn-s, .main-movie .info-and-actions .actions .add-to-later, .main-movie .info-and-actions .actions .add-to-favorites {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -66,7 +66,7 @@
 }
 
 /* line 48, _buttons.scss */
-.btn-s, #content .pagination .step {
+.btn-s {
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -76,24 +76,24 @@
 }
 
 /* line 10, _shared.scss */
-#content .filters, .custom-search {
+#content .filters, .custom-search, .main-movie .info-and-actions, .similar-movies {
   overflow: hidden;
   *zoom: 1;
 }
 
 /* line 14, _shared.scss */
-header, #content, #content .movies {
+header, #content, .similar-movies .movies {
   *zoom: 1;
 }
 /* line 38, C:/ruby187/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
-header:after, #content:after, #content .movies:after {
+header:after, #content:after, .similar-movies .movies:after {
   content: "";
   display: table;
   clear: both;
 }
 
 /* line 18, _shared.scss */
-#content .movies .movie .movie-info .site-logo, #content .movies .movie .movie-info .duration {
+.similar-movies .movies .movie .movie-info .site-logo, .similar-movies .movies .movie .movie-info .duration {
   position: absolute;
   z-index: 5;
 }
@@ -288,7 +288,7 @@ body {
 }
 
 /* line 8, _buttons.scss */
-.btn-combined, .btn-combined-left, .btn-combined-right, .btn, .btn-s, #content .pagination .step {
+.btn-combined, .btn-combined-left, .btn-combined-right, .btn, .btn-s, .main-movie .info-and-actions .actions .add-to-later, .main-movie .info-and-actions .actions .add-to-favorites {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #373739), color-stop(35%, #202020), color-stop(80%, #0a0a0a), color-stop(100%, #0b0b0b));
   background-image: -webkit-linear-gradient(#373739, #202020 35%, #0a0a0a 80%, #0b0b0b);
   background-image: -moz-linear-gradient(#373739, #202020 35%, #0a0a0a 80%, #0b0b0b);
@@ -302,7 +302,7 @@ body {
   color: white;
 }
 /* line 15, _buttons.scss */
-.pressed.btn-combined, .pressed.btn-combined-left, .drop-down-wrapper.drop-down-displayed .btn-combined-left.drop-down-trigger, .pressed.btn-combined-right, .drop-down-wrapper.drop-down-displayed .btn-combined-right.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .btn-combined.drop-down-trigger, .pressed.btn, .pressed.btn-s, .drop-down-wrapper.drop-down-displayed .btn-s.drop-down-trigger, .drop-down-wrapper.drop-down-displayed #content .pagination .drop-down-trigger.step, #content .pagination .drop-down-wrapper.drop-down-displayed .drop-down-trigger.step, #content .pagination .pressed.step, .drop-down-wrapper.drop-down-displayed .btn.drop-down-trigger {
+.pressed.btn-combined, .pressed.btn-combined-left, .drop-down-wrapper.drop-down-displayed .btn-combined-left.drop-down-trigger, .pressed.btn-combined-right, .drop-down-wrapper.drop-down-displayed .btn-combined-right.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .btn-combined.drop-down-trigger, .pressed.btn, .pressed.btn-s, .drop-down-wrapper.drop-down-displayed .btn-s.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .btn.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .main-movie .info-and-actions .actions .drop-down-trigger.add-to-later, .main-movie .info-and-actions .actions .drop-down-wrapper.drop-down-displayed .drop-down-trigger.add-to-later, .drop-down-wrapper.drop-down-displayed .main-movie .info-and-actions .actions .drop-down-trigger.add-to-favorites, .main-movie .info-and-actions .actions .drop-down-wrapper.drop-down-displayed .drop-down-trigger.add-to-favorites, .main-movie .info-and-actions .actions .pressed.add-to-later, .main-movie .info-and-actions .actions .pressed.add-to-favorites {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #202020), color-stop(50%, #1b1b1b), color-stop(100%, #151515));
   background-image: -webkit-linear-gradient(#202020, #1b1b1b, #151515);
   background-image: -moz-linear-gradient(#202020, #1b1b1b, #151515);
@@ -346,7 +346,7 @@ body {
 }
 
 /* line 43, _buttons.scss */
-.btn, .btn-s, #content .pagination .step {
+.btn, .btn-s, .main-movie .info-and-actions .actions .add-to-later, .main-movie .info-and-actions .actions .add-to-favorites {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -355,7 +355,7 @@ body {
 }
 
 /* line 48, _buttons.scss */
-.btn-s, #content .pagination .step {
+.btn-s {
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -365,7 +365,7 @@ body {
 }
 
 /* line 8, _buttons.scss */
-.btn-combined, .btn-combined-left, .btn-combined-right, .btn, .btn-s, #content .pagination .step {
+.btn-combined, .btn-combined-left, .btn-combined-right, .btn, .btn-s, .main-movie .info-and-actions .actions .add-to-later, .main-movie .info-and-actions .actions .add-to-favorites {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #373739), color-stop(35%, #202020), color-stop(80%, #0a0a0a), color-stop(100%, #0b0b0b));
   background-image: -webkit-linear-gradient(#373739, #202020 35%, #0a0a0a 80%, #0b0b0b);
   background-image: -moz-linear-gradient(#373739, #202020 35%, #0a0a0a 80%, #0b0b0b);
@@ -379,7 +379,7 @@ body {
   color: white;
 }
 /* line 15, _buttons.scss */
-.pressed.btn-combined, .pressed.btn-combined-left, .drop-down-wrapper.drop-down-displayed .btn-combined-left.drop-down-trigger, .pressed.btn-combined-right, .drop-down-wrapper.drop-down-displayed .btn-combined-right.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .btn-combined.drop-down-trigger, .pressed.btn, .pressed.btn-s, .drop-down-wrapper.drop-down-displayed .btn-s.drop-down-trigger, .drop-down-wrapper.drop-down-displayed #content .pagination .drop-down-trigger.step, #content .pagination .drop-down-wrapper.drop-down-displayed .drop-down-trigger.step, #content .pagination .pressed.step, .drop-down-wrapper.drop-down-displayed .btn.drop-down-trigger {
+.pressed.btn-combined, .pressed.btn-combined-left, .drop-down-wrapper.drop-down-displayed .btn-combined-left.drop-down-trigger, .pressed.btn-combined-right, .drop-down-wrapper.drop-down-displayed .btn-combined-right.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .btn-combined.drop-down-trigger, .pressed.btn, .pressed.btn-s, .drop-down-wrapper.drop-down-displayed .btn-s.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .btn.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .main-movie .info-and-actions .actions .drop-down-trigger.add-to-later, .main-movie .info-and-actions .actions .drop-down-wrapper.drop-down-displayed .drop-down-trigger.add-to-later, .drop-down-wrapper.drop-down-displayed .main-movie .info-and-actions .actions .drop-down-trigger.add-to-favorites, .main-movie .info-and-actions .actions .drop-down-wrapper.drop-down-displayed .drop-down-trigger.add-to-favorites, .main-movie .info-and-actions .actions .pressed.add-to-later, .main-movie .info-and-actions .actions .pressed.add-to-favorites {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #202020), color-stop(50%, #1b1b1b), color-stop(100%, #151515));
   background-image: -webkit-linear-gradient(#202020, #1b1b1b, #151515);
   background-image: -moz-linear-gradient(#202020, #1b1b1b, #151515);
@@ -423,7 +423,7 @@ body {
 }
 
 /* line 43, _buttons.scss */
-.btn, .btn-s, #content .pagination .step {
+.btn, .btn-s, .main-movie .info-and-actions .actions .add-to-later, .main-movie .info-and-actions .actions .add-to-favorites {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -432,7 +432,7 @@ body {
 }
 
 /* line 48, _buttons.scss */
-.btn-s, #content .pagination .step {
+.btn-s {
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -442,24 +442,24 @@ body {
 }
 
 /* line 10, _shared.scss */
-#content .filters, .custom-search {
+#content .filters, .custom-search, .main-movie .info-and-actions, .similar-movies {
   overflow: hidden;
   *zoom: 1;
 }
 
 /* line 14, _shared.scss */
-header, #content, #content .movies {
+header, #content, .similar-movies .movies {
   *zoom: 1;
 }
 /* line 38, C:/ruby187/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
-header:after, #content:after, #content .movies:after {
+header:after, #content:after, .similar-movies .movies:after {
   content: "";
   display: table;
   clear: both;
 }
 
 /* line 18, _shared.scss */
-#content .movies .movie .movie-info .site-logo, #content .movies .movie .movie-info .duration {
+.similar-movies .movies .movie .movie-info .site-logo, .similar-movies .movies .movie .movie-info .duration {
   position: absolute;
   z-index: 5;
 }
@@ -972,33 +972,33 @@ header .right .search .do-search .icon-search {
 }
 
 /* line 120, _pc.common.scss */
-#content .movies .movie-wrapper {
+.similar-movies .movies .movie-wrapper {
   width: 25%;
   float: left;
 }
 /* line 129, _pc.common.scss */
-#content .movies .movie {
+.similar-movies .movies .movie {
   border: 2px solid transparent;
   position: relative;
   overflow: hidden;
 }
 /* line 137, _pc.common.scss */
-#content .movies .movie .thumbnail {
+.similar-movies .movies .movie .thumbnail {
   font-size: 0;
 }
 /* line 140, _pc.common.scss */
-#content .movies .movie .thumbnail .thumbnail-stub {
+.similar-movies .movies .movie .thumbnail .thumbnail-stub {
   width: 100%;
 }
 /* line 144, _pc.common.scss */
-#content .movies .movie .thumbnail .thumbnail-image {
+.similar-movies .movies .movie .thumbnail .thumbnail-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
 }
 /* line 153, _pc.common.scss */
-#content .movies .movie .movie-info .site-logo {
+.similar-movies .movies .movie .movie-info .site-logo {
   -webkit-transition: all 0.35s ease-in-out;
   -moz-transition: all 0.35s ease-in-out;
   -o-transition: all 0.35s ease-in-out;
@@ -1009,11 +1009,11 @@ header .right .search .do-search .icon-search {
   opacity: 1;
 }
 /* line 162, _pc.common.scss */
-#content .movies .movie .movie-info .site-logo img {
+.similar-movies .movies .movie .movie-info .site-logo img {
   max-width: 100%;
 }
 /* line 167, _pc.common.scss */
-#content .movies .movie .movie-info .duration {
+.similar-movies .movies .movie .movie-info .duration {
   -webkit-transition: all 0.35s ease-in-out;
   -moz-transition: all 0.35s ease-in-out;
   -o-transition: all 0.35s ease-in-out;
@@ -1026,7 +1026,7 @@ header .right .search .do-search .icon-search {
   opacity: 1;
 }
 /* line 180, _pc.common.scss */
-#content .movies .movie .movie-info-hover {
+.similar-movies .movies .movie .movie-info-hover {
   -webkit-transition: all 0.35s ease-in-out;
   -moz-transition: all 0.35s ease-in-out;
   -o-transition: all 0.35s ease-in-out;
@@ -1040,7 +1040,7 @@ header .right .search .do-search .icon-search {
   text-shadow: 0 1px 1px black;
 }
 /* line 190, _pc.common.scss */
-#content .movies .movie .movie-info-hover .add-to-later, #content .movies .movie .movie-info-hover .add-to-favorites {
+.similar-movies .movies .movie .movie-info-hover .add-to-later, .similar-movies .movies .movie .movie-info-hover .add-to-favorites {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
@@ -1053,35 +1053,35 @@ header .right .search .do-search .icon-search {
   color: white;
 }
 /* line 199, _pc.common.scss */
-#content .movies .movie .movie-info-hover .add-to-later {
+.similar-movies .movies .movie .movie-info-hover .add-to-later {
   top: 9px;
   left: 9px;
 }
 /* line 205, _pc.common.scss */
-#content .movies .movie .movie-info-hover .add-to-favorites {
+.similar-movies .movies .movie .movie-info-hover .add-to-favorites {
   top: 9px;
   right: 9px;
 }
 /* line 211, _pc.common.scss */
-#content .movies .movie .movie-info-hover .movie-bottom-info {
+.similar-movies .movies .movie .movie-info-hover .movie-bottom-info {
   position: absolute;
   width: 100%;
   bottom: 0;
   left: 0;
 }
 /* line 217, _pc.common.scss */
-#content .movies .movie .movie-info-hover .movie-bottom-info .title {
+.similar-movies .movies .movie .movie-info-hover .movie-bottom-info .title {
   display: block;
   margin: 9px;
   color: white;
 }
 /* line 223, _pc.common.scss */
-#content .movies .movie .movie-info-hover .movie-bottom-info .added {
+.similar-movies .movies .movie .movie-info-hover .movie-bottom-info .added {
   margin: 9px;
   color: #686868;
 }
 /* line 230, _pc.common.scss */
-#content .movies .movie .movie-hidden-url {
+.similar-movies .movies .movie .movie-hidden-url {
   position: absolute;
   top: 0;
   left: 0;
@@ -1091,114 +1091,150 @@ header .right .search .do-search .icon-search {
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA9JREFUeNpiYGBgWAsQYAAAsgCuSsSEDwAAAABJRU5ErkJggg==') repeat;
 }
 /* line 242, _pc.common.scss */
-#content .movies .movie:hover .movie-info .site-logo {
+.similar-movies .movies .movie:hover .movie-info .site-logo {
   opacity: 0;
 }
 /* line 246, _pc.common.scss */
-#content .movies .movie:hover .movie-info .duration {
+.similar-movies .movies .movie:hover .movie-info .duration {
   opacity: 0;
 }
 /* line 250, _pc.common.scss */
-#content .movies .movie:hover .movie-info-hover {
+.similar-movies .movies .movie:hover .movie-info-hover {
   top: 0;
 }
 
-/* line 6, list.pc.scss */
-#content .main-content .terms {
-  height: 20px;
+/* line 74, menu/*.png */
+.menu-sprite {
+  background: url('/img/menu-s04a832fbe5.png') no-repeat;
 }
-/* line 9, list.pc.scss */
-#content .main-content .terms li {
-  display: inline-block;
-}
-/* line 14, list.pc.scss */
-#content .main-content .filters-container {
-  margin-left: 60px;
-  margin-right: 60px;
-}
-/* line 18, list.pc.scss */
-#content .main-content .filters-container .filters {
-  margin-right: 90px;
-}
-/* line 22, list.pc.scss */
-#content .main-content .filters-container .sort-wrapper {
+
+/* line 5, movie.pc.scss */
+.movie-and-adv .my-ad3 {
   float: right;
-  width: 90px;
-  position: relative;
-}
-/* line 38, list.pc.scss */
-#content .main-content .filters-container .sort-wrapper .sort-title {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   display: inline-block;
-  height: 30px;
-  line-height: 30px;
-  vertical-align: middle;
-  width: 70px;
-  text-align: center;
-  font-size: 12px;
+  background-color: #ffe460;
+  width: 45px;
+  height: 300px;
+  margin-right: 7.5px;
 }
-/* line 45, list.pc.scss */
-#content .main-content .filters-container .sort-wrapper .trigger-sort {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline-block;
-  height: 30px;
-  line-height: 30px;
-  vertical-align: middle;
-  width: 20px;
-}
-/* line 50, list.pc.scss */
-#content .main-content .filters-container .sort-wrapper .sort-container {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-  min-width: 150px;
-}
-/* line 58, list.pc.scss */
-#content .movies {
-  margin-left: 60px;
+/* line 14, movie.pc.scss */
+.movie-and-adv .main-movie-wrapper {
   margin-right: 60px;
 }
-/* line 63, list.pc.scss */
-#content .pagination-wrapper {
-  margin-left: 60px;
-  margin-right: 60px;
-  text-align: center;
+
+/* line 19, movie.pc.scss */
+.main-movie {
+  width: 90%;
+  margin: 0 auto;
 }
-/* line 68, list.pc.scss */
-#content .pagination {
+/* line 23, movie.pc.scss */
+.main-movie .title {
   display: inline-block;
-  height: 49px;
-  overflow-y: hidden;
+  color: white;
+  font-size: 25px;
 }
-/* line 77, list.pc.scss */
-#content .pagination .pagination-fixed {
+/* line 29, movie.pc.scss */
+.main-movie .added {
+  display: inline-block;
+  color: #686868;
+}
+/* line 34, movie.pc.scss */
+.main-movie .player {
+  background-color: coral;
+  margin: 20px 0;
+  height: 350px;
+  width: 100%;
+}
+/* line 41, movie.pc.scss */
+.main-movie .info-and-actions {
+  margin: 20px 0;
+}
+/* line 49, movie.pc.scss */
+.main-movie .info-and-actions .info {
+  margin-right: 205px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  border: 1px solid #5b5b5b;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 20px;
+}
+/* line 59, movie.pc.scss */
+.main-movie .info-and-actions .info dt {
+  float: left;
+  width: 150px;
+}
+/* line 64, movie.pc.scss */
+.main-movie .info-and-actions .info dd {
+  padding-left: 150px;
+}
+/* line 69, movie.pc.scss */
+.main-movie .info-and-actions .actions {
   float: right;
+  width: 200px;
 }
-/* line 81, list.pc.scss */
-#content .pagination .pagination-flexible {
-  margin-right: 49px;
+/* line 73, movie.pc.scss */
+.main-movie .info-and-actions .actions .add-to-later, .main-movie .info-and-actions .actions .add-to-favorites {
+  display: block;
+  margin-bottom: 20px;
+  color: white;
+  width: 100%;
 }
-/* line 86, list.pc.scss */
-#content .pagination.has-dots .pagination-flexible {
-  margin-right: 98px;
-}
-/* line 91, list.pc.scss */
-#content .pagination .step {
+/* line 80, movie.pc.scss */
+.main-movie .info-and-actions .actions .add-to-later i, .main-movie .info-and-actions .actions .add-to-favorites i {
   display: inline-block;
-  vertical-align: top;
-  margin-bottom: 49px;
+  vertical-align: middle;
 }
-/* line 98, list.pc.scss */
-#content .pagination .prev {
-  margin-right: 10px;
+/* line 89, movie.pc.scss */
+.main-movie .info-and-actions .actions .add-to-later i {
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  background-position: 0 -37px;
+  height: 41px;
+  width: 60px;
+  background-image: url('/img/menu-s04a832fbe5.png');
+  background-repeat: no-repeat;
 }
-/* line 102, list.pc.scss */
-#content .pagination .next {
-  margin-left: 10px;
+/* line 97, movie.pc.scss */
+.main-movie .info-and-actions .actions .add-to-favorites i {
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  background-position: 0 -37px;
+  height: 41px;
+  width: 60px;
+  background-image: url('/img/menu-s04a832fbe5.png');
+  background-repeat: no-repeat;
+}
+
+/* line 105, movie.pc.scss */
+.similar-movies-label {
+  margin-left: 60px;
+  margin-right: 60px;
+  color: white;
+}
+
+/* line 113, movie.pc.scss */
+.similar-movies .my-ad4 {
+  float: left;
+  background-color: #ffe460;
+  width: 54px;
+  height: 250px;
+  margin: 0 3px;
+}
+/* line 121, movie.pc.scss */
+.similar-movies .my-ad5 {
+  float: right;
+  background-color: #ffe460;
+  width: 54px;
+  height: 400px;
+  margin: 0 3px;
+}
+/* line 129, movie.pc.scss */
+.similar-movies .movies {
+  margin-left: 60px;
+  margin-right: 60px;
 }

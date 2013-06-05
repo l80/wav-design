@@ -1,16 +1,7 @@
 @import "pc.common";
 
-$left-ads-width: 60px;
-$right-ads-width: 60px;
-
-@mixin left-and-right-ads-gap {
-  margin-left: $left-ads-width;
-  margin-right: $right-ads-width;
-}
-
 #content {
   .main-content {
-    margin-left: $nav-collapsed-width;
 
     .terms {
       height: $nav-trigger-height;
