@@ -1,0 +1,162 @@
+@import "compass";
+@import "reset";
+@import "buttons";
+
+$margin: 10px;
+$font-color-grey: #686868 !default;
+$z-index-level-1: 5;
+$z-index-level-2: $z-index-level-1*2;
+
+%clearfix {
+  @include clearfix;
+}
+
+%pie-clearfix {
+  @include pie-clearfix;
+}
+
+%position-absolute {
+  position: absolute;
+  z-index: $z-index-level-1;
+}
+
+@mixin position-absolute {
+  @extend %position-absolute;
+}
+
+@mixin border-box {
+  @include box-sizing(border-box);
+}
+
+$radio-selected-image: "selected.png";
+$radio-height: image-height($radio-selected-image);
+
+@mixin selectable-radio($float, $display: block) {
+  input {
+    height: $radio-height;
+    @include appearance(none);
+    margin: 0;
+    display: $display;
+    float: $float;
+    visibility: hidden;
+
+    &:checked {
+      @include replace-text-with-dimensions($radio-selected-image);
+      visibility: visible;
+    }
+  }
+}
+
+html {
+  height: 100%;
+  color: white;
+}
+
+body {
+  height: 100%;
+}
+
+#content {
+  .filters {
+    @extend %clearfix;
+    margin: $margin;
+
+    .filter {
+      $filter-height: 49px;
+      display: block;
+      float: left;
+      height: $filter-height;
+
+      .left, .right, .label {
+        float: left;
+        height: $filter-height;
+      }
+
+      @mixin filter($left, $right) {
+        .left {
+          @include replace-text-with-dimensions("filter/#{$left}.png");
+        }
+
+        .right {
+          @include replace-text-with-dimensions("filter/#{$right}.png");
+        }
+      }
+
+      @include filter(filter-open-prev, filter-close-next);
+
+      .label {
+        background: url("../img/filter/filter-bg.png") repeat-x;
+      }
+
+      &:first-child  {
+        @include filter(filter-open, filter-close-next);
+      }
+
+      &:last-child {
+        @include filter(filter-open-prev, filter-close);
+      }
+
+      &:first-child:last-child {
+        @include filter(filter-open, filter-close);
+      }
+    }
+  }
+}
+
+.sort-container {
+  $item-height: $radio-height;
+
+  %sort-item {
+    height: $item-height;
+    line-height: $item-height;
+    padding: $margin $margin/2;
+    border-bottom: 1px solid #494748;
+  }
+
+  .title {
+    @extend %sort-item;
+    color: $font-color-grey;
+  }
+
+  label {
+    @extend %sort-item;
+    display: block;
+    cursor: pointer;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  @include selectable-radio(right);
+}
+
+.drop-down-wrapper {
+  .drop-down-container {
+    //animation settings
+    @include transition(height 0.3s linear, top 0.3s linear, bottom 0.3s linear);
+
+    position: absolute;
+    top: 100%;
+    right: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: 9999;
+    background: #1d1d1d;
+
+    > div {
+      @include transition(top 0.3s linear);
+
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -100%;
+    }
+  }
+
+  &.drop-down-displayed {
+    .drop-down-trigger {
+      @extend .pressed;
+    }
+  }
+}

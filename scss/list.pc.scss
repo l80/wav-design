@@ -1,0 +1,115 @@
+@import "pc.common";
+
+$left-ads-width: 60px;
+$right-ads-width: 60px;
+
+@mixin left-and-right-ads-gap {
+  margin-left: $left-ads-width;
+  margin-right: $right-ads-width;
+}
+
+#content {
+  .main-content {
+    margin-left: $nav-collapsed-width;
+
+    .terms {
+      height: $nav-trigger-height;
+
+      li {
+        display: inline-block;
+      }
+    }
+
+    .filters-container {
+      @include left-and-right-ads-gap;
+      $sort-width: 90px;
+
+      .filters {
+        margin-right: $sort-width;
+      }
+
+      .sort-wrapper {
+        $btn-sort-height: 30px;
+        $btn-sort-trigger-width: 20px;
+
+        float: right;
+        width: $sort-width;
+        position: relative;
+
+        @mixin sort-btn {
+          @include border-box;
+          display: inline-block;
+          height: $btn-sort-height;
+          line-height: $btn-sort-height;
+          vertical-align: middle;
+        }
+
+        .sort-title {
+          @include sort-btn;
+          width: $sort-width - $btn-sort-trigger-width;
+          text-align: center;
+          font-size: 12px;
+        }
+
+        .trigger-sort {
+          @include sort-btn;
+          width: $btn-sort-trigger-width;
+        }
+
+        .sort-container {
+          @include border-radius($btn-border-radius);
+          min-width: 150px;
+        }
+      }
+    }
+  }
+
+  .movies {
+    @extend %movies;
+    @include left-and-right-ads-gap;
+  }
+
+  .pagination-wrapper {
+    @include left-and-right-ads-gap;
+    text-align: center;
+  }
+
+  .pagination {
+    $item-height: 49px;
+    $item-width: 49px;
+    $prev-next-gap: 10px;
+
+    display: inline-block;
+    height: $item-height;
+    overflow-y: hidden;
+
+    .pagination-fixed {
+      float: right;
+    }
+
+    .pagination-flexible {
+      margin-right: $item-width; //next item
+    }
+
+    &.has-dots {
+      .pagination-flexible {
+        margin-right: $item-width*2; //dots + next item
+      }
+    }
+
+    .step {
+      @extend .btn-s;
+      display: inline-block;
+      vertical-align: top;
+      margin-bottom: $item-height; //additional margin to push down
+    }
+
+    .prev {
+      margin-right: $prev-next-gap;
+    }
+
+    .next {
+      margin-left: $prev-next-gap;
+    }
+  }
+}

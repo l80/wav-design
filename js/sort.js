@@ -2,28 +2,32 @@ var wav = wav || {};
 
 wav.init = function() {
     wav.navigation = $('.main-navigation');
-    wav.sortSubMenu = wav.navigation.children('.sort-container');
+    wav.sortSubMenu = $('.sort-container');
     wav.sortSubMenuDisplayed = false;
 };
 
-wav.toggleSortSubMenu = function() {
-    var content = wav.sortSubMenu.children();
+wav.toggleSortSubMenu = function($trigger) {
+    var wrapper = $trigger.parents('.drop-down-wrapper');
+    var container = wrapper.find('.drop-down-container');
+    var content = container.children();
 
-    if (wav.sortSubMenuDisplayed) {
-        wav.sortSubMenu.css('height', 0);
+    var displayed = wrapper.hasClass('drop-down-displayed');
+
+    if (displayed) {
+        container.css('height', 0);
         content.css('top',-1*content.height());
-        wav.sortSubMenuDisplayed = false;
+        wrapper.removeClass('drop-down-displayed');
     } else {
-        wav.sortSubMenu.css('height', content.height());
+        container.css('height', content.height());
         content.css('top', 0);
-        wav.sortSubMenuDisplayed = true;
+        wrapper.addClass('drop-down-displayed');
     }
 };
 
 $(document).ready(function() {
     wav.init();
-    wav.navigation.children('.menu-sorting').click(function(e) {
+    $('.drop-down-trigger').click(function(e) {
         e.preventDefault();
-        wav.toggleSortSubMenu();
+        wav.toggleSortSubMenu($(this));
     })
 });

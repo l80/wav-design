@@ -20,18 +20,22 @@ $btn-border-radius: 4px !default;
 }
 
 .btn-inline {
+  display: inline-block;
+}
+
+.btn-combined {
   @extend %btn;
   //border: 1px solid $btn-border-color;
   border-right: 0;
 }
 
-.btn-inline-left {
-  @extend .btn-inline;
+.btn-combined-left {
+  @extend .btn-combined;
   @include border-left-radius($btn-border-radius);
 }
 
-.btn-inline-right {
-  @extend .btn-inline;
+.btn-combined-right {
+  @extend .btn-combined;
   @include border-right-radius($btn-border-radius);
   border-right: 1px solid $btn-border-color;
 }
