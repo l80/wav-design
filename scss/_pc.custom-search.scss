@@ -128,7 +128,7 @@
 
   .do-search {
     @include input-reset;
-    @include background-image(linear-gradient(#ecb246, #eb8600));
+    @include background-image(linear-gradient(#ebbd43, #eaab3a 35%, #eb8600));
     @include border-radius($border-radius);
 
     float: right;
