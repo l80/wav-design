@@ -1,11 +1,15 @@
 @import "shared";
 @import "pc.vars";
 @import "buttons";
-@import "pc.custom-search";
 @import "pc/menu/*.png";
 
 body {
   background: inline-image("background.png") repeat;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 @mixin middle-inline-block {
@@ -18,96 +22,97 @@ body {
   margin-right: $right-ads-width;
 }
 
+@mixin gradient-with-light-top-border {
+  @include background-image(linear-gradient(#2d2d2d, #171717 35%, black));
+  border-top: 1px solid #535353;
+}
+
+@mixin gradient-yellow {
+  @include background-image(linear-gradient(#ecb246, #eb8600));
+}
+
 header {
-  $header-height: image-height("pc/logo.png");
+  $header-logo-height: image-height("pc/logo.png");
+  $header-terms-height: 30px;
 
-  @extend %pie-clearfix;
-  height: $header-height;
-  background: inline-image("pc/header-background.png") repeat;
-  padding: 0 20px;
+  .logo-and-search {
+    @extend %pie-clearfix;
+    height: $header-logo-height;
+    background: inline-image("pc/header-background.png") repeat;
+    padding: 0 20px;
 
-  .logo {
-    float: left;
-    @include replace-text-with-dimensions("pc/logo.png");
+    .logo {
+      float: left;
+      @include replace-text-with-dimensions("pc/logo.png");
+    }
+
+    .right {
+      float: right;
+      line-height: $header-logo-height;
+
+      .later {
+        @include middle-inline-block;
+        @include replace-text-with-dimensions("menu/favorites-icon.png");
+      }
+
+      .favorites {
+        @include middle-inline-block;
+        @include replace-text-with-dimensions("menu/favorites-icon.png");
+      }
+
+      .search {
+        @include middle-inline-block;
+
+        $header-search-height: 40px;
+
+        @mixin header-search-input {
+          @include input-reset;
+          display: inline-block;
+          height: $header-search-height;
+          vertical-align: middle;
+        }
+
+        input {
+          @include header-search-input;
+          @include border-left-radius($border-radius);
+          padding: 0 5px;
+          color: $font-color-grey;
+        }
+
+        .do-search {
+          @include header-search-input;
+          @include gradient-yellow;
+          @include border-right-radius($border-radius);
+
+          .icon-search {
+            display: inline-block;
+            @include replace-text-with-dimensions("pc/search-icon.png");
+          }
+        }
+      }
+    }
   }
 
-  .right {
-    float: right;
-    line-height: $header-height;
+  .terms-wrapper {
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
 
-    .later {
-      @include middle-inline-block;
-      @include replace-text-with-dimensions("menu/favorites-icon.png");
-    }
+    .terms {
+      @include gradient-with-light-top-border;
+      border-bottom: 1px solid #191919;
 
-    .favorites {
-      @include middle-inline-block;
-      @include replace-text-with-dimensions("menu/favorites-icon.png");
-    }
+      height: $header-terms-height;
+      line-height: $header-terms-height;
 
-    .search {
-      @include middle-inline-block;
-
-      $header-search-height: 40px;
-
-      @mixin header-search-input {
-        @include input-reset;
+      li {
         display: inline-block;
-        height: $header-search-height;
-        vertical-align: middle;
-      }
-
-      input {
-        @include header-search-input;
-        @include border-left-radius($border-radius);
-        padding: 0 5px;
-        color: $font-color-grey;
-      }
-
-      .do-search {
-        @include header-search-input;
-        @include background-image(linear-gradient(#ecb246, #eb8600));
-        @include border-right-radius($border-radius);
-
-        .icon-search {
-          display: inline-block;
-          @include replace-text-with-dimensions("pc/search-icon.png");
-        }
       }
     }
   }
 }
 
-$nav-trigger-height: 20px;
-$nav-collapsed-width: 50px;
-
 #content {
   @extend %pie-clearfix;
-
-  .main-navigation {
-    width: $nav-collapsed-width;
-    float: left;
-
-    .trigger {
-      height: $nav-trigger-height;
-      background: inline-image("pc/menu/open.png") no-repeat 50% 50% #1e1e20;
-    }
-
-    .collapsed-navigation {
-      $items: home, tags, favorites, actresses;
-      @each $item in $items {
-        .#{$item} {
-          @include replace-text-with-dimensions("pc/menu/#{$item}.png");
-        }
-      }
-    }
-
-    &.opened {
-      .trigger {
-        background: inline-image("pc/menu/close.png") no-repeat 50% 50% #1e1e20;
-      }
-    }
-  }
 
   .main-content {
     margin-left: $nav-collapsed-width;

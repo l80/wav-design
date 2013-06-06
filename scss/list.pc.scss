@@ -1,16 +1,7 @@
-@import "pc.common";
+@import "pc.imports";
 
 #content {
   .main-content {
-
-    .terms {
-      height: $nav-trigger-height;
-
-      li {
-        display: inline-block;
-      }
-    }
-
     .filters-container {
       @include left-and-right-ads-gap;
       $sort-width: 90px;

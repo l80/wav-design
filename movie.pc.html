@@ -12,40 +12,61 @@
 <body>
 
 <header>
-    <div class="logo"></div>
-    <div class="right">
-        <div class="later"></div>
-        <!-- DI DELIMITER
-                -->
-        <div class="favorites"></div>
-        <!-- DI DELIMITER
-                -->
-        <div class="search">
-            <input type="text" placeholder="Search..."/><button class="do-search"><i class="icon-search"></i></button>
+    <div class="logo-and-search">
+        <div class="logo"></div>
+        <div class="right">
+            <div class="later"></div>
+            <!-- DI DELIMITER
+                    -->
+            <div class="favorites"></div>
+            <!-- DI DELIMITER
+                    -->
+            <div class="search">
+                <input type="text" placeholder="Search..."/><button class="do-search"><i class="icon-search"></i></button>
+            </div>
+            <div class="change-language"></div>
         </div>
-        <div class="change-language"></div>
     </div>
-</header>
 
-<div id="content">
-    <nav class="main-navigation"> <!--class="opened"-->
-        <div class="trigger"></div>
-        <ul class="collapsed-navigation">
-            <li class="home">Home</li>
-            <li class="favorites">Favorites</li>
-            <li class="tags">Tags</li>
-            <li class="actresses">Actresses</li>
-        </ul>
-    </nav>
-
-    <div class="main-content">
+    <div class="terms-wrapper">
         <div class="terms">
             <ul>
                 <li>ASD</li>
                 <li>QWE</li>
             </ul>
         </div>
+    </div>
+</header>
 
+<div id="content">
+    <nav class="main-navigation opened"> <!--class="opened"-->
+        <ul class="collapsed-navigation">
+            <li class="trigger"><i><!--open icon--></i></li>
+            <li class="home">Home</li>
+            <li class="favorites">Favorites</li>
+            <li class="tags">Tags</li>
+            <li class="actresses">Actresses</li>
+        </ul>
+
+        <ul class="opened-navigation">
+            <li class="trigger"><i><!--close icon--></i> Hide Menu</li>
+            <li class="home">Home</li>
+            <li class="collapsable-wrapper">
+                <div class="collapsable" style="height: 200px">  <!--todo remove it-->
+                    <div class="item"><i class="top-movies"></i>Top movies</div>
+                    <div class="sub-items">
+                        <div class="sub-item"><a href="#">Newest Movies</a></div>
+                        <div class="sub-item"><a href="#">Most favourited</a></div>
+                        <div class="sub-item"><a href="#">Most watched</a></div>
+                    </div>
+                </div>
+            <li class="item">Actressses</li>
+            <li class="item">Tags</li>
+            <li class="item">Watch Later</li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
         <div class="movie-and-adv">
             <div class="my-ad3">
 
