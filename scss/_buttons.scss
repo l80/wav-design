@@ -1,15 +1,19 @@
 @import "compass";
 
 $btn-border-color: #4c4c4c;
+$btn-border-width: 1px;
 $btn-width: 30px !default;
+$btn-margin: 1px !default;
 $btn-height: 30px !default;
 $btn-border-radius: 4px !default;
+$btn-full-width: $btn-width + $btn-margin*2 + $btn-border-width*2;
+$btn-full-height: $btn-height + $btn-border-width*2;
 
 %btn {
   @include background-image(linear-gradient(#373739, #202020 35%, #0A0A0A 80%, #0b0b0b));
     @include box-shadow(0 0 4px 1px black);
-  border: 1px solid $btn-border-color;
-  border-bottom: 1px solid rgb(43, 43, 43);
+  border: $btn-border-width solid $btn-border-color;
+  border-bottom: $btn-border-width solid rgb(43, 43, 43);
   color: white;
 
   &.pressed {
@@ -57,5 +61,5 @@ $btn-border-radius: 4px !default;
   //box-shadow: inset 0 0px 0px 1px #393939;
   //border: 1px solid black;
 
-  margin: 0 1px;
+  margin: 0 $btn-margin;
 }

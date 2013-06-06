@@ -253,3 +253,63 @@ $nav-collapsed-width: 50px;
     }
   }
 }
+
+.my-ad-left {
+  float: left;
+  background-color: #ffe460;
+  width: $left-ads-width - $left-ads-width/10;
+  height: 250px;
+  margin: 0 $left-ads-width/20;
+}
+
+.my-ad-right {
+  float: right;
+  background-color: #ffe460;
+  width: $right-ads-width - $right-ads-width/10;
+  height: 400px;
+  margin: 0 $right-ads-width/20;
+}
+
+.step-pagination-wrapper {
+  @include left-and-right-ads-gap;
+  text-align: center;
+}
+
+.step-pagination {
+  $item-height: 49px;
+  $item-width: 49px;
+  $prev-next-gap: 10px;
+
+  display: inline-block;
+  height: $item-height;
+  overflow-y: hidden;
+
+  .pagination-fixed {
+    float: right;
+  }
+
+  .pagination-flexible {
+    margin-right: $item-width; //next item
+  }
+
+  &.has-dots {
+    .pagination-flexible {
+      margin-right: $item-width*2; //dots + next item
+    }
+  }
+
+  .step {
+    @extend .btn-s;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: $item-height; //additional margin to push down
+  }
+
+  .prev {
+    margin-right: $prev-next-gap;
+  }
+
+  .next {
+    margin-left: $prev-next-gap;
+  }
+}

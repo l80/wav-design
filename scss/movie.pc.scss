@@ -110,22 +110,6 @@
 .similar-movies {
   @extend %clearfix;
 
-  .my-ad4 {
-    float: left;
-    background-color: #ffe460;
-    width: $left-ads-width - $left-ads-width/10;
-    height: 250px;
-    margin: 0 $left-ads-width/20;
-  }
-
-  .my-ad5 {
-    float: right;
-    background-color: #ffe460;
-    width: $right-ads-width - $right-ads-width/10;
-    height: 400px;
-    margin: 0 $right-ads-width/20;
-  }
-
   .movies {
     @include left-and-right-ads-gap;
     @extend %movies;

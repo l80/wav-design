@@ -1,8 +1,8 @@
 $(document).ready(function() {
     /* some custom settings */
     var abcIndex = $('.iosSlider').iosSlider({
-//        snapToChildren: true,
-//        desktopClickDrag: true
+        snapToChildren: true,
+        desktopClickDrag: true
     });
 
     $('.abc-index-container .next').click(function(e) {

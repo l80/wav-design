@@ -59,48 +59,4 @@
     @extend %movies;
     @include left-and-right-ads-gap;
   }
-
-  .pagination-wrapper {
-    @include left-and-right-ads-gap;
-    text-align: center;
-  }
-
-  .pagination {
-    $item-height: 49px;
-    $item-width: 49px;
-    $prev-next-gap: 10px;
-
-    display: inline-block;
-    height: $item-height;
-    overflow-y: hidden;
-
-    .pagination-fixed {
-      float: right;
-    }
-
-    .pagination-flexible {
-      margin-right: $item-width; //next item
-    }
-
-    &.has-dots {
-      .pagination-flexible {
-        margin-right: $item-width*2; //dots + next item
-      }
-    }
-
-    .step {
-      @extend .btn-s;
-      display: inline-block;
-      vertical-align: top;
-      margin-bottom: $item-height; //additional margin to push down
-    }
-
-    .prev {
-      margin-right: $prev-next-gap;
-    }
-
-    .next {
-      margin-left: $prev-next-gap;
-    }
-  }
 }

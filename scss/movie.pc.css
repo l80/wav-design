@@ -1,5 +1,5 @@
-/* line 8, _buttons.scss */
-.btn-combined, .btn-combined-left, .btn-combined-right, .btn, .btn-s, .main-movie .info-and-actions .actions .add-to-later, .main-movie .info-and-actions .actions .add-to-favorites {
+/* line 12, _buttons.scss */
+.btn-combined, .btn-combined-left, .btn-combined-right, .btn, .btn-s, .step-pagination .step, .main-movie .info-and-actions .actions .add-to-later, .main-movie .info-and-actions .actions .add-to-favorites {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #373739), color-stop(35%, #202020), color-stop(80%, #0a0a0a), color-stop(100%, #0b0b0b));
   background-image: -webkit-linear-gradient(#373739, #202020 35%, #0a0a0a 80%, #0b0b0b);
   background-image: -moz-linear-gradient(#373739, #202020 35%, #0a0a0a 80%, #0b0b0b);
@@ -12,8 +12,8 @@
   border-bottom: 1px solid #2b2b2b;
   color: white;
 }
-/* line 15, _buttons.scss */
-.pressed.btn-combined, .pressed.btn-combined-left, .drop-down-wrapper.drop-down-displayed .btn-combined-left.drop-down-trigger, .pressed.btn-combined-right, .drop-down-wrapper.drop-down-displayed .btn-combined-right.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .btn-combined.drop-down-trigger, .pressed.btn, .pressed.btn-s, .drop-down-wrapper.drop-down-displayed .btn-s.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .btn.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .main-movie .info-and-actions .actions .drop-down-trigger.add-to-later, .main-movie .info-and-actions .actions .drop-down-wrapper.drop-down-displayed .drop-down-trigger.add-to-later, .drop-down-wrapper.drop-down-displayed .main-movie .info-and-actions .actions .drop-down-trigger.add-to-favorites, .main-movie .info-and-actions .actions .drop-down-wrapper.drop-down-displayed .drop-down-trigger.add-to-favorites, .main-movie .info-and-actions .actions .pressed.add-to-later, .main-movie .info-and-actions .actions .pressed.add-to-favorites {
+/* line 19, _buttons.scss */
+.pressed.btn-combined, .pressed.btn-combined-left, .drop-down-wrapper.drop-down-displayed .btn-combined-left.drop-down-trigger, .pressed.btn-combined-right, .drop-down-wrapper.drop-down-displayed .btn-combined-right.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .btn-combined.drop-down-trigger, .pressed.btn, .pressed.btn-s, .drop-down-wrapper.drop-down-displayed .btn-s.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .step-pagination .drop-down-trigger.step, .step-pagination .drop-down-wrapper.drop-down-displayed .drop-down-trigger.step, .step-pagination .pressed.step, .drop-down-wrapper.drop-down-displayed .btn.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .main-movie .info-and-actions .actions .drop-down-trigger.add-to-later, .main-movie .info-and-actions .actions .drop-down-wrapper.drop-down-displayed .drop-down-trigger.add-to-later, .drop-down-wrapper.drop-down-displayed .main-movie .info-and-actions .actions .drop-down-trigger.add-to-favorites, .main-movie .info-and-actions .actions .drop-down-wrapper.drop-down-displayed .drop-down-trigger.add-to-favorites, .main-movie .info-and-actions .actions .pressed.add-to-later, .main-movie .info-and-actions .actions .pressed.add-to-favorites {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #202020), color-stop(50%, #1b1b1b), color-stop(100%, #151515));
   background-image: -webkit-linear-gradient(#202020, #1b1b1b, #151515);
   background-image: -moz-linear-gradient(#202020, #1b1b1b, #151515);
@@ -25,17 +25,17 @@
   border: none;
 }
 
-/* line 22, _buttons.scss */
+/* line 26, _buttons.scss */
 .btn-inline {
   display: inline-block;
 }
 
-/* line 26, _buttons.scss */
+/* line 30, _buttons.scss */
 .btn-combined, .btn-combined-left, .btn-combined-right {
   border-right: 0;
 }
 
-/* line 32, _buttons.scss */
+/* line 36, _buttons.scss */
 .btn-combined-left {
   -moz-border-radius-topleft: 4px;
   -webkit-border-top-left-radius: 4px;
@@ -45,7 +45,7 @@
   border-bottom-left-radius: 4px;
 }
 
-/* line 37, _buttons.scss */
+/* line 41, _buttons.scss */
 .btn-combined-right {
   -moz-border-radius-topright: 4px;
   -webkit-border-top-right-radius: 4px;
@@ -56,8 +56,8 @@
   border-right: 1px solid #4c4c4c;
 }
 
-/* line 43, _buttons.scss */
-.btn, .btn-s, .main-movie .info-and-actions .actions .add-to-later, .main-movie .info-and-actions .actions .add-to-favorites {
+/* line 47, _buttons.scss */
+.btn, .btn-s, .step-pagination .step, .main-movie .info-and-actions .actions .add-to-later, .main-movie .info-and-actions .actions .add-to-favorites {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -65,8 +65,8 @@
   border-radius: 4px;
 }
 
-/* line 48, _buttons.scss */
-.btn-s {
+/* line 52, _buttons.scss */
+.btn-s, .step-pagination .step {
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -287,8 +287,8 @@ body {
   top: -100%;
 }
 
-/* line 8, _buttons.scss */
-.btn-combined, .btn-combined-left, .btn-combined-right, .btn, .btn-s, .main-movie .info-and-actions .actions .add-to-later, .main-movie .info-and-actions .actions .add-to-favorites {
+/* line 12, _buttons.scss */
+.btn-combined, .btn-combined-left, .btn-combined-right, .btn, .btn-s, .step-pagination .step, .main-movie .info-and-actions .actions .add-to-later, .main-movie .info-and-actions .actions .add-to-favorites {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #373739), color-stop(35%, #202020), color-stop(80%, #0a0a0a), color-stop(100%, #0b0b0b));
   background-image: -webkit-linear-gradient(#373739, #202020 35%, #0a0a0a 80%, #0b0b0b);
   background-image: -moz-linear-gradient(#373739, #202020 35%, #0a0a0a 80%, #0b0b0b);
@@ -301,8 +301,8 @@ body {
   border-bottom: 1px solid #2b2b2b;
   color: white;
 }
-/* line 15, _buttons.scss */
-.pressed.btn-combined, .pressed.btn-combined-left, .drop-down-wrapper.drop-down-displayed .btn-combined-left.drop-down-trigger, .pressed.btn-combined-right, .drop-down-wrapper.drop-down-displayed .btn-combined-right.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .btn-combined.drop-down-trigger, .pressed.btn, .pressed.btn-s, .drop-down-wrapper.drop-down-displayed .btn-s.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .btn.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .main-movie .info-and-actions .actions .drop-down-trigger.add-to-later, .main-movie .info-and-actions .actions .drop-down-wrapper.drop-down-displayed .drop-down-trigger.add-to-later, .drop-down-wrapper.drop-down-displayed .main-movie .info-and-actions .actions .drop-down-trigger.add-to-favorites, .main-movie .info-and-actions .actions .drop-down-wrapper.drop-down-displayed .drop-down-trigger.add-to-favorites, .main-movie .info-and-actions .actions .pressed.add-to-later, .main-movie .info-and-actions .actions .pressed.add-to-favorites {
+/* line 19, _buttons.scss */
+.pressed.btn-combined, .pressed.btn-combined-left, .drop-down-wrapper.drop-down-displayed .btn-combined-left.drop-down-trigger, .pressed.btn-combined-right, .drop-down-wrapper.drop-down-displayed .btn-combined-right.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .btn-combined.drop-down-trigger, .pressed.btn, .pressed.btn-s, .drop-down-wrapper.drop-down-displayed .btn-s.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .step-pagination .drop-down-trigger.step, .step-pagination .drop-down-wrapper.drop-down-displayed .drop-down-trigger.step, .step-pagination .pressed.step, .drop-down-wrapper.drop-down-displayed .btn.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .main-movie .info-and-actions .actions .drop-down-trigger.add-to-later, .main-movie .info-and-actions .actions .drop-down-wrapper.drop-down-displayed .drop-down-trigger.add-to-later, .drop-down-wrapper.drop-down-displayed .main-movie .info-and-actions .actions .drop-down-trigger.add-to-favorites, .main-movie .info-and-actions .actions .drop-down-wrapper.drop-down-displayed .drop-down-trigger.add-to-favorites, .main-movie .info-and-actions .actions .pressed.add-to-later, .main-movie .info-and-actions .actions .pressed.add-to-favorites {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #202020), color-stop(50%, #1b1b1b), color-stop(100%, #151515));
   background-image: -webkit-linear-gradient(#202020, #1b1b1b, #151515);
   background-image: -moz-linear-gradient(#202020, #1b1b1b, #151515);
@@ -314,17 +314,17 @@ body {
   border: none;
 }
 
-/* line 22, _buttons.scss */
+/* line 26, _buttons.scss */
 .btn-inline {
   display: inline-block;
 }
 
-/* line 26, _buttons.scss */
+/* line 30, _buttons.scss */
 .btn-combined, .btn-combined-left, .btn-combined-right {
   border-right: 0;
 }
 
-/* line 32, _buttons.scss */
+/* line 36, _buttons.scss */
 .btn-combined-left {
   -moz-border-radius-topleft: 4px;
   -webkit-border-top-left-radius: 4px;
@@ -334,7 +334,7 @@ body {
   border-bottom-left-radius: 4px;
 }
 
-/* line 37, _buttons.scss */
+/* line 41, _buttons.scss */
 .btn-combined-right {
   -moz-border-radius-topright: 4px;
   -webkit-border-top-right-radius: 4px;
@@ -345,8 +345,8 @@ body {
   border-right: 1px solid #4c4c4c;
 }
 
-/* line 43, _buttons.scss */
-.btn, .btn-s, .main-movie .info-and-actions .actions .add-to-later, .main-movie .info-and-actions .actions .add-to-favorites {
+/* line 47, _buttons.scss */
+.btn, .btn-s, .step-pagination .step, .main-movie .info-and-actions .actions .add-to-later, .main-movie .info-and-actions .actions .add-to-favorites {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -354,8 +354,8 @@ body {
   border-radius: 4px;
 }
 
-/* line 48, _buttons.scss */
-.btn-s {
+/* line 52, _buttons.scss */
+.btn-s, .step-pagination .step {
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -364,8 +364,8 @@ body {
   margin: 0 1px;
 }
 
-/* line 8, _buttons.scss */
-.btn-combined, .btn-combined-left, .btn-combined-right, .btn, .btn-s, .main-movie .info-and-actions .actions .add-to-later, .main-movie .info-and-actions .actions .add-to-favorites {
+/* line 12, _buttons.scss */
+.btn-combined, .btn-combined-left, .btn-combined-right, .btn, .btn-s, .step-pagination .step, .main-movie .info-and-actions .actions .add-to-later, .main-movie .info-and-actions .actions .add-to-favorites {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #373739), color-stop(35%, #202020), color-stop(80%, #0a0a0a), color-stop(100%, #0b0b0b));
   background-image: -webkit-linear-gradient(#373739, #202020 35%, #0a0a0a 80%, #0b0b0b);
   background-image: -moz-linear-gradient(#373739, #202020 35%, #0a0a0a 80%, #0b0b0b);
@@ -378,8 +378,8 @@ body {
   border-bottom: 1px solid #2b2b2b;
   color: white;
 }
-/* line 15, _buttons.scss */
-.pressed.btn-combined, .pressed.btn-combined-left, .drop-down-wrapper.drop-down-displayed .btn-combined-left.drop-down-trigger, .pressed.btn-combined-right, .drop-down-wrapper.drop-down-displayed .btn-combined-right.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .btn-combined.drop-down-trigger, .pressed.btn, .pressed.btn-s, .drop-down-wrapper.drop-down-displayed .btn-s.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .btn.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .main-movie .info-and-actions .actions .drop-down-trigger.add-to-later, .main-movie .info-and-actions .actions .drop-down-wrapper.drop-down-displayed .drop-down-trigger.add-to-later, .drop-down-wrapper.drop-down-displayed .main-movie .info-and-actions .actions .drop-down-trigger.add-to-favorites, .main-movie .info-and-actions .actions .drop-down-wrapper.drop-down-displayed .drop-down-trigger.add-to-favorites, .main-movie .info-and-actions .actions .pressed.add-to-later, .main-movie .info-and-actions .actions .pressed.add-to-favorites {
+/* line 19, _buttons.scss */
+.pressed.btn-combined, .pressed.btn-combined-left, .drop-down-wrapper.drop-down-displayed .btn-combined-left.drop-down-trigger, .pressed.btn-combined-right, .drop-down-wrapper.drop-down-displayed .btn-combined-right.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .btn-combined.drop-down-trigger, .pressed.btn, .pressed.btn-s, .drop-down-wrapper.drop-down-displayed .btn-s.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .step-pagination .drop-down-trigger.step, .step-pagination .drop-down-wrapper.drop-down-displayed .drop-down-trigger.step, .step-pagination .pressed.step, .drop-down-wrapper.drop-down-displayed .btn.drop-down-trigger, .drop-down-wrapper.drop-down-displayed .main-movie .info-and-actions .actions .drop-down-trigger.add-to-later, .main-movie .info-and-actions .actions .drop-down-wrapper.drop-down-displayed .drop-down-trigger.add-to-later, .drop-down-wrapper.drop-down-displayed .main-movie .info-and-actions .actions .drop-down-trigger.add-to-favorites, .main-movie .info-and-actions .actions .drop-down-wrapper.drop-down-displayed .drop-down-trigger.add-to-favorites, .main-movie .info-and-actions .actions .pressed.add-to-later, .main-movie .info-and-actions .actions .pressed.add-to-favorites {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #202020), color-stop(50%, #1b1b1b), color-stop(100%, #151515));
   background-image: -webkit-linear-gradient(#202020, #1b1b1b, #151515);
   background-image: -moz-linear-gradient(#202020, #1b1b1b, #151515);
@@ -391,17 +391,17 @@ body {
   border: none;
 }
 
-/* line 22, _buttons.scss */
+/* line 26, _buttons.scss */
 .btn-inline {
   display: inline-block;
 }
 
-/* line 26, _buttons.scss */
+/* line 30, _buttons.scss */
 .btn-combined, .btn-combined-left, .btn-combined-right {
   border-right: 0;
 }
 
-/* line 32, _buttons.scss */
+/* line 36, _buttons.scss */
 .btn-combined-left {
   -moz-border-radius-topleft: 4px;
   -webkit-border-top-left-radius: 4px;
@@ -411,7 +411,7 @@ body {
   border-bottom-left-radius: 4px;
 }
 
-/* line 37, _buttons.scss */
+/* line 41, _buttons.scss */
 .btn-combined-right {
   -moz-border-radius-topright: 4px;
   -webkit-border-top-right-radius: 4px;
@@ -422,8 +422,8 @@ body {
   border-right: 1px solid #4c4c4c;
 }
 
-/* line 43, _buttons.scss */
-.btn, .btn-s, .main-movie .info-and-actions .actions .add-to-later, .main-movie .info-and-actions .actions .add-to-favorites {
+/* line 47, _buttons.scss */
+.btn, .btn-s, .step-pagination .step, .main-movie .info-and-actions .actions .add-to-later, .main-movie .info-and-actions .actions .add-to-favorites {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -431,8 +431,8 @@ body {
   border-radius: 4px;
 }
 
-/* line 48, _buttons.scss */
-.btn-s {
+/* line 52, _buttons.scss */
+.btn-s, .step-pagination .step {
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -1103,6 +1103,64 @@ header .right .search .do-search .icon-search {
   top: 0;
 }
 
+/* line 257, _pc.common.scss */
+.my-ad-left {
+  float: left;
+  background-color: #ffe460;
+  width: 54px;
+  height: 250px;
+  margin: 0 3px;
+}
+
+/* line 265, _pc.common.scss */
+.my-ad-right {
+  float: right;
+  background-color: #ffe460;
+  width: 54px;
+  height: 400px;
+  margin: 0 3px;
+}
+
+/* line 273, _pc.common.scss */
+.step-pagination-wrapper {
+  margin-left: 60px;
+  margin-right: 60px;
+  text-align: center;
+}
+
+/* line 278, _pc.common.scss */
+.step-pagination {
+  display: inline-block;
+  height: 49px;
+  overflow-y: hidden;
+}
+/* line 287, _pc.common.scss */
+.step-pagination .pagination-fixed {
+  float: right;
+}
+/* line 291, _pc.common.scss */
+.step-pagination .pagination-flexible {
+  margin-right: 49px;
+}
+/* line 296, _pc.common.scss */
+.step-pagination.has-dots .pagination-flexible {
+  margin-right: 98px;
+}
+/* line 301, _pc.common.scss */
+.step-pagination .step {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 49px;
+}
+/* line 308, _pc.common.scss */
+.step-pagination .prev {
+  margin-right: 10px;
+}
+/* line 312, _pc.common.scss */
+.step-pagination .next {
+  margin-left: 10px;
+}
+
 /* line 74, menu/*.png */
 .menu-sprite {
   background: url('/img/menu-s04a832fbe5.png') no-repeat;
@@ -1218,22 +1276,6 @@ header .right .search .do-search .icon-search {
 }
 
 /* line 113, movie.pc.scss */
-.similar-movies .my-ad4 {
-  float: left;
-  background-color: #ffe460;
-  width: 54px;
-  height: 250px;
-  margin: 0 3px;
-}
-/* line 121, movie.pc.scss */
-.similar-movies .my-ad5 {
-  float: right;
-  background-color: #ffe460;
-  width: 54px;
-  height: 400px;
-  margin: 0 3px;
-}
-/* line 129, movie.pc.scss */
 .similar-movies .movies {
   margin-left: 60px;
   margin-right: 60px;
