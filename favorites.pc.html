@@ -5,9 +5,13 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0"/>
     <link rel="stylesheet" href="./css/reset.css"/>
+    <!--<link rel="stylesheet" href="./css/slider.vertical.css"/>-->
     <link rel="stylesheet" href="./scss/favorites.pc.css"/>
     <script type="text/javascript" src="./js/jquery.1.7.2.js"></script>
     <script type="text/javascript" src="./js/sort.js"></script>
+    <script type="text/javascript" src="./js/jquery.iosslider-vertical.js"></script>
+    <script type="text/javascript" src="./js/iscroll.js"></script>
+    <script type="text/javascript" src="./js/favorites.js"></script>
 </head>
 <body>
 
@@ -51,238 +55,240 @@
         <div class="opened-navigation">
             <div class="trigger"><i><!--close icon--></i> Hide Menu</div>
             <div class="home">Home</div>
-            <ul class="movies">
-                <li class="movie-wrapper">
-                    <div class="movie">
-                        <div class="thumbnail">
-                            <img class="thumbnail-stub" src="./img/thumbnail-stub.png" alt=""/>
-                            <img class="thumbnail-image" src="./img/thumbnail-image.jpeg" alt=""/>
-                        </div>
-
-                        <div class="movie-info">
-                            <div class="site-logo">
-                                <img src="./img/sites/logo_xhamster.jpg" alt=""/>
+            <div class="iosSliderVertical" id="favorite-movies">
+                <ul class="movies slider">
+                    <li class="movie-wrapper slide">
+                        <div class="movie">
+                            <div class="thumbnail">
+                                <img class="thumbnail-stub" src="./img/thumbnail-stub.png" alt=""/>
+                                <img class="thumbnail-image" src="./img/thumbnail-image.jpeg" alt=""/>
                             </div>
-                            <div class="duration">12:21</div>
-                        </div>
 
-                        <div class="movie-info-hover">
-                            <a href="#" class="movie-hidden-url">
-                                <img src="./img/pc/transparent-black.png?_debugResources=y&amp;n=1" class="movie-background">
-                            </a>
+                            <div class="movie-info">
+                                <div class="site-logo">
+                                    <img src="./img/sites/logo_xhamster.jpg" alt=""/>
+                                </div>
+                                <div class="duration">12:21</div>
+                            </div>
 
-                            <span class="add-to-favorites"><i class="icon-star"></i></span>
-                            <span class="add-to-later"><i class="icon-time"></i></span>
-
-                            <div class="movie-bottom-info">
-                                <a href="/m/1036980" class="title">
-                                    Busty Aya Kurosaki enjoys her body being oiled up
+                            <div class="movie-info-hover">
+                                <a href="#" class="movie-hidden-url">
+                                    <img src="./img/pc/transparent-black.png?_debugResources=y&amp;n=1" class="movie-background">
                                 </a>
 
-                                <div class="added">2 minutes ago</div>
+                                <span class="add-to-favorites"><i class="icon-star"></i></span>
+                                <span class="add-to-later"><i class="icon-time"></i></span>
+
+                                <div class="movie-bottom-info">
+                                    <a href="/m/1036980" class="title">
+                                        Busty Aya Kurosaki enjoys her body being oiled up
+                                    </a>
+
+                                    <div class="added">2 minutes ago</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
+                    </li>
 
-                <li class="movie-wrapper">
-                    <div class="movie">
-                        <div class="thumbnail">
-                            <img class="thumbnail-stub" src="./img/thumbnail-stub.png" alt=""/>
-                            <img class="thumbnail-image" src="./img/thumbnail-image.jpeg" alt=""/>
-                        </div>
-
-                        <div class="movie-info">
-                            <div class="site-logo">
-                                <img src="./img/sites/logo_xhamster.jpg" alt=""/>
+                    <li class="movie-wrapper slide">
+                        <div class="movie">
+                            <div class="thumbnail">
+                                <img class="thumbnail-stub" src="./img/thumbnail-stub.png" alt=""/>
+                                <img class="thumbnail-image" src="./img/thumbnail-image.jpeg" alt=""/>
                             </div>
-                            <div class="duration">12:21</div>
-                        </div>
 
-                        <div class="movie-info-hover">
-                            <a href="#" class="movie-hidden-url">
-                                <img src="./img/pc/transparent-black.png?_debugResources=y&amp;n=1" class="movie-background">
-                            </a>
+                            <div class="movie-info">
+                                <div class="site-logo">
+                                    <img src="./img/sites/logo_xhamster.jpg" alt=""/>
+                                </div>
+                                <div class="duration">12:21</div>
+                            </div>
 
-                            <span class="add-to-favorites"><i class="icon-star"></i></span>
-                            <span class="add-to-later"><i class="icon-time"></i></span>
-
-                            <div class="movie-bottom-info">
-                                <a href="/m/1036980" class="title">
-                                    Busty Aya Kurosaki enjoys her body being oiled up
+                            <div class="movie-info-hover">
+                                <a href="#" class="movie-hidden-url">
+                                    <img src="./img/pc/transparent-black.png?_debugResources=y&amp;n=1" class="movie-background">
                                 </a>
 
-                                <div class="added">2 minutes ago</div>
+                                <span class="add-to-favorites"><i class="icon-star"></i></span>
+                                <span class="add-to-later"><i class="icon-time"></i></span>
+
+                                <div class="movie-bottom-info">
+                                    <a href="/m/1036980" class="title">
+                                        Busty Aya Kurosaki enjoys her body being oiled up
+                                    </a>
+
+                                    <div class="added">2 minutes ago</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
+                    </li>
 
-                <li class="movie-wrapper">
-                    <div class="movie">
-                        <div class="thumbnail">
-                            <img class="thumbnail-stub" src="./img/thumbnail-stub.png" alt=""/>
-                            <img class="thumbnail-image" src="./img/thumbnail-image.jpeg" alt=""/>
-                        </div>
-
-                        <div class="movie-info">
-                            <div class="site-logo">
-                                <img src="./img/sites/logo_xhamster.jpg" alt=""/>
+                    <li class="movie-wrapper slide">
+                        <div class="movie">
+                            <div class="thumbnail">
+                                <img class="thumbnail-stub" src="./img/thumbnail-stub.png" alt=""/>
+                                <img class="thumbnail-image" src="./img/thumbnail-image.jpeg" alt=""/>
                             </div>
-                            <div class="duration">12:21</div>
-                        </div>
 
-                        <div class="movie-info-hover">
-                            <a href="#" class="movie-hidden-url">
-                                <img src="./img/pc/transparent-black.png?_debugResources=y&amp;n=1" class="movie-background">
-                            </a>
+                            <div class="movie-info">
+                                <div class="site-logo">
+                                    <img src="./img/sites/logo_xhamster.jpg" alt=""/>
+                                </div>
+                                <div class="duration">12:21</div>
+                            </div>
 
-                            <span class="add-to-favorites"><i class="icon-star"></i></span>
-                            <span class="add-to-later"><i class="icon-time"></i></span>
-
-                            <div class="movie-bottom-info">
-                                <a href="/m/1036980" class="title">
-                                    Busty Aya Kurosaki enjoys her body being oiled up
+                            <div class="movie-info-hover">
+                                <a href="#" class="movie-hidden-url">
+                                    <img src="./img/pc/transparent-black.png?_debugResources=y&amp;n=1" class="movie-background">
                                 </a>
 
-                                <div class="added">2 minutes ago</div>
+                                <span class="add-to-favorites"><i class="icon-star"></i></span>
+                                <span class="add-to-later"><i class="icon-time"></i></span>
+
+                                <div class="movie-bottom-info">
+                                    <a href="/m/1036980" class="title">
+                                        Busty Aya Kurosaki enjoys her body being oiled up
+                                    </a>
+
+                                    <div class="added">2 minutes ago</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
+                    </li>
 
-                <li class="movie-wrapper">
-                    <div class="movie">
-                        <div class="thumbnail">
-                            <img class="thumbnail-stub" src="./img/thumbnail-stub.png" alt=""/>
-                            <img class="thumbnail-image" src="./img/thumbnail-image.jpeg" alt=""/>
-                        </div>
-
-                        <div class="movie-info">
-                            <div class="site-logo">
-                                <img src="./img/sites/logo_xhamster.jpg" alt=""/>
+                    <li class="movie-wrapper slide">
+                        <div class="movie">
+                            <div class="thumbnail">
+                                <img class="thumbnail-stub" src="./img/thumbnail-stub.png" alt=""/>
+                                <img class="thumbnail-image" src="./img/thumbnail-image.jpeg" alt=""/>
                             </div>
-                            <div class="duration">12:21</div>
-                        </div>
 
-                        <div class="movie-info-hover">
-                            <a href="#" class="movie-hidden-url">
-                                <img src="./img/pc/transparent-black.png?_debugResources=y&amp;n=1" class="movie-background">
-                            </a>
+                            <div class="movie-info">
+                                <div class="site-logo">
+                                    <img src="./img/sites/logo_xhamster.jpg" alt=""/>
+                                </div>
+                                <div class="duration">12:21</div>
+                            </div>
 
-                            <span class="add-to-favorites"><i class="icon-star"></i></span>
-                            <span class="add-to-later"><i class="icon-time"></i></span>
-
-                            <div class="movie-bottom-info">
-                                <a href="/m/1036980" class="title">
-                                    Busty Aya Kurosaki enjoys her body being oiled up
+                            <div class="movie-info-hover">
+                                <a href="#" class="movie-hidden-url">
+                                    <img src="./img/pc/transparent-black.png?_debugResources=y&amp;n=1" class="movie-background">
                                 </a>
 
-                                <div class="added">2 minutes ago</div>
+                                <span class="add-to-favorites"><i class="icon-star"></i></span>
+                                <span class="add-to-later"><i class="icon-time"></i></span>
+
+                                <div class="movie-bottom-info">
+                                    <a href="/m/1036980" class="title">
+                                        Busty Aya Kurosaki enjoys her body being oiled up
+                                    </a>
+
+                                    <div class="added">2 minutes ago</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
+                    </li>
 
-                <li class="movie-wrapper">
-                    <div class="movie">
-                        <div class="thumbnail">
-                            <img class="thumbnail-stub" src="./img/thumbnail-stub.png" alt=""/>
-                            <img class="thumbnail-image" src="./img/thumbnail-image.jpeg" alt=""/>
-                        </div>
-
-                        <div class="movie-info">
-                            <div class="site-logo">
-                                <img src="./img/sites/logo_xhamster.jpg" alt=""/>
+                    <li class="movie-wrapper slide">
+                        <div class="movie">
+                            <div class="thumbnail">
+                                <img class="thumbnail-stub" src="./img/thumbnail-stub.png" alt=""/>
+                                <img class="thumbnail-image" src="./img/thumbnail-image.jpeg" alt=""/>
                             </div>
-                            <div class="duration">12:21</div>
-                        </div>
 
-                        <div class="movie-info-hover">
-                            <a href="#" class="movie-hidden-url">
-                                <img src="./img/pc/transparent-black.png?_debugResources=y&amp;n=1" class="movie-background">
-                            </a>
+                            <div class="movie-info">
+                                <div class="site-logo">
+                                    <img src="./img/sites/logo_xhamster.jpg" alt=""/>
+                                </div>
+                                <div class="duration">12:21</div>
+                            </div>
 
-                            <span class="add-to-favorites"><i class="icon-star"></i></span>
-                            <span class="add-to-later"><i class="icon-time"></i></span>
-
-                            <div class="movie-bottom-info">
-                                <a href="/m/1036980" class="title">
-                                    Busty Aya Kurosaki enjoys her body being oiled up
+                            <div class="movie-info-hover">
+                                <a href="#" class="movie-hidden-url">
+                                    <img src="./img/pc/transparent-black.png?_debugResources=y&amp;n=1" class="movie-background">
                                 </a>
 
-                                <div class="added">2 minutes ago</div>
+                                <span class="add-to-favorites"><i class="icon-star"></i></span>
+                                <span class="add-to-later"><i class="icon-time"></i></span>
+
+                                <div class="movie-bottom-info">
+                                    <a href="/m/1036980" class="title">
+                                        Busty Aya Kurosaki enjoys her body being oiled up
+                                    </a>
+
+                                    <div class="added">2 minutes ago</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
+                    </li>
 
-                <li class="movie-wrapper">
-                    <div class="movie">
-                        <div class="thumbnail">
-                            <img class="thumbnail-stub" src="./img/thumbnail-stub.png" alt=""/>
-                            <img class="thumbnail-image" src="./img/thumbnail-image.jpeg" alt=""/>
-                        </div>
-
-                        <div class="movie-info">
-                            <div class="site-logo">
-                                <img src="./img/sites/logo_xhamster.jpg" alt=""/>
+                    <li class="movie-wrapper slide">
+                        <div class="movie">
+                            <div class="thumbnail">
+                                <img class="thumbnail-stub" src="./img/thumbnail-stub.png" alt=""/>
+                                <img class="thumbnail-image" src="./img/thumbnail-image.jpeg" alt=""/>
                             </div>
-                            <div class="duration">12:21</div>
-                        </div>
 
-                        <div class="movie-info-hover">
-                            <a href="#" class="movie-hidden-url">
-                                <img src="./img/pc/transparent-black.png?_debugResources=y&amp;n=1" class="movie-background">
-                            </a>
+                            <div class="movie-info">
+                                <div class="site-logo">
+                                    <img src="./img/sites/logo_xhamster.jpg" alt=""/>
+                                </div>
+                                <div class="duration">12:21</div>
+                            </div>
 
-                            <span class="add-to-favorites"><i class="icon-star"></i></span>
-                            <span class="add-to-later"><i class="icon-time"></i></span>
-
-                            <div class="movie-bottom-info">
-                                <a href="/m/1036980" class="title">
-                                    Busty Aya Kurosaki enjoys her body being oiled up
+                            <div class="movie-info-hover">
+                                <a href="#" class="movie-hidden-url">
+                                    <img src="./img/pc/transparent-black.png?_debugResources=y&amp;n=1" class="movie-background">
                                 </a>
 
-                                <div class="added">2 minutes ago</div>
+                                <span class="add-to-favorites"><i class="icon-star"></i></span>
+                                <span class="add-to-later"><i class="icon-time"></i></span>
+
+                                <div class="movie-bottom-info">
+                                    <a href="/m/1036980" class="title">
+                                        Busty Aya Kurosaki enjoys her body being oiled up
+                                    </a>
+
+                                    <div class="added">2 minutes ago</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
+                    </li>
 
-                <li class="movie-wrapper">
-                    <div class="movie">
-                        <div class="thumbnail">
-                            <img class="thumbnail-stub" src="./img/thumbnail-stub.png" alt=""/>
-                            <img class="thumbnail-image" src="./img/thumbnail-image.jpeg" alt=""/>
-                        </div>
-
-                        <div class="movie-info">
-                            <div class="site-logo">
-                                <img src="./img/sites/logo_xhamster.jpg" alt=""/>
+                    <li class="movie-wrapper slide">
+                        <div class="movie">
+                            <div class="thumbnail">
+                                <img class="thumbnail-stub" src="./img/thumbnail-stub.png" alt=""/>
+                                <img class="thumbnail-image" src="./img/thumbnail-image.jpeg" alt=""/>
                             </div>
-                            <div class="duration">12:21</div>
-                        </div>
 
-                        <div class="movie-info-hover">
-                            <a href="#" class="movie-hidden-url">
-                                <img src="./img/pc/transparent-black.png?_debugResources=y&amp;n=1" class="movie-background">
-                            </a>
+                            <div class="movie-info">
+                                <div class="site-logo">
+                                    <img src="./img/sites/logo_xhamster.jpg" alt=""/>
+                                </div>
+                                <div class="duration">12:21</div>
+                            </div>
 
-                            <span class="add-to-favorites"><i class="icon-star"></i></span>
-                            <span class="add-to-later"><i class="icon-time"></i></span>
-
-                            <div class="movie-bottom-info">
-                                <a href="/m/1036980" class="title">
-                                    Busty Aya Kurosaki enjoys her body being oiled up
+                            <div class="movie-info-hover">
+                                <a href="#" class="movie-hidden-url">
+                                    <img src="./img/pc/transparent-black.png?_debugResources=y&amp;n=1" class="movie-background">
                                 </a>
 
-                                <div class="added">2 minutes ago</div>
+                                <span class="add-to-favorites"><i class="icon-star"></i></span>
+                                <span class="add-to-later"><i class="icon-time"></i></span>
+
+                                <div class="movie-bottom-info">
+                                    <a href="/m/1036980" class="title">
+                                        Busty Aya Kurosaki enjoys her body being oiled up
+                                    </a>
+
+                                    <div class="added">2 minutes ago</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
