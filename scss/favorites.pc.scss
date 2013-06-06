@@ -1,0 +1,13 @@
+@import "movie.pc";
+
+.main-navigation {
+  .opened-navigation {
+    .movies {
+      @extend %movies;
+
+      .movie-wrapper {
+        width: 100%;
+      }
+    }
+  }
+}
