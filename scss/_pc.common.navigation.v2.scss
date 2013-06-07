@@ -1,0 +1,67 @@
+@import "compass";
+@import "pc.common";
+@import "pc.icons";
+
+.main-navigation {
+  .opened-navigation {
+    $item-height: 40px;
+
+    %section {
+      @include horizontal-bg-image-with-dimension("pc/bg/nav-item.png");
+      display: block;
+    }
+
+    %item {
+      @include height-and-line-height($item-height);
+      display: block;
+      border-top: 1px solid transparent;
+    }
+
+    %item-with-yellow-rectangle {
+      $rectangle-width: 6px;
+
+      position: relative;
+      padding-right: $rectangle-width + 4px;
+
+      &:hover, &.active {
+        color: #e77804;
+
+        &:before {
+          @include gradient-yellow;
+
+          $top-bottom-gap: 3px;
+
+          content: " ";
+          position: absolute;
+          top: $top-bottom-gap;
+          bottom: $top-bottom-gap;
+          right: 0;
+          display: block;
+
+          width: $rectangle-width;
+        }
+      }
+    }
+
+    .all-movies {
+      @extend %section;
+    }
+
+    .section {
+      @extend %section;
+    }
+
+    .pages {
+      .item {
+        @extend %item-with-yellow-rectangle;
+        @extend %item;
+      }
+    }
+
+    .filters {
+      .item {
+        @extend %item;
+      }
+    }
+  }
+}

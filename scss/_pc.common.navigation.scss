@@ -38,7 +38,7 @@ $opened-navigation-width: 300px;
   }
 
   .opened-navigation {
-    @extend %shared-navigation;
+    //@extend %shared-navigation;
     @include transition(left 0.35s ease-in-out);
 
     position: absolute;

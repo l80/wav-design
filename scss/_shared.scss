@@ -28,6 +28,22 @@ $z-index-level-2: $z-index-level-1*2;
   @include box-sizing(border-box);
 }
 
+@mixin height-and-line-height($height) {
+  height: $height;
+  line-height: $height;
+}
+
+@mixin horizontal-bg-image-with-dimension($path, $line-height: true) {
+  $height: image-height($path);
+
+  background: image-url($path) repeat-x;
+  height: $height;
+
+  @if $line-height {
+    line-height: $height;
+  }
+}
+
 $radio-selected-image: "selected.png";
 $radio-height: image-height($radio-selected-image);
 
