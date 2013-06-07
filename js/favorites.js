@@ -15,9 +15,11 @@ $(document).ready(function() {
 });
 
 $(window).load(function() {
-    var myScroll = new iScroll('favorite-movies');
+//    var myScroll = new iScroll('favorite-movies');
 //
 //    setTimeout(function () {
 //        myScroll.refresh();
 //    }, 100);
+
+    $('.iosSliderVertical').iosSliderVertical();
 });
