@@ -2,6 +2,7 @@
 @import "pc.vars";
 @import "buttons";
 @import "pc/menu/*.png";
+@import "dropdown";
 
 body {
   background: inline-image("background.png") repeat;
@@ -58,6 +59,48 @@ header {
       .favorites {
         @include middle-inline-block;
         @include replace-text-with-dimensions("menu/favorites-icon.png");
+      }
+
+      .change-language-wrapper {
+        @include middle-inline-block;
+        position: relative;
+
+        .change-language {
+          @include replace-text-with-dimensions("menu/favorites-icon.png");
+        }
+
+        .dropdown {
+          @extend %dropdown;
+
+          $item-height: 50px;
+          $dropdown-bg-color: #313236;
+          //$dropdown-border-color: #3D3E42;
+          $dropdown-border: 1px;
+          $dropdown-border-color: #535353;
+          $dropdown-triangle-dimension: 8px;
+
+
+          width: 150px;
+          text-align: center;
+
+          li {
+            height: 50px;
+            line-height: 50px;
+            vertical-align: middle;
+            border-bottom: 1px solid #46474b;
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+
+          @each $lang in en ja {
+            .#{$lang} {
+              display: inline-block;
+              @include replace-text-with-dimensions("langs/#{$lang}.png");
+            }
+          }
+        }
       }
 
       .search {
