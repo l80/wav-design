@@ -71,3 +71,7 @@
 %dropdown {
   @include dropdown;
 }
+
+.dropdown {
+  @extend %dropdown;
+}

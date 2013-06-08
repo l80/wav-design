@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="./scss/list.pc.css"/>
     <script type="text/javascript" src="./js/jquery.1.7.2.js"></script>
     <script type="text/javascript" src="./js/sort.js"></script>
+    <script type="text/javascript" src="./js/input-fix.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+    <script src="./js/label-fix.js"></script>
+    <![endif]-->
 </head>
 <body>
 
@@ -63,52 +68,52 @@
             <div class="by-length column">
                 <div class="title">By movie length</div>
                 <div class="row">
-                    <input type="radio" id="length-all" name="group1" value="Milk"><label for="length-all" onclick="">All</label>
+                    <input type="radio" id="length-all" name="cs-length" value="Milk"><label for="length-all" onclick="">Alli<i></i></label>
                 </div>
                 <div class="row">
-                    <input type="radio" id="length-short" name="group1" value="Milk"><label for="length-short" onclick="">Short</label>
+                    <input type="radio" id="length-short" name="cs-length" value="Milk"><label for="length-short" onclick="">Short<i></i></label>
                 </div>
                 <div class="row">
-                    <input type="radio" id="length-medium" name="group1" value="Milk"><label for="length-medium" onclick="">Medium</label>
+                    <input type="radio" id="length-medium" name="cs-length" value="Milk"><label for="length-medium" onclick="">Medium<i></i></label>
                 </div>
                 <div class="row">
-                    <input type="radio" id="length-long" name="group1" value="Milk"><label for="length-long" onclick="">Long</label>
+                    <input type="radio" id="length-long" name="cs-length" value="Milk"><label for="length-long" onclick="">Long<i></i></label>
                 </div>
             </div><!--
          --><div class="by-age column">
                 <div class="title">Age</div>
                 <div class="row">
-                    <label for="age-today" onclick="">Today</label><input type="radio" id="age-today" name="group1" value="Milk">
+                    <label for="age-today" onclick="">Today<i></i></label><input type="radio" id="age-today" name="group1" value="Milk">
                 </div>
                 <div class="row">
-                    <label for="age-week" onclick="">Week</label><input type="radio" id="age-week" name="group1" value="Milk">
+                    <label for="age-week" onclick="">Week<i></i></label><input type="radio" id="age-week" name="group1" value="Milk">
                 </div>
                 <div class="row">
-                    <label for="age-month" onclick="">Month</label><input type="radio" id="age-month" name="group1" value="Milk">
+                    <label for="age-month" onclick="">Month<i></i></label><input type="radio" id="age-month" name="group1" value="Milk">
                 </div>
                 <div class="row">
-                    <label for="age-half-a-year" onclick="">Half a year</label><input type="radio" id="age-half-a-year" name="group1" value="Milk">
+                    <label for="age-half-a-year" onclick="">Half a year<i></i></label><input type="radio" id="age-half-a-year" name="group1" value="Milk">
                 </div>
             </div><!--
          --><div class="by-scope column">
                 <div class="title">Show only</div>
                 <div class="row">
-                    <label for="scope-all" onclick="">All</label><input type="radio" id="scope-all" name="group1" value="Milk">
+                    <label for="scope-all" onclick="">All<i></i></label><input type="radio" id="scope-all" name="group1" value="Milk">
                 </div>
                 <div class="row">
-                    <label for="scope-other" onclick="">Other</label><input type="radio" id="scope-other" name="group1" value="Milk">
+                    <label for="scope-other" onclick="">Other<i></i></label><input type="radio" id="scope-other" name="group1" value="Milk">
                 </div>
                 <div class="row">
-                    <label for="scope-japan" onclick="">Japan</label><input type="radio" id="scope-japan" name="group1" value="Milk">
+                    <label for="scope-japan" onclick="">Japan<i></i></label><input type="radio" id="scope-japan" name="group1" value="Milk">
                 </div>
             </div><!--
          --><div class="by-sites column">
                 <div class="title">Sites</div>
                 <div class="row">
-                    <input type="checkbox" id="site-xvideos" name="group1" value="Milk"><label for="site-xvideos" class="site xvideos" onclick="">All</label>
+                    <input type="checkbox" id="site-xvideos" name="cs-sites" value="Milk"><label for="site-xvideos" class="site xvideos" onclick="">All<i></i></label>
                 </div>
                 <div class="row">
-                    <input type="checkbox" id="site-xhamster" name="group1" value="Milk"><label for="site-xhamster" class="site xhamster" onclick="">Other</label>
+                    <input type="checkbox" id="site-xhamster" name="cs-sites" value="Milk"><label for="site-xhamster" class="site xhamster" onclick="">Other<i></i></label>
                 </div>
                 <div class="row">
                     <input type="checkbox" id="site-fc2" name="group1" value="Milk"><label for="site-fc2" class="site fc2" onclick="">Japan</label>

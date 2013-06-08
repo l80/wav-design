@@ -1,8 +1,10 @@
 @import "shared";
 @import "pc.vars";
+@import "pc.common";
 
 .custom-search {
   @extend %clearfix;
+  @extend %replace-radio-or-checkbox-with-right-middle-image; //apply to all custom filters
 
   $margin: 20px;
   padding: $margin $margin*2;
@@ -52,30 +54,6 @@
       @extend %column-row;
       margin: $margin*0.5 0 $margin*0.5 $margin*2;
     }
-
-    @mixin radio-settings {
-      label {
-        &:hover {
-          cursor: pointer;
-        }
-      }
-
-      input {
-        display: none;
-      }
-
-      input:checked + label {
-        color: white;
-      }
-
-      input:checked + label:after {
-        content: " ";
-        display: inline-block;
-        @include replace-text-with-dimensions($radio-selected-image);
-      }
-    }
-
-    @include radio-settings;
   }
 
   @mixin first-column {
@@ -96,6 +74,7 @@
   .by-sites {
     width: 40%;
 
+    //todo replace with .sites-selector
     .row {
       display: inline-block;
       margin-right: $radio-width;
@@ -108,7 +87,7 @@
       height: 15px;
 
       position: relative;
-      overflow: initial !important;
+      overflow: visible !important;
 
       $sites: xvideos xhamster fc2;
       @each $site in $sites {
@@ -116,13 +95,6 @@
           @include replace-text("sites/logo_#{$site}.png");
         }
       }
-    }
-
-    input:checked + label:after {
-      position: absolute;
-      top: 50%;
-      left: 100%;
-      margin-top: -1*$radio-height/2;
     }
   }
 

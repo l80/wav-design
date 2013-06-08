@@ -23,6 +23,66 @@ a {
   margin-right: $right-ads-width;
 }
 
+@mixin replace-radio-or-checkbox-with-image($checked-position: right-middle) {
+  label {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+  .checked {
+    input:after {
+      content: " ";
+      display: inline-block;
+      @include replace-text-with-dimensions($radio-selected-image);
+    }
+
+    label {
+      color: white;
+
+      @if $checked-position == right-middle {
+        position: relative;
+      }
+    }
+
+    i {
+      display: inline-block;
+      @include replace-text-with-dimensions($radio-selected-image);
+
+      @if $checked-position == right-middle {
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-top: -1*$radio-height/2;
+      }
+    }
+  }
+}
+
+%replace-radio-or-checkbox-with-right-middle-image {
+  @include replace-radio-or-checkbox-with-image;
+}
+
+%dropdown-with-rows {
+  $item-height: 50px;
+
+  li {
+    height: $item-height;
+    line-height: $item-height;
+    vertical-align: middle;
+    border-bottom: 1px solid #46474b;
+    padding: 0 $margin;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
 @mixin gradient-with-light-top-border {
   @include background-image(linear-gradient(#2d2d2d, #171717 35%, black));
   border-top: 1px solid #535353;
@@ -70,29 +130,10 @@ header {
         }
 
         .dropdown {
-          @extend %dropdown;
-
-          $item-height: 50px;
-          $dropdown-bg-color: #313236;
-          //$dropdown-border-color: #3D3E42;
-          $dropdown-border: 1px;
-          $dropdown-border-color: #535353;
-          $dropdown-triangle-dimension: 8px;
-
+          @extend %dropdown-with-rows;
 
           width: 150px;
           text-align: center;
-
-          li {
-            height: 50px;
-            line-height: 50px;
-            vertical-align: middle;
-            border-bottom: 1px solid #46474b;
-
-            &:last-child {
-              border-bottom: none;
-            }
-          }
 
           @each $lang in en ja {
             .#{$lang} {
@@ -359,5 +400,35 @@ header {
 
   .next {
     margin-left: $prev-next-gap;
+  }
+}
+
+.sites-selector {
+  @extend %clearfix;
+  @extend %replace-radio-or-checkbox-with-right-middle-image;
+  @include border-box;
+
+  $radio-width: image-width($radio-selected-image);
+
+  li {
+    float: left;
+    padding-right: $radio-width;
+  }
+
+  .site {
+    display: inline-block;
+    background-size: contain;
+    width: 55px;
+    height: 15px;
+
+    position: relative;
+    overflow: visible !important;
+
+    $sites: xvideos xhamster fc2;
+    @each $site in $sites {
+      &.#{$site} {
+        @include replace-text("sites/logo_#{$site}.png");
+      }
+    }
   }
 }

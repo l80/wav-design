@@ -2,9 +2,12 @@
 @import "pc.common";
 @import "pc.icons";
 
+$nav-font-size: 1.2em;
+
 .main-navigation {
   .opened-navigation {
     $item-height: 40px;
+    $label-padding: $margin;
 
     %section {
       @include horizontal-bg-image-with-dimension("pc/bg/nav-item.png");
@@ -15,6 +18,12 @@
       @include height-and-line-height($item-height);
       display: block;
       border-top: 1px solid transparent;
+    }
+
+    %label {
+      color: #9d9d9f;
+      font-size: $nav-font-size;
+      padding-left: $label-padding;
     }
 
     %item-with-yellow-rectangle {
@@ -51,16 +60,59 @@
       @extend %section;
     }
 
-    .pages {
-      .item {
-        @extend %item-with-yellow-rectangle;
-        @extend %item;
+    .dropdown {
+      //common settings for all nav dropdowns
+      @extend %dropdown-with-rows;
+
+      width: $nav-opened-width*0.7;
+
+      a {
+        span {
+          color: $font-color-grey;
+        }
       }
     }
 
-    .filters {
+    .nav-pages {
+      .item {
+        @extend %item-with-yellow-rectangle;
+        @extend %item;
+        @extend %label;
+      }
+    }
+
+    .nav-filters {
       .item {
         @extend %item;
+
+        .label {
+          @extend %label;
+        }
+      }
+
+      .item-with-value {
+        @extend %pie-clearfix;
+        @extend %item;
+
+        position: relative;
+
+        .label {
+          @extend %label;
+          float: left;
+        }
+
+        .value {
+          float: right;
+          color: white;
+          font-size: $nav-font-size;
+          padding-right: $label-padding;
+        }
+      }
+
+      .sites-selector {
+        li {
+          width: 50%;
+        }
       }
     }
   }

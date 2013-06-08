@@ -2,8 +2,6 @@
 @import "shared.navigation";
 @import "pc.common";
 
-$opened-navigation-width: 300px;
-
 #content {
   position: relative;
 }
@@ -43,9 +41,9 @@ $opened-navigation-width: 300px;
 
     position: absolute;
     top: 0;
-    left: -$opened-navigation-width;
+    left: -$nav-opened-width;
     z-index: 999;
-    width: $opened-navigation-width;
+    width: $nav-opened-width;
     height: 100%;
     background: #000000;
 
