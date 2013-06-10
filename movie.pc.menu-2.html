@@ -10,7 +10,7 @@
     <script type="text/javascript" src="./js/sort.js"></script>
     <script type="text/javascript" src="./js/input-fix.js"></script>
     <!--<script type="text/javascript" src="./js/jquery.ftaccordeon.js"></script>-->
-    <script type="text/javascript" src="./js/jquery.accordion.js"></script>
+    <script type="text/javascript" src="./js/jquery.accordion.2.0.js"></script>
     <script type="text/javascript" src="./js/pc.menu.accordion.js"></script>
 </head>
 <body>
@@ -76,63 +76,67 @@
         <div class="opened-navigation">
             <div class="trigger"><i><!--open icon--></i> Hide Menu</div>
             <a class="all-movies" href="#">All movies</a>
-            <div class="accordion">
-                <a class="section">Pages</a>
-                <div class="nav-pages">
-                    <a href="#" class="item"><i class="icon-actresses"></i> Actresses</a></li>
-                    <a href="#" class="item"><i class="icon-tags"></i> Tags</a></li>
-                    <a href="#" class="item"><i class="icon-favourites"></i> Favourites</a></li>
-                </div>
-                <a class="section">Filters</a>
-                <ul class="nav-filters">
-                    <li class="item">
-                        <div class="label">Popular actresses</div>
-                    </li>
-                    <li class="item-with-value">
-                        <div class="label">Movie length</div>
-                        <div class="value">All</div>
-                        <ul class="dropdown left-top">
-                            <li class="current">All</li>
-                            <li><a href="#">Short <span>(<5 minutes)</span></a></li>
-                            <li><a href="#">Medium <span>(5-15 minutes)</span></a></li>
-                            <li><a href="#">Long <span>(>15 minutes)</span></a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <div class="label">Sites</div>
-                        <ul class="sites-selector">
-                            <li>
-                                <input type="checkbox" id="site-xvideos" name="group1" value="Milk" class="styled">
-                                <label for="site-xvideos" class="site xvideos" onclick="">All<i></i></label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="site-xhamster" name="group1" value="Milk" class="styled">
-                                <label for="site-xhamster" class="site xhamster" onclick="">Other<i></i></label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="site-fc2" name="group1" value="Milk" class="styled">
-                                <label for="site-fc2" class="site fc2" onclick="">Japan<i></i></label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="site-a" name="group1" value="Milk" class="styled">
-                                <label for="site-a" class="site fc2" onclick="">Japan<i></i></label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="site-b" name="group1" value="Milk" class="styled">
-                                <label for="site-b" class="site fc2" onclick="">Japan<i></i></label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="site-c" name="group1" value="Milk" class="styled">
-                                <label for="site-c" class="site fc2" onclick="">Japan<i></i></label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="site-d" name="group1" value="Milk" class="styled">
-                                <label for="site-d" class="site fc2" onclick="">Japan<i></i></label>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+            <ul class="accordion">
+                <li class="active">
+                    <a class="section handle">Pages</a>
+                    <div class="nav-pages panel loading">
+                        <a href="#" class="item"><i class="icon-actresses"></i> Actresses</a>
+                        <a href="#" class="item"><i class="icon-tags"></i> Tags</a>
+                        <a href="#" class="item"><i class="icon-favourites"></i> Favourites</a>
+                    </div>
+                </li>
+                <li>
+                    <a class="section handle">Filters</a>
+                    <ul class="nav-filters panel loading">
+                        <li class="item">
+                            <div class="label">Popular actresses</div>
+                        </li>
+                        <li class="item-with-value">
+                            <div class="label">Movie length</div>
+                            <div class="value">All</div>
+                            <ul class="dropdown left-top">
+                                <li class="current">All</li>
+                                <li><a href="#">Short <span>(<5 minutes)</span></a></li>
+                                <li><a href="#">Medium <span>(5-15 minutes)</span></a></li>
+                                <li><a href="#">Long <span>(>15 minutes)</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="label">Sites</div>
+                            <ul class="sites-selector">
+                                <li>
+                                    <input type="checkbox" id="site-xvideos" name="group1" value="Milk" class="styled">
+                                    <label for="site-xvideos" class="site xvideos" onclick="">All<i></i></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="site-xhamster" name="group1" value="Milk" class="styled">
+                                    <label for="site-xhamster" class="site xhamster" onclick="">Other<i></i></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="site-fc2" name="group1" value="Milk" class="styled">
+                                    <label for="site-fc2" class="site fc2" onclick="">Japan<i></i></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="site-a" name="group1" value="Milk" class="styled">
+                                    <label for="site-a" class="site fc2" onclick="">Japan<i></i></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="site-b" name="group1" value="Milk" class="styled">
+                                    <label for="site-b" class="site fc2" onclick="">Japan<i></i></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="site-c" name="group1" value="Milk" class="styled">
+                                    <label for="site-c" class="site fc2" onclick="">Japan<i></i></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="site-d" name="group1" value="Milk" class="styled">
+                                    <label for="site-d" class="site fc2" onclick="">Japan<i></i></label>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </nav>
 
