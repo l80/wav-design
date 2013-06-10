@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./css/reset.css"/>
     <link rel="stylesheet" href="./scss/list.pc.css"/>
     <script type="text/javascript" src="./js/jquery.1.7.2.js"></script>
+    <script type="text/javascript" src="./js/jquery.ba-outside-events.js"></script>
+    <script type="text/javascript" src="./js/jquery.daDropdown.js"></script>
     <script type="text/javascript" src="./js/sort.js"></script>
     <script type="text/javascript" src="./js/input-fix.js"></script>
     <!--[if lt IE 9]>
@@ -30,7 +32,7 @@
                 <input type="text" placeholder="Search..."/><button class="do-search"><i class="icon-search"></i></button>
             </div>
             <div class="change-language-wrapper">
-                <div class="change-language"></div>
+                <div class="change-language" dropdown-open=".change-language-wrapper .dropdown"></div>
                 <ul class="dropdown top-right">
                     <li><a href="#"><i class="en"></i> English</a></li>
                     <li><span><i class="ja"></i> Japan</span></li>

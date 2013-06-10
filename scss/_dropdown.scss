@@ -38,6 +38,12 @@
   border: $dropdown-border solid $dropdown-border-color;
   z-index: 999;
 
+  display: none;
+
+  &.open {
+    display: block;
+  }
+
   //this may be simplified
   &.top-right {
     top: 100%;
