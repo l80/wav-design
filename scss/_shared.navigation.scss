@@ -1,5 +1,18 @@
 $nav-sub-item-height: 40px;
 
+@mixin nav-arrow($img, $width, $ratio) {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: $width;
+
+  background: transparent url("/img/#{$img}.png") no-repeat left center;
+  background-size: image-width("#{$img}.png")*$ratio image-height("#{$img}.png")*$ratio;
+}
+
 %shared-navigation {
   $item-height: 50px;
   $items-gap: 2px;
@@ -7,23 +20,6 @@ $nav-sub-item-height: 40px;
   %item {
     height: $item-height;
     margin-bottom: $items-gap;
-  }
-
-  %arrow {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: $item-height;
-  }
-
-  @mixin arrow($img, $width, $ratio) {
-    @extend %arrow;
-    background: transparent url("/img/#{$img}.png") no-repeat left center;
-    width: $width;
-
-    background-size: image-width("#{$img}.png")*$ratio image-height("#{$img}.png")*$ratio;
   }
 
   .home {
@@ -66,7 +62,7 @@ $nav-sub-item-height: 40px;
     position: relative;
 
     &:after {
-      @include arrow(arrow-closed, 25px, 0.5);
+      @include nav-arrow(arrow-closed, 25px, 0.5);
     }
   }
 
@@ -74,7 +70,7 @@ $nav-sub-item-height: 40px;
     &.opened {
       .item {
         &:after {
-          @include arrow(arrow-opened, 29px, 0.5);
+          @include nav-arrow(arrow-opened, 29px, 0.5);
         }
       }
     }

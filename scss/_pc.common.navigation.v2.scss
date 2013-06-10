@@ -1,6 +1,7 @@
 @import "compass";
 @import "pc.common";
 @import "pc.icons";
+@import "shared.navigation";
 
 $nav-font-size: 1.2em;
 
@@ -69,6 +70,31 @@ $nav-font-size: 1.2em;
       a {
         span {
           color: $font-color-grey;
+        }
+      }
+    }
+
+    .pages-and-filters {
+      @mixin nav-open-close-icon($icon) {
+        @include replace-text-with-dimensions("#{$icon}.png");
+        margin-top: ($item-height - image-height("#{$icon}.png"))/2;
+      }
+
+      .accordion-opener {
+        display: block;
+
+        i {
+          @include nav-open-close-icon(arrow-closed);
+          float: right;
+          margin-right: 5px;
+        }
+      }
+
+      .active {
+        .accordion-opener {
+          i {
+            @include nav-open-close-icon(arrow-opened);
+          }
         }
       }
     }

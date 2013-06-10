@@ -9,7 +9,7 @@ $(document).ready(function() {
 //    });
 
     //http://projects.timhuegdon.com/jquery-accordion/
-    $('.opened-navigation .accordion').accordion({
+    $('.pages-and-filters').accordion({
         handle: ".handle", // Default: "h3"
         panel: ".panel", // Default: ".panel"
         speed: 500, // Default: 200
