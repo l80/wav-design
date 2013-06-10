@@ -7,6 +7,7 @@
   @extend %replace-radio-or-checkbox-with-right-middle-image; //apply to all custom filters
 
   $margin: 20px;
+  $margin-left: $margin*2;
   padding: $margin $margin*2;
 
   $column-min-height: 250px; //this should be pretty large value
@@ -47,12 +48,12 @@
 
     .title {
       @extend %column-row;
-      margin: 0 0 $margin*0.7 $margin*2;
+      margin: 0 0 $margin*0.7 $margin-left;
     }
 
     .row {
       @extend %column-row;
-      margin: $margin*0.5 0 $margin*0.5 $margin*2;
+      margin: $margin*0.5 0 $margin*0.5 $margin-left;
     }
   }
 
@@ -74,27 +75,9 @@
   .by-sites {
     width: 40%;
 
-    //todo replace with .sites-selector
-    .row {
-      display: inline-block;
-      margin-right: $radio-width;
-    }
-
-    .site {
-      display: inline-block;
-      background-size: contain;
-      width: 55px;
-      height: 15px;
-
-      position: relative;
-      overflow: visible !important;
-
-      $sites: xvideos xhamster fc2;
-      @each $site in $sites {
-        &.#{$site} {
-          @include replace-text("sites/logo_#{$site}.png");
-        }
-      }
+    li {
+      @extend %column-row;
+      margin: $margin*0.5 0 $margin*0.5 $margin-left;
     }
   }
 

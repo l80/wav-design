@@ -3,7 +3,8 @@ $(document).ready(function() {
 //        stowage: true
 //    });
 
-    $('.opened-navigation').accordion({
-        autoheight: false
+    $('.opened-navigation .accordion').accordion({
+        autoheight: false,
+        collapsible: true
     });
 });
