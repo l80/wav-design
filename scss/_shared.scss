@@ -1,6 +1,8 @@
 @import "compass";
 @import "reset";
 @import "buttons";
+@import "shared.mixins";
+@import "shared.repsonsive";
 
 $margin: 10px;
 $font-color-grey: #686868 !default;

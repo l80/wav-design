@@ -4,14 +4,33 @@
 @import "custom-search";
 @import "buttons";
 @import "app-menu";
-@import "menu/*.png";
-@import "sprites/menu"; //http://www.pfvdw.com/blog/compass-sprites-and-background-repeat-x trick
+@import "common.normalize";
+@import "common.mixins";
+//@import "sprites/menu"; //http://www.pfvdw.com/blog/compass-sprites-and-background-repeat-x trick
+
+//http://compass-style.org/help/tutorials/spriting/customization-options/
+//to fix problems with sprites scaling
+//you should include it before sprites import
+$icons-spacing: 10px;
+
+@import "mobile/icons/*.png";
+
+@mixin inline-block-middle {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+%inline-block-middle {
+  @include inline-block-middle;
+}
 
 @mixin relative-thumbnail {
   .thumbnail {
     position: relative;
+    overflow: hidden;
 
     .thumbnail-stub {
+      display: block;
       width: 100%;
     }
 
@@ -37,6 +56,16 @@
 //end add gap
 }
 
+@mixin movies-views-favourited {
+  display: inline-block;
+  padding-right: $margin;
+  color: $font-color-grey;
+
+  i {
+    padding-right: $margin/2;
+  }
+}
+
 @mixin movies {
   .movies {
     @include pie-clearfix;
@@ -57,6 +86,9 @@
             width: $btn-width;
             height: $btn-height;
             display: block;
+
+            line-height: $btn-height;
+            text-align: center;
           }
 
           .site-logo {
@@ -77,6 +109,7 @@
             right: 4px;
 
             width: $btn-width;
+            text-align: center;
             padding: 5px 0;
             background-color: rgba(0, 0, 0, 0.75);
             color: white;
@@ -94,7 +127,15 @@
             .add-to-later {
               @extend %movie-thumbnail-btn;
 
-              margin-top: 4px;
+              i {
+                vertical-align: middle;
+                @include sprite-replace-text($icons-sprites, later);
+                @include resize-sprite($icons-sprites, later, 50);
+
+                padding-right: 2px; //correct alignment by x
+              }
+
+              //margin-top: 4px;  //why do we need this?
             }
           }
         }
@@ -104,34 +145,56 @@
         margin: $margin;
       }
 
-      .added {
+      .additional-info {
         margin: $margin;
-        color: $font-color-grey
+
+        .views {
+          @include movies-views-favourited;
+
+          i {
+            @include sprite-replace-text-with-dimensions($icons-sprites, movie-views);
+          }
+        }
+
+        .favourited {
+          @include movies-views-favourited;
+
+          i {
+            @include sprite-replace-text-with-dimensions($icons-sprites, movie-favourited);
+          }
+        }
       }
     }
   }
 }
 
 .stp-content {
-  background: inline-image("background.png") repeat;
+  background: image-url("mobile/bg.png") repeat;
 }
 
 header {
-  height: 60px; //default iphone navbar height
+  $icon-gap: 18px;
+  $header-height: 60px; //default iphone navbar height
+
+  height: $header-height;
+  line-height: $header-height;
+
   margin-bottom: $margin;
   @include display-box;
   @include box-align(center);
 
-  @include menu-sprite(pattern);
-
+  background-image: image-url("mobile/menu-bg.png");
   background-repeat: repeat-x;
 
   .menu-trigger {
-    @include sprite-replace-text-with-dimensions($menu-sprites, trigger);
+    @include inline-block-middle;
+    @include resizable-sprite($icons-sprites, menu);
+    margin: 0 $icon-gap;
   }
 
   .logo {
-    @include sprite-replace-text-with-dimensions($menu-sprites, logo);
+    @include inline-block-middle;
+    @include resizable-sprite($icons-sprites, logo);
   }
 
   .right {
@@ -139,16 +202,37 @@ header {
     @include display-box;
     @include box-pack(end);
 
+    height: $header-height;
+    line-height: $header-height;
+
     .later {
-      @include sprite-replace-text-with-dimensions($menu-sprites, favorites-icon);
+      @include inline-block-middle;
+      @include background-resized-sprite($icons-sprites, later, 80);
+
+      margin: 0 $icon-gap/2;
+
+      @include iphone {
+        display: none; //don't display for small screens
+      }
     }
 
     .favorites {
-      @include sprite-replace-text-with-dimensions($menu-sprites, favorites-icon);
+      @include inline-block-middle;
+      @include background-resized-sprite($icons-sprites, favorites, 80);
+
+      margin: 0 $icon-gap/2;
+
+      @include iphone {
+        display: none; //don't display for small screens
+      }
     }
 
     .search {
-      @include sprite-replace-text-with-dimensions($menu-sprites, search-icon);
+      @include inline-block-middle;
+      @include resizable-sprite($icons-sprites, search);
+      margin: 0 $icon-gap/2;
+
+      margin-bottom: 4px; //correct position
     }
   }
 }
@@ -159,6 +243,60 @@ header {
 }
 
 #content {
+  .tabs {
+    position: relative;
+    margin: $margin $margin -2px $margin;
+
+    $tab-widths: 30% 30% 20% 20%;
+    $tabs: top-movies actresses tags sites;
+
+    @mixin tab-item($i, $name) {
+
+      $left: 0;
+
+      @for $j from 1 through $i - 1 {
+        $left: $left + nth($tab-widths, $j);
+      }
+
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: $left;
+
+      width: nth($tab-widths, $i);
+
+      &.active {
+        background: #000000; //$name
+      }
+    }
+
+    @for $i from 1 through length($tabs) {
+      .#{nth($tabs, $i)} {
+        @include tab-item($i, nth($tabs, $i));
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .top-movies {
+    }
+
+    .actresses {
+
+    }
+
+    .tags {
+
+    }
+
+    .sites {
+
+    }
+  }
   .main-navigation {
     height: $nav-height;
     margin: $margin;

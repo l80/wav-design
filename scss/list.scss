@@ -3,5 +3,28 @@
 #content {
   padding-bottom: 20px;
 
+  .movies-wrapper {
+    background: #0b0c0d;
+
+    .sort-by {
+      padding: $margin*2 $margin;
+      text-align: right;
+
+      span {
+        color: white;
+        padding: 0 $margin;
+      }
+
+      a {
+        padding: 0 $margin;
+        color: $font-color-grey;
+      }
+    }
+
+    .movies {
+      margin-top: 0;
+    }
+  }
+
   @include movies;
 }

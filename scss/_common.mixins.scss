@@ -1,0 +1,14 @@
+@import "shared";
+
+@mixin resizable-sprite($sprites, $sprite) {
+  @include sprite-replace-text-with-dimensions($sprites, $sprite);
+
+  @include iphone {
+    @include resize-sprite($sprites, $sprite, 75);
+  }
+}
+
+@mixin background-resized-sprite($sprites, $sprite, $percents) {
+  @include sprite-replace-text($sprites, $sprite);
+  @include resize-sprite($sprites, $sprite, $percents);
+}

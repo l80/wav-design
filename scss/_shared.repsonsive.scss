@@ -1,0 +1,75 @@
+$break-iphone-p: 320px;
+$break-iphone-l: 480px;
+$break-ipad-p: 768px;
+$break-ipad-l: 1024px;
+$break-mobile: 640px;
+
+//responsive web design mixins
+@mixin respond-to($media) {
+  @if $media == iphone {
+    @media (max-width: $break-iphone-l) { @content; }
+  }
+  @else if $media == iphone-p {
+    @media (max-width: $break-iphone-p) { @content; }
+  }
+  @else if $media == ipad {
+    @media (max-width: $break-ipad-l) { @content; }
+  }
+  @else if $media == ipad-p {
+    @media (max-width: $break-ipad-p) { @content; }
+  }
+  @else if $media == mobile {
+    @media (max-width: $break-mobile) { @content; }
+  }
+  @else if $media == desktop {
+    @media only screen and (min-width: $break-mobile + 1) { @content; }
+  }
+}
+
+@mixin ipad {
+  @include respond-to(ipad) {
+    @content;
+  }
+}
+
+@mixin ipad-p {
+  @include respond-to(ipad-p) {
+    @content;
+  }
+}
+
+@mixin iphone {
+  @include respond-to(iphone) {
+    @content;
+  }
+}
+
+@mixin iphone-p {
+  @include respond-to(iphone-p) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @include respond-to(desktop) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  .mobile & {
+    @content;
+  }
+}
+
+@mixin hide-mobile {
+  @include respond-to(mobile) {
+    display: none !important;
+  }
+}
+
+@mixin desktop {
+  .desktop & {
+    @content;
+  }
+}
