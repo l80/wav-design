@@ -1,46 +1,45 @@
 @import "compass";
 @import "vars";
+@import "shared";
 
 $custom-search-item-height: 50px;
 
 @mixin custom-search-opened {
-  #content.custom-search-opened & {
+  .custom-search-opened & {
       @content;
   }
 }
 
 #content {
   position: relative;
-  
-  &.custom-search-opened {
-    height: 500px; //by js
+
+  @include custom-search-opened {
     overflow: hidden;
   }
 }
 
 .custom-search-container {
-  display: none;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: -1;
+  visibility: hidden;
 
   @include custom-search-opened {
-    display: block;
+    visibility: visible;
+    z-index: 999;
   }
 
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 9999;
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .custom-search {
   background: #000000;
 
-  position: absolute;
-  bottom: 0;
-  left: 20%;
-  right: 0;
+  border: 1px solid transparent;
+  margin: 50px 0;
 
   .item {
     height: $custom-search-item-height;
@@ -68,6 +67,14 @@ $custom-search-item-height: 50px;
       direction: rtl;
       @include appearance(button);
     }
+  }
+
+  .by-sites {
+    height: auto;
+  }
+
+  .multiple-columns-sites-selector {
+    @include site-selector-column(50%);
   }
 
   .do-search {

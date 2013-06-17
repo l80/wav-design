@@ -6,7 +6,11 @@
             onClose: function() {},
             onOk: function() {},
             postConstruct: function() {},
-            android: false
+            android: false,
+            positionByCenter: true,
+            openedClass: '',
+            alsoDisplayed: null,
+            closeOnOutsideClick: true
         }, options);
 
         var that = {},
@@ -19,13 +23,21 @@
 
         var resize = function(doResize) {
             if (doResize) {
-                var heightDiff = $window.height() - $child.height();
+                if (options.positionByCenter) {
+                    var heightDiff = $window.height() - $child.height();
 
-                if (heightDiff > 0) {
-                    $child.css('padding-top', heightDiff/2+'px')
+                    if (heightDiff > 0) {
+                        $child.css('padding-top', heightDiff/2+'px')
+                    }
                 }
 
-                var modalHeight = max($window.height(), $child.outerHeight(true));
+                var modalHeight;
+
+                if (options.alsoDisplayed) {
+                    modalHeight = max($window.height(), options.alsoDisplayed.outerHeight(true) + $child.outerHeight(true));
+                } else {
+                    modalHeight = max($window.height(), $child.outerHeight(true));
+                }
 
                 $body.css('height', modalHeight+'px');
                 $this.css('height', modalHeight+'px');
@@ -59,6 +71,8 @@
                 //disable click highlighting
                 $body.addClass('android-dialog-open');
             }
+
+            if (options.openedClass) $body.addClass(options.openedClass);
         };
 
         var close = function() {
@@ -77,6 +91,15 @@
                 }
 
                 options.onClose();
+                if (options.openedClass) $body.removeClass(options.openedClass);
+            }
+        };
+
+        var toggle = function() {
+            if (displayed) {
+                close();
+            } else {
+                open();
             }
         };
 
@@ -85,13 +108,15 @@
             resize(displayed); //resize only when dialog is displayed
         });
 
-        //close dialog on click
-        $this.on('click', function(e) {
-            //close when user clicks outside area
-            if (e.target == $this[0] || e.target == $child[0]) {
-                close();
-            }
-        });
+        if (options.closeOnOutsideClick) {
+            //close dialog on click
+            $this.on('click', function(e) {
+                //close when user clicks outside area
+                if (e.target == $this[0] || e.target == $child[0]) {
+                    close();
+                }
+            });
+        }
 
         //ok button handler
         $this.find('.button.ok').on('click', function(e) {
@@ -112,6 +137,7 @@
 
         that.open = open;
         that.close = close;
+        that.toggle = toggle;
         that.child = $child;
 
         options.postConstruct(that);

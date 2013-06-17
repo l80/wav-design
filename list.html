@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="./scss/list.css"/>
     <script type="text/javascript" src="./js/jquery.1.7.2.js"></script>
     <script type="text/javascript" src="./js/sort.js"></script>
+    <script type="text/javascript" src="./js/jquery.customSearch.js"></script>
+    <script type="text/javascript" src="./js/jquery.dialog.js"></script>
+    <script type="text/javascript" src="./js/jquery.ba-outside-events.js"></script>
+    <script type="text/javascript" src="./js/mobile.list.js"></script>
+    <script type="text/javascript" src="./js/input-fix.js"></script>
 </head>
 <body>
 
@@ -36,7 +41,38 @@
                         </li>
                         <li class="item">Age <span class="value">Today</span></li>
                         <li class="item">Show only <span class="value">All</span></li>
-                        <li class="item">Sites</li>
+                        <li class="item by-sites">
+                            <ul class="multiple-columns-sites-selector">
+                                <li>
+                                    <input type="checkbox" id="site-xvideos" name="group1" value="Milk" class="styled">
+                                    <label for="site-xvideos" class="site xvideos" onclick="">All<i></i></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="site-xhamster" name="group1" value="Milk" class="styled">
+                                    <label for="site-xhamster" class="site xhamster" onclick="">Other<i></i></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="site-fc2" name="group1" value="Milk" class="styled">
+                                    <label for="site-fc2" class="site fc2" onclick="">Japan<i></i></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="site-a" name="group1" value="Milk" class="styled">
+                                    <label for="site-a" class="site fc2" onclick="">Japan<i></i></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="site-b" name="group1" value="Milk" class="styled">
+                                    <label for="site-b" class="site fc2" onclick="">Japan<i></i></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="site-c" name="group1" value="Milk" class="styled">
+                                    <label for="site-c" class="site fc2" onclick="">Japan<i></i></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="site-d" name="group1" value="Milk" class="styled">
+                                    <label for="site-d" class="site fc2" onclick="">Japan<i></i></label>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                     <button class="do-search">Search</button>
                 </div>
@@ -91,8 +127,8 @@
                     </a>
                 </div>
 
-                <ul class="movies">
-                    <li class="movie">
+                <div class="movies">
+                    <a href="#" class="movie">
                         <div class="thumbnail">
                             <img class="thumbnail-stub" src="./img/thumbnail-stub.png" alt=""/>
                             <img class="thumbnail-image" src="./img/thumbnail-image.jpeg" alt=""/>
@@ -114,9 +150,9 @@
                             <li class="views"><i></i>223</li>
                             <li class="favourited"><i></i>23</li>
                         </ul>
-                    </li>
+                    </a>
 
-                    <li class="movie">
+                    <a href="#" class="movie">
                         <div class="thumbnail">
                             <img class="thumbnail-stub" src="./img/thumbnail-stub.png" alt=""/>
                             <img class="thumbnail-image" src="./img/thumbnail-image.jpeg" alt=""/>
@@ -137,9 +173,9 @@
                             <li class="views"><i></i>223</li>
                             <li class="favourited"><i></i>23</li>
                         </ul>
-                    </li>
+                    </a>
 
-                    <li class="movie">
+                    <a href="#" class="movie">
                         <div class="thumbnail">
                             <img class="thumbnail-stub" src="./img/thumbnail-stub.png" alt=""/>
                             <img class="thumbnail-image" src="./img/thumbnail-image.jpeg" alt=""/>
@@ -160,9 +196,9 @@
                             <li class="views"><i></i>223</li>
                             <li class="favourited"><i></i>23</li>
                         </ul>
-                    </li>
+                    </a>
 
-                    <li class="movie">
+                    <a href="#" class="movie">
                         <div class="thumbnail">
                             <img class="thumbnail-stub" src="./img/thumbnail-stub.png" alt=""/>
                             <img class="thumbnail-image" src="./img/thumbnail-image.jpeg" alt=""/>
@@ -183,9 +219,9 @@
                             <li class="views"><i></i>223</li>
                             <li class="favourited"><i></i>23</li>
                         </ul>
-                    </li>
+                    </a>
 
-                    <li class="movie">
+                    <a href="#" class="movie">
                         <div class="thumbnail">
                             <img class="thumbnail-stub" src="./img/thumbnail-stub.png" alt=""/>
                             <img class="thumbnail-image" src="./img/thumbnail-image.jpeg" alt=""/>
@@ -206,8 +242,8 @@
                             <li class="views"><i></i>223</li>
                             <li class="favourited"><i></i>23</li>
                         </ul>
-                    </li>
-                </ul>
+                    </a>
+                </div>
             </div>
 
             <div class="my-ad2"></div>
@@ -223,6 +259,10 @@
                 <li class="btn-t">4</li>
                 <li class="btn-t">5</li>
             </ul>
+
+            <p class="movies-per-page">
+                Movies shown per page <a href="#">15</a> <a href="#">25</a> <a href="#">50</a>
+            </p>
         </div>
     </div>
 </div>
