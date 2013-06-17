@@ -135,15 +135,13 @@ $nav-font-size: 1.2em;
         }
       }
 
-      .sites-selector {
-        padding-left: $label-padding;
-
-        li {
-          @include border-box;
-          width: 50%;
-          padding-top: $label-padding*0.7;
-          padding-bottom: $label-padding*0.7;
+      .multiple-columns-sites-selector {
+        @include site-selector-column(50%) {
+            padding-top: $label-padding*0.7;
+            padding-bottom: $label-padding*0.7;
         }
+
+        padding-left: $label-padding;
       }
     }
   }

@@ -1,13 +1,10 @@
 @import "compass";
 @import "reset";
 @import "buttons";
+@import "shared.vars";
 @import "shared.mixins";
 @import "shared.repsonsive";
-
-$margin: 10px;
-$font-color-grey: #686868 !default;
-$z-index-level-1: 5;
-$z-index-level-2: $z-index-level-1*2;
+@import "jquery.dialog";
 
 %clearfix {
   @include clearfix;
@@ -45,9 +42,6 @@ $z-index-level-2: $z-index-level-1*2;
     line-height: $height;
   }
 }
-
-$radio-selected-image: "selected.png";
-$radio-height: image-height($radio-selected-image);
 
 @mixin selectable-radio($float, $display: block) {
   input {
@@ -175,6 +169,44 @@ body {
   &.drop-down-displayed {
     .drop-down-trigger {
       @extend .pressed;
+    }
+  }
+}
+
+@mixin site-selector-column($width) {
+  li {
+    @include border-box;
+    width: $width;
+    @content;
+  }
+}
+
+.multiple-columns-sites-selector {
+  @extend %clearfix;
+  @extend %replace-radio-or-checkbox-with-right-middle-image;
+  @include border-box;
+
+  $radio-width: image-width($radio-selected-image);
+
+  li {
+    float: left;
+    padding-right: $radio-width;
+  }
+
+  .site {
+    display: inline-block;
+    background-size: contain;
+    width: 55px;
+    height: 15px;
+
+    position: relative;
+    overflow: visible !important;
+
+    $sites: xvideos xhamster fc2;
+    @each $site in $sites {
+      &.#{$site} {
+        @include replace-text("sites/logo_#{$site}.png");
+      }
     }
   }
 }

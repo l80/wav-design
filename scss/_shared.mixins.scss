@@ -1,3 +1,5 @@
+@import "shared.vars";
+
 //https://gist.github.com/darren131/3410875
 @mixin resize-sprite($map, $sprite, $percent) {
   $spritePath:    sprite-path($map);
@@ -10,4 +12,48 @@
   width: ceil($width*($percent/100));
   height: ceil($height*($percent/100));
   background-position: 0 floor(nth(sprite-position($map, $sprite), 2)  * ($percent/100) );
+}
+
+@mixin replace-radio-or-checkbox-with-image($checked-position: right-middle) {
+  label {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+  .checked {
+    input:after {
+      content: " ";
+      display: inline-block;
+      @include replace-text-with-dimensions($radio-selected-image);
+    }
+
+    label {
+      color: white;
+
+      @if $checked-position == right-middle {
+        position: relative;
+      }
+    }
+
+    i {
+      display: inline-block;
+      @include replace-text-with-dimensions($radio-selected-image);
+
+      @if $checked-position == right-middle {
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-top: -1*$radio-height/2;
+      }
+    }
+  }
+}
+
+%replace-radio-or-checkbox-with-right-middle-image {
+  @include replace-radio-or-checkbox-with-image;
 }
