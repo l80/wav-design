@@ -1,0 +1,13 @@
+@import "../modules/all";
+
+body {
+  background: inline-image("background.png") repeat;
+}
+
+#content {
+  @extend %pie-clearfix;
+
+  .main-content {
+    margin-left: $nav-collapsed-width;
+  }
+}

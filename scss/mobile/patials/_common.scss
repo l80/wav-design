@@ -1,0 +1,24 @@
+@import "../modules/all";
+
+.stp-content {
+  background: image-url("mobile/bg.png") repeat;
+}
+
+.my-ad1, .my-ad2 {
+  background: lightgoldenrodyellow;
+  height: 30px;
+}
+
+#content {
+  .pagination {
+    margin: $margin;
+    @include display-box;
+    @include box-pack(center);
+  }
+
+  .total-displayed-info {
+    color: $font-color-grey;
+    text-align: center;
+    margin: $margin*2;
+  }
+}

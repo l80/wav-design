@@ -1,0 +1,5 @@
+@mixin custom-search-opened {
+  .custom-search-opened & {
+    @content;
+  }
+}

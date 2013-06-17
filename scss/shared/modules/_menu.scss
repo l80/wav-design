@@ -1,0 +1,78 @@
+@mixin replace-radio-or-checkbox-with-image($checked-position: right-middle) {
+  label {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+  .checked {
+    input:after {
+      content: " ";
+      display: inline-block;
+      @include replace-text-with-dimensions($radio-selected-image);
+    }
+
+    label {
+      color: white;
+
+      @if $checked-position == right-middle {
+        position: relative;
+      }
+    }
+
+    i {
+      display: inline-block;
+      @include replace-text-with-dimensions($radio-selected-image);
+
+      @if $checked-position == right-middle {
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-top: -1*$radio-height/2;
+      }
+    }
+  }
+}
+
+%replace-radio-or-checkbox-with-right-middle-image {
+  @include replace-radio-or-checkbox-with-image;
+}
+
+@mixin selectable-radio($float, $display: block) {
+  input {
+    height: $radio-height;
+    @include appearance(none);
+    margin: 0;
+    display: $display;
+    float: $float;
+    visibility: hidden;
+
+    &:checked {
+      @include replace-text-with-dimensions($radio-selected-image);
+      visibility: visible;
+    }
+  }
+}
+
+@mixin site-selector-column($width) {
+  li {
+    @include border-box;
+    width: $width;
+    @content;
+  }
+}
+
+@mixin site-selector-icon-resize($percents) {
+  .site {
+    $sites: xvideos xhamster fc2;
+    @each $site in $sites {
+      &.#{$site} {
+        @include background-resized-sprite($sites-sprites, "logo_#{$site}", $percents);
+      }
+    }
+  }
+}

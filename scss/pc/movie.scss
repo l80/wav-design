@@ -1,0 +1,117 @@
+@import "partials/base";
+@import "menu/*.png";
+
+.movie-and-adv {
+  .my-ad3 {
+    float: right;
+    display: inline-block;
+    background-color: #ffe460;
+    width: $right-ads-width - $right-ads-width/4;
+    height: 300px;
+    margin-right: $right-ads-width/8;
+  }
+  
+  .main-movie-wrapper {
+    margin-right: $right-ads-width;
+  }
+}
+
+.main-movie {
+  width: 90%;
+  margin: 0 auto;
+
+  .title {
+    display: inline-block;
+    color: white;
+    font-size: 25px;
+  }
+
+  .added {
+    display: inline-block;
+    color: $font-color-grey;
+  }
+
+  .player {
+    background-color: coral;
+    margin: $margin 0;
+    height: 350px;
+    width: 100%;
+  }
+
+  .info-and-actions {
+    @extend %clearfix;
+
+    $actions-width: 200px;
+    $info-actions-gap: 5px;
+
+    margin: $margin 0;
+
+    .info {
+      $info-label-width: 150px;
+
+      margin-right: $actions-width + $info-actions-gap;
+
+      @include border-radius($border-radius);
+      border: 1px solid #5b5b5b;
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: $margin;
+
+      dt {
+        float: left;
+        width: $info-label-width;
+      }
+
+      dd {
+        padding-left: $info-label-width;
+      }
+    }
+
+    .actions {
+      float: right;
+      width: $actions-width;
+
+      %main-movie-button {
+        @extend .btn;
+        display: block;
+        margin-bottom: $margin;
+        color: white;
+        width: 100%;
+
+        i {
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+
+      .add-to-later {
+        @extend %main-movie-button;
+
+        i {
+          @include sprite-replace-text-with-dimensions($menu-sprites, favorites-icon);
+        }
+      }
+
+      .add-to-favorites {
+        @extend %main-movie-button;
+
+        i {
+          @include sprite-replace-text-with-dimensions($menu-sprites, favorites-icon);
+        }
+      }
+    }
+  }
+}
+
+.similar-movies-label {
+  @include left-and-right-ads-gap;
+  color: white;
+}
+
+.similar-movies {
+  @extend %clearfix;
+
+  .movies {
+    @include left-and-right-ads-gap;
+    @extend %movies;
+  }
+}

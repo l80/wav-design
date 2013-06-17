@@ -1,0 +1,143 @@
+@mixin relative-thumbnail {
+  .thumbnail {
+    position: relative;
+    overflow: hidden;
+
+    .thumbnail-stub {
+      display: block;
+      width: 100%;
+    }
+
+    .thumbnail-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+}
+
+@mixin columns-gap($gap: 2px) {
+//add gap between movies
+  @include border-box;
+  &:nth-child(odd) {
+    padding-right: $gap/2;
+  }
+
+  &:nth-child(even) {
+    padding-left: $gap/2;
+  }
+//end add gap
+}
+
+@mixin movies-views-favourited {
+  display: inline-block;
+  padding-right: $margin;
+  color: $font-color-grey;
+
+  i {
+    padding-right: $margin/2;
+  }
+}
+
+@mixin movies {
+  .movies {
+    @include pie-clearfix;
+    margin: $margin;
+
+    .movie {
+      width: 50%;
+      position: relative;
+      float: left;
+      @include columns-gap;
+      @include relative-thumbnail;
+
+      .thumbnail {
+        .movie-info {
+          %movie-thumbnail-btn {
+            @include border-radius($btn-border-radius);
+            background-color: rgba(0, 0, 0, 0.75);
+            width: $btn-width;
+            height: $btn-height;
+            display: block;
+
+            line-height: $btn-height;
+            text-align: center;
+          }
+
+          .site-logo {
+            @extend %position-absolute;
+            top: 2px;
+            left: 2px;
+
+            max-width: 35%;
+
+            img {
+              max-width: 100%;
+            }
+          }
+
+          .duration {
+            @extend %position-absolute;
+            bottom: 4px;
+            right: 4px;
+
+            width: $btn-width;
+            text-align: center;
+            padding: 5px 0;
+            background-color: rgba(0, 0, 0, 0.75);
+            color: white;
+          }
+
+          .btn-container {
+            @extend %position-absolute;
+            top: 4px;
+            right: 4px;
+
+            .add-to-favorites {
+              @extend %movie-thumbnail-btn;
+            }
+
+            .add-to-later {
+              @extend %movie-thumbnail-btn;
+
+              i {
+                vertical-align: middle;
+                @include sprite-replace-text($icons-sprites, later);
+                @include resize-sprite($icons-sprites, later, 50);
+
+                padding-right: 2px; //correct alignment by x
+              }
+
+              //margin-top: 4px;  //why do we need this?
+            }
+          }
+        }
+      }
+
+      .title {
+        margin: $margin;
+      }
+
+      .additional-info {
+        margin: $margin;
+
+        .views {
+          @include movies-views-favourited;
+
+          i {
+            @include sprite-replace-text-with-dimensions($icons-sprites, movie-views);
+          }
+        }
+
+        .favourited {
+          @include movies-views-favourited;
+
+          i {
+            @include sprite-replace-text-with-dimensions($icons-sprites, movie-favourited);
+          }
+        }
+      }
+    }
+  }
+}

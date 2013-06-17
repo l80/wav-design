@@ -1,0 +1,6 @@
+//http://compass-style.org/help/tutorials/spriting/customization-options/
+//to fix problems with sprites scaling
+//you should include it before sprites import
+$sites-spacing: 10px;
+
+@import "sites/*.png";

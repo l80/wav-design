@@ -1,0 +1,91 @@
+@import "../modules/all";
+
+.custom-search {
+  @extend %clearfix;
+  @extend %replace-radio-or-checkbox-with-right-middle-image; //apply to all custom filters
+
+  $margin: 20px;
+  $margin-left: $margin*2;
+  padding: $margin $margin*2;
+
+  $column-min-height: 250px; //this should be pretty large value
+  $radio-width: image-width($radio-selected-image);
+  //$row-height: image-height($radio-selected-image);
+  $row-height: 20px;
+  $column-gap: image-width($radio-selected-image) + 10px;
+
+  background: #000000;
+
+  %label {
+    color: white;
+    font-size: 20px;
+    padding-bottom: $margin;
+  }
+
+  h3 {
+    @extend %label;
+  }
+
+  .hide {
+    @extend %label;
+    float: right;
+  }
+
+  %column-row {
+    color: $font-color-grey;
+    height: $row-height;
+    line-height: $row-height;
+  }
+
+  .column {
+    display: inline-block;
+    width: 20%;
+
+    border-left: 1px solid #2b2a2f;
+    vertical-align: top;
+
+    .title {
+      @extend %column-row;
+      margin: 0 0 $margin*0.7 $margin-left;
+    }
+
+    .row {
+      @extend %column-row;
+      margin: $margin*0.5 0 $margin*0.5 $margin-left;
+    }
+  }
+
+  @mixin first-column {
+    border-left: none;
+    margin-left: -$radio-width;
+  }
+
+  .by-length {
+    @include first-column;
+  }
+
+  .by-age {
+  }
+
+  .by-scope {
+  }
+
+  .by-sites {
+    width: 40%;
+
+    li {
+      @extend %column-row;
+      margin: $margin*0.5 0 $margin*0.5 $margin-left;
+    }
+  }
+
+  .do-search {
+    @include input-reset;
+    @include background-image(linear-gradient(#ebbd43, #eaab3a 35%, #eb8600));
+    @include border-radius($border-radius);
+
+    float: right;
+    color: white;
+    padding: $margin*0.5 $margin*2;
+  }
+}

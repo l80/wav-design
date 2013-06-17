@@ -1,0 +1,53 @@
+@import "partials/base";
+
+#content {
+  .main-content {
+    .filters-container {
+      @include left-and-right-ads-gap;
+      $sort-width: 91px;
+
+      .filters {
+        margin-right: $sort-width;
+      }
+
+      .sort-wrapper {
+        $btn-sort-height: 30px;
+        $btn-sort-trigger-width: 20px;
+
+        float: right;
+        width: $sort-width;
+        position: relative;
+
+        @mixin sort-btn {
+          @include border-box;
+          display: inline-block;
+          height: $btn-sort-height;
+          line-height: $btn-sort-height;
+          vertical-align: middle;
+        }
+
+        .sort-title {
+          @include sort-btn;
+          width: $sort-width - $btn-sort-trigger-width;
+          text-align: center;
+          font-size: 12px;
+        }
+
+        .trigger-sort {
+          @include sort-btn;
+          width: $btn-sort-trigger-width;
+        }
+
+        .sort-container {
+          @include border-radius($btn-border-radius);
+          min-width: 150px;
+        }
+      }
+    }
+  }
+
+  .movies {
+    @extend %movies;
+    @include left-and-right-ads-gap;
+  }
+}

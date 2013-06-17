@@ -1,0 +1,45 @@
+@import "patials/base";
+
+#content {
+  padding-bottom: 20px;
+
+  .movies-wrapper {
+    background: #0b0c0d;
+
+    .sort-by {
+      padding: $margin*2 $margin;
+      text-align: right;
+
+      span {
+        color: white;
+        padding: 0 $margin;
+      }
+
+      a {
+        padding: 0 $margin;
+        color: $font-color-grey;
+      }
+    }
+
+    .movies {
+      margin-top: 0;
+    }
+  }
+
+  @include movies;
+
+  .movies-per-page {
+    color: $font-color-grey;
+    text-align: center;
+    margin: $margin*3 0 $margin*2 0;
+
+    a {
+      $btn-dimension: $btn-width*0.8;
+
+      @include textured-button($btn-dimension, $btn-dimension, $btn-dimension) {
+        display: inline-block;
+        margin-left: $margin;
+      }
+    }
+  }
+}

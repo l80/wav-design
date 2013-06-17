@@ -1,0 +1,66 @@
+@import "../modules/all";
+
+header {
+  $icon-gap: 18px;
+  $header-height: 60px; //default iphone navbar height
+
+  height: $header-height;
+  line-height: $header-height;
+
+  margin-bottom: $margin;
+  @include display-box;
+  @include box-align(center);
+
+  background-image: image-url("mobile/menu-bg.png");
+  background-repeat: repeat-x;
+
+  .menu-trigger {
+    @include inline-block-middle;
+    @include resizable-sprite($icons-sprites, menu);
+    margin: 0 $icon-gap;
+  }
+
+  .logo {
+    @include inline-block-middle;
+    @include resizable-sprite($icons-sprites, logo);
+  }
+
+  .right {
+    @include box-flex(1);
+    @include display-box;
+    @include box-pack(end);
+
+    height: $header-height;
+    line-height: $header-height;
+
+    .later {
+      @include inline-block-middle;
+      @include background-resized-sprite($icons-sprites, later, 80);
+
+      margin: 0 $icon-gap/2;
+
+      @include iphone {
+        display: none; //don't display for small screens
+      }
+    }
+
+    .favorites {
+      @include inline-block-middle;
+      @include background-resized-sprite($icons-sprites, favorites, 80);
+
+      margin: 0 $icon-gap/2;
+
+      @include iphone {
+        display: none; //don't display for small screens
+      }
+    }
+
+    .search {
+      @include inline-block-middle;
+      @include resizable-sprite($icons-sprites, search);
+      margin: 0 $icon-gap/2;
+
+      margin-bottom: 4px; //correct position
+    }
+  }
+}

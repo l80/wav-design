@@ -1,0 +1,21 @@
+@import "../modules/all";
+
+.stp-nav {
+  .sub-item {
+    $before-width: 10px;
+    padding-left: $before-width;
+
+    &:hover {
+      padding-left: 0;
+
+      &:before {
+        content: " ";
+        display: block;
+        float: left;
+        width: $before-width/2;
+        border-left: $before-width/2 solid #fa9008;
+        height: $nav-sub-item-height;
+      }
+    }
+  }
+}

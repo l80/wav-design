@@ -1,0 +1,107 @@
+@import "partials/base";
+
+.main-content {
+  .label-and-index {
+    @extend %clearfix;
+    @include left-and-right-ads-gap;
+
+    @include user-select(none);
+
+    margin-top: $margin;
+    margin-bottom: $margin;
+
+    $label-width: 100px;
+
+    .label {
+      float: left;
+      width: $label-width;
+      height: $btn-height;
+      line-height: $btn-height;
+    }
+
+    .abc-index-container {
+      $item-width: $btn-full-width;
+      $next-item-gap: $margin;
+      $margin-right: $item-width + $next-item-gap;
+
+      margin-left: $label-width;
+      max-width: $item-width*10 + $margin-right; //dirty hack
+
+      .next {
+        float: right;
+        cursor: pointer;
+      }
+
+      .abc-slider-container {
+        margin-right: $margin-right;
+
+        .iosSlider {
+          height: $btn-full-height;
+          width: 100%;
+
+          .slide {
+            @extend .btn-s;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  .actresses {
+    @extend %clearfix;
+    @include left-and-right-ads-gap;
+
+    .actress {
+      width: 20%;
+      display: block;
+      float: left;
+      margin-bottom: $margin;
+
+      text-align: center;
+      text-decoration: none;
+
+      .thumbnail {
+        position: relative;
+        margin: 0 1px;
+
+        .thumbnail-stub {
+          width: 100%;
+        }
+
+        .thumbnail-image {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+        }
+      }
+
+      .name {
+        $name-height: 25px;
+
+        color: white;
+        height: $name-height;
+        left: $name-height;
+        overflow: hidden;
+      }
+
+      .movies-count {
+        color: $font-color-grey;
+      }
+    }
+  }
+}
+
+
+//.abc-index-container {
+//  text-align: right;
+//
+//  .abc-slider-container {
+//    display: inline-block;
+//  }
+//
+//  .next {
+//    display: inline-block;
+//  }
+//}

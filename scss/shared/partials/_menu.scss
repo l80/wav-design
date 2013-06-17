@@ -1,0 +1,21 @@
+.multiple-columns-sites-selector {
+  @extend %clearfix;
+  @extend %replace-radio-or-checkbox-with-right-middle-image;
+  @include border-box;
+  @include site-selector-icon-resize(100);
+
+  $radio-width: image-width($radio-selected-image);
+
+  li {
+    float: left;
+    padding-right: $radio-width;
+  }
+
+  .site {
+    display: inline-block;
+    background-size: contain;
+
+    position: relative;
+    overflow: visible !important;
+  }
+}

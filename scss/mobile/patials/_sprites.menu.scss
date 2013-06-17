@@ -1,0 +1,8 @@
+//@import "sprites/menu"; //http://www.pfvdw.com/blog/compass-sprites-and-background-repeat-x trick
+
+//http://compass-style.org/help/tutorials/spriting/customization-options/
+//to fix problems with sprites scaling
+//you should include it before sprites import
+$icons-spacing: 10px;
+
+@import "menu/*.png";

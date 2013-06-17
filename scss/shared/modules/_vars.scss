@@ -1,0 +1,15 @@
+$margin: 10px;
+$font-color-grey: #686868 !default;
+$z-index-level-1: 5;
+$z-index-level-2: $z-index-level-1*2;
+
+$radio-selected-image: "selected.png";
+$radio-height: image-height($radio-selected-image);
+
+$btn-height: 40px !default;
+$btn-width: 40px !default;
+$btn-border-radius: 4px !default;
+$btn-border-width: 1px;
+$btn-margin: 2px !default;
+$btn-full-width: $btn-width + $btn-margin*2 + $btn-border-width*2;
+$btn-full-height: $btn-height + $btn-border-width*2;

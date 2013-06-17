@@ -1,0 +1,145 @@
+@import "../modules/all";
+
+$nav-font-size: 1.2em;
+
+.main-navigation {
+  .opened-navigation {
+    $item-height: 40px;
+    $label-padding: $margin;
+
+    %section {
+      @include horizontal-bg-image-with-dimension("pc/bg/nav-item.png");
+      display: block;
+    }
+
+    %item {
+      @include height-and-line-height($item-height);
+      display: block;
+      border-top: 1px solid transparent;
+    }
+
+    %label {
+      color: #9d9d9f;
+      font-size: $nav-font-size;
+      padding-left: $label-padding;
+    }
+
+    %item-with-yellow-rectangle {
+      $rectangle-width: 6px;
+
+      position: relative;
+      padding-right: $rectangle-width + 4px;
+
+      &:hover, &.active {
+        color: #e77804;
+
+        &:before {
+          @include gradient-yellow;
+
+          $top-bottom-gap: 3px;
+
+          content: " ";
+          position: absolute;
+          top: $top-bottom-gap;
+          bottom: $top-bottom-gap;
+          right: 0;
+          display: block;
+
+          width: $rectangle-width;
+        }
+      }
+    }
+
+    .all-movies {
+      @extend %section;
+    }
+
+    .section {
+      @extend %section;
+    }
+
+    .dropdown {
+      //common settings for all nav dropdowns
+      @extend %dropdown-with-rows;
+
+      width: $nav-opened-width*0.7;
+
+      a {
+        span {
+          color: $font-color-grey;
+        }
+      }
+    }
+
+    .pages-and-filters {
+      @mixin nav-open-close-icon($icon) {
+        @include replace-text-with-dimensions("#{$icon}.png");
+        margin-top: ($item-height - image-height("#{$icon}.png"))/2;
+      }
+
+      .accordion-opener {
+        display: block;
+
+        i {
+          @include nav-open-close-icon(arrow-closed);
+          float: right;
+          margin-right: 5px;
+        }
+      }
+
+      .active {
+        .accordion-opener {
+          i {
+            @include nav-open-close-icon(arrow-opened);
+          }
+        }
+      }
+    }
+
+    .nav-pages {
+      .item {
+        @extend %item-with-yellow-rectangle;
+        @extend %item;
+        @extend %label;
+      }
+    }
+
+    .nav-filters {
+      .item {
+        @extend %item;
+
+        .label {
+          @extend %label;
+        }
+      }
+
+      .item-with-value {
+        @extend %pie-clearfix;
+        @extend %item;
+
+        position: relative;
+
+        .label {
+          @extend %label;
+          float: left;
+        }
+
+        .value {
+          float: right;
+          color: white;
+          font-size: $nav-font-size;
+          padding-right: $label-padding;
+        }
+      }
+
+      .multiple-columns-sites-selector {
+        @include site-selector-column(50%) {
+            padding-top: $label-padding*0.7;
+            padding-bottom: $label-padding*0.7;
+        }
+
+        padding-left: $label-padding;
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+@import "../modules/all";
+
+#content {
+  position: relative;
+}
+
+.main-navigation {
+  width: $nav-collapsed-width;
+  float: left;
+
+  %trigger {
+    @include gradient-with-light-top-border;
+    height: $nav-trigger-height;
+    line-height: $nav-trigger-height;
+  }
+
+  .collapsed-navigation {
+    $items: home, tags, favorites, actresses;
+    @each $item in $items {
+      .#{$item} {
+        @include replace-text-with-dimensions("pc/menu/#{$item}.png");
+      }
+    }
+
+    .trigger {
+      @extend %trigger;
+      text-align: center;
+
+      i {
+        @include replace-text-with-dimensions("pc/menu/open.png");
+        display: inline-block;
+      }
+    }
+  }
+
+  .opened-navigation {
+    //@extend %shared-navigation;
+    @include transition(left 0.35s ease-in-out);
+
+    position: absolute;
+    top: 0;
+    left: -$nav-opened-width;
+    z-index: 999;
+    width: $nav-opened-width;
+    height: 100%;
+    background: #000000;
+
+    .trigger {
+      @extend %trigger;
+
+      text-align: right;
+      padding-right: 5px;
+
+      i {
+        @include replace-text-with-dimensions("pc/menu/close.png");
+        display: inline-block;
+      }
+    }
+
+    .collapsable {
+      .sub-item {
+        position: relative;
+
+        padding-left: 22px;
+
+        &:hover {
+          a {
+            color: #e77804;
+          }
+
+          &:before {
+            @include gradient-yellow;
+
+            $top-bottom-gap: 3px;
+
+            content: " ";
+            position: absolute;
+            top: $top-bottom-gap;
+            bottom: $top-bottom-gap;
+            left: 0;
+            display: block;
+
+            width: 6px;
+          }
+        }
+      }
+    }
+  }
+
+  &.opened {
+    .opened-navigation {
+      left: 0;
+    }
+  }
+}

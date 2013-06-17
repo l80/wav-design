@@ -1,0 +1,29 @@
+.drop-down-wrapper {
+  .drop-down-container {
+    //animation settings
+    @include transition(height 0.3s linear, top 0.3s linear, bottom 0.3s linear);
+
+    position: absolute;
+    top: 100%;
+    right: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: 9999;
+    background: #1d1d1d;
+
+    > div {
+      @include transition(top 0.3s linear);
+
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -100%;
+    }
+  }
+
+  &.drop-down-displayed {
+    .drop-down-trigger {
+      @extend .pressed;
+    }
+  }
+}

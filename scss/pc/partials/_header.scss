@@ -1,0 +1,104 @@
+@import "../modules/all";
+
+header {
+  $header-logo-height: image-height("pc/logo.png");
+  $header-terms-height: 30px;
+
+  .logo-and-search {
+    @extend %pie-clearfix;
+    height: $header-logo-height;
+    background: inline-image("pc/header-background.png") repeat;
+    padding: 0 20px;
+
+    .logo {
+      float: left;
+      @include replace-text-with-dimensions("pc/logo.png");
+    }
+
+    .right {
+      float: right;
+      line-height: $header-logo-height;
+
+      .later {
+        @include inline-block-middle;
+        @include replace-text-with-dimensions("menu/favorites-icon.png");
+      }
+
+      .favorites {
+        @include inline-block-middle;
+        @include replace-text-with-dimensions("menu/favorites-icon.png");
+      }
+
+      .change-language-wrapper {
+        @include inline-block-middle;
+        position: relative;
+
+        .change-language {
+          @include replace-text-with-dimensions("menu/favorites-icon.png");
+        }
+
+        .dropdown {
+          @extend %dropdown-with-rows;
+
+          width: 150px;
+          text-align: center;
+
+          @each $lang in en ja {
+            .#{$lang} {
+              display: inline-block;
+              @include replace-text-with-dimensions("langs/#{$lang}.png");
+            }
+          }
+        }
+      }
+
+      .search {
+        @include inline-block-middle;
+
+        $header-search-height: 40px;
+
+        @mixin header-search-input {
+          @include input-reset;
+          display: inline-block;
+          height: $header-search-height;
+          vertical-align: middle;
+        }
+
+        input {
+          @include header-search-input;
+          @include border-left-radius($border-radius);
+          padding: 0 5px;
+          color: $font-color-grey;
+        }
+
+        .do-search {
+          @include header-search-input;
+          @include gradient-yellow;
+          @include border-right-radius($border-radius);
+
+          .icon-search {
+            display: inline-block;
+            @include replace-text-with-dimensions("pc/search-icon.png");
+          }
+        }
+      }
+    }
+  }
+
+  .terms-wrapper {
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+
+    .terms {
+      @include gradient-with-light-top-border;
+      border-bottom: 1px solid #191919;
+
+      height: $header-terms-height;
+      line-height: $header-terms-height;
+
+      li {
+        display: inline-block;
+      }
+    }
+  }
+}

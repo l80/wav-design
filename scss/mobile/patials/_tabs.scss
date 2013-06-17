@@ -1,0 +1,91 @@
+@import "../modules/all";
+
+#content {
+  .tabs {
+    position: relative;
+    margin: $margin $margin -2px $margin;
+
+    $tab-widths: 30% 30% 20% 20%;
+    $tabs: top-movies actresses tags sites;
+
+    @mixin tab-item($i, $name) {
+
+      $left: 0;
+
+      @for $j from 1 through $i - 1 {
+        $left: $left + nth($tab-widths, $j);
+      }
+
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: $left;
+
+      width: nth($tab-widths, $i);
+
+      &.active {
+        background: #000000; //$name
+      }
+    }
+
+    @for $i from 1 through length($tabs) {
+      .#{nth($tabs, $i)} {
+        @include tab-item($i, nth($tabs, $i));
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .top-movies {
+    }
+
+    .actresses {
+
+    }
+
+    .tags {
+
+    }
+
+    .sites {
+
+    }
+  }
+  .main-navigation {
+    height: $nav-height;
+    margin: $margin;
+    @include display-box;
+
+    position: relative;
+
+    .menu-top-movies {
+      @include box-flex(6);
+    }
+
+    .menu-actresses {
+      @include box-flex(5);
+    }
+
+    .menu-tags {
+      @include box-flex(3);
+    }
+
+    .menu-sites {
+      @include box-flex(3);
+    }
+
+    .trigger-sort {
+      @include box-flex(1);
+      @include hide-text;
+    }
+
+    .sort-container {
+      @include border-radius($btn-border-radius);
+      min-width: 150px;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+$btn-border-color: #4c4c4c;
+
+%btn {
+  @include background-image(linear-gradient(#373739, #202020 35%, #0A0A0A 80%, #0b0b0b));
+    @include box-shadow(0 0 4px 1px black);
+  border: $btn-border-width solid $btn-border-color;
+  border-bottom: $btn-border-width solid rgb(43, 43, 43);
+  color: white;
+
+  &.pressed {
+    @include background-image(linear-gradient(#202020, #1b1b1b, #151515));
+    @include box-shadow(0 0 4px 1px black, inset 0 0 1px 1px #232324);
+    border: none;
+  }
+}
+
+.btn-inline {
+  display: inline-block;
+}
+
+.btn-combined {
+  @extend %btn;
+  //border: 1px solid $btn-border-color;
+  border-right: 0;
+}
+
+.btn-combined-left {
+  @extend .btn-combined;
+  @include border-left-radius($btn-border-radius);
+}
+
+.btn-combined-right {
+  @extend .btn-combined;
+  @include border-right-radius($btn-border-radius);
+  border-right: 1px solid $btn-border-color;
+}
+
+.btn {
+  @extend %btn;
+  @include border-radius($btn-border-radius);
+}
+
+.btn-s { //short for button-symbolic
+  @extend .btn;
+  width: $btn-width;
+  height: $btn-height;
+
+  line-height: $btn-height;
+  text-align: center;
+  vertical-align: middle;
+
+  //box-shadow: inset 0 0px 0px 1px #393939;
+  //border: 1px solid black;
+
+  margin: 0 $btn-margin;
+}
+
+.btn-t {
+  @include textured-button($btn-width, $btn-height, $btn-border-radius) {
+    margin: 0 $btn-margin;
+  }
+}
