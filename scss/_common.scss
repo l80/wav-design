@@ -337,9 +337,27 @@ header {
     @include box-pack(center);
   }
 
-  .total-displayed-info {
-    margin: $margin*2;
+  %grey-and-centered {
     color: $font-color-grey;
     text-align: center;
+  }
+
+  .total-displayed-info {
+    @extend %grey-and-centered;
+    margin: $margin*2;
+  }
+
+  .movies-per-page {
+    @extend %grey-and-centered;
+    margin: $margin*3 0 $margin*2 0;
+
+    a {
+      $btn-dimension: $btn-width*0.8;
+
+      @include textured-button($btn-dimension, $btn-dimension, $btn-dimension) {
+        display: inline-block;
+        margin-left: $margin;
+      }
+    }
   }
 }
