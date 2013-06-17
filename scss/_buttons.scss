@@ -64,10 +64,10 @@ $btn-full-height: $btn-height + $btn-border-width*2;
   margin: 0 $btn-margin;
 }
 
-.btn-t {
-  @include border-radius($btn-border-radius);
-  width: $btn-width;
-  height: $btn-height;
+@mixin textured-button($width, $height, $border-radius) {
+  @include border-radius($border-radius);
+  width: $width;
+  height: $height;
 
   background-image: inline-image("mobile/pagination-btn-texture.png");
   background-size: 100%;
@@ -76,9 +76,15 @@ $btn-full-height: $btn-height + $btn-border-width*2;
   border: 1px solid #4c4c4c;
   border-bottom: 1px solid #252525;
 
-  line-height: $btn-height;
+  line-height: $height;
   text-align: center;
   vertical-align: middle;
 
-  margin: 0 $btn-margin;
+  @content;
+}
+
+.btn-t {
+  @include textured-button($btn-width, $btn-height, $btn-border-radius) {
+    margin: 0 $btn-margin;
+  }
 }
