@@ -1,6 +1,6 @@
-@import "shared";
-@import "pc.vars";
-@import "triangle";
+@import "../shared/shared";
+@import "pc.common.vars";
+@import "pc.common.triangle";
 
 @mixin triangle-position($direction, $position, $triangle-dimension, $border) {
   @if $direction == up {

@@ -1,8 +1,7 @@
-@import "shared";
-@import "pc.vars";
-@import "buttons";
+@import "../shared/shared";
+@import "pc.common.vars";
+@import "pc.common.dropdown";
 @import "pc/menu/*.png";
-@import "dropdown";
 
 body {
   background: inline-image("background.png") repeat;

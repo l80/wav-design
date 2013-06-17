@@ -1,11 +1,10 @@
 @import "compass";
-@import "shared";
-@import "vars";
-@import "custom-search";
-@import "buttons";
-@import "app-menu";
-@import "common.normalize";
-@import "common.mixins";
+@import "../shared/shared";
+@import "mobile.common.vars";
+@import "mobile.custom-search";
+@import "mobile.app-menu";
+@import "mobile.common.normalize";
+@import "mobile.common.mixins";
 //@import "sprites/menu"; //http://www.pfvdw.com/blog/compass-sprites-and-background-repeat-x trick
 
 //http://compass-style.org/help/tutorials/spriting/customization-options/

@@ -1,9 +1,9 @@
 @import "compass";
-@import "reset";
-@import "buttons";
+@import "shared.reset";
 @import "shared.vars";
 @import "shared.mixins";
 @import "shared.repsonsive";
+@import "shared.buttons";
 @import "jquery.dialog";
 
 //http://compass-style.org/help/tutorials/spriting/customization-options/
@@ -104,7 +104,7 @@ body {
       @include filter(filter-open-prev, filter-close-next);
 
       .label {
-        background: url("../img/filter/filter-bg.png") repeat-x;
+        background: url("../../img/filter/filter-bg.png") repeat-x;
       }
 
       &:first-child  {
