@@ -14,6 +14,19 @@
   background-position: 0 floor(nth(sprite-position($map, $sprite), 2)  * ($percent/100) );
 }
 
+@mixin resizable-sprite($sprites, $sprite) {
+  @include sprite-replace-text-with-dimensions($sprites, $sprite);
+
+  @include iphone {
+    @include resize-sprite($sprites, $sprite, 75);
+  }
+}
+
+@mixin background-resized-sprite($sprites, $sprite, $percents) {
+  @include sprite-replace-text($sprites, $sprite);
+  @include resize-sprite($sprites, $sprite, $percents);
+}
+
 @mixin replace-radio-or-checkbox-with-image($checked-position: right-middle) {
   label {
     &:hover {

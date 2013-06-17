@@ -75,6 +75,7 @@ $custom-search-item-height: 50px;
 
   .multiple-columns-sites-selector {
     @include site-selector-column(50%);
+    @include site-selector-icon-resize(70);
   }
 
   .do-search {

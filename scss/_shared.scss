@@ -6,6 +6,13 @@
 @import "shared.repsonsive";
 @import "jquery.dialog";
 
+//http://compass-style.org/help/tutorials/spriting/customization-options/
+//to fix problems with sprites scaling
+//you should include it before sprites import
+$sites-spacing: 10px;
+
+@import "sites/*.png";
+
 %clearfix {
   @include clearfix;
 }
@@ -181,10 +188,22 @@ body {
   }
 }
 
+@mixin site-selector-icon-resize($percents) {
+  .site {
+    $sites: xvideos xhamster fc2;
+    @each $site in $sites {
+      &.#{$site} {
+        @include background-resized-sprite($sites-sprites, "logo_#{$site}", $percents);
+      }
+    }
+  }
+}
+
 .multiple-columns-sites-selector {
   @extend %clearfix;
   @extend %replace-radio-or-checkbox-with-right-middle-image;
   @include border-box;
+  @include site-selector-icon-resize(100);
 
   $radio-width: image-width($radio-selected-image);
 
@@ -196,17 +215,8 @@ body {
   .site {
     display: inline-block;
     background-size: contain;
-    width: 55px;
-    height: 15px;
 
     position: relative;
     overflow: visible !important;
-
-    $sites: xvideos xhamster fc2;
-    @each $site in $sites {
-      &.#{$site} {
-        @include replace-text("sites/logo_#{$site}.png");
-      }
-    }
   }
 }
