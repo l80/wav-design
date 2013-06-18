@@ -8,4 +8,4 @@ http_images_path = "/img"
 
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 line_comments = false
-sass_options = {:debug_info => true, :force => false}
+sass_options = {:debug_info => false, :force => false}
