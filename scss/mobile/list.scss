@@ -11,13 +11,13 @@
       text-align: right;
 
       span {
-        color: white;
+        color: $color-white;
         padding: 0 $margin;
       }
 
       a {
         padding: 0 $margin;
-        color: $font-color-grey;
+        color: $color-grey;
       }
     }
 
@@ -28,18 +28,4 @@
 
   @include movies;
 
-  .movies-per-page {
-    color: $font-color-grey;
-    text-align: center;
-    margin: $margin*3 0 $margin*2 0;
-
-    a {
-      $btn-dimension: $btn-width*0.8;
-
-      @include textured-button($btn-dimension, $btn-dimension, $btn-dimension) {
-        display: inline-block;
-        margin-left: $margin;
-      }
-    }
-  }
 }

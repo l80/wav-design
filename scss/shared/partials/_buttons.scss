@@ -7,7 +7,7 @@ $btn-border-color: #4c4c4c;
     @include box-shadow(0 0 4px 1px black);
   border: $btn-border-width solid $btn-border-color;
   border-bottom: $btn-border-width solid rgb(43, 43, 43);
-  color: white;
+  color: $color-white;
 
   &.pressed {
     @include background-image(linear-gradient(#202020, #1b1b1b, #151515));
@@ -40,8 +40,32 @@ $btn-border-color: #4c4c4c;
   margin: 0 $btn-margin;
 }
 
-.btn-t {
-  @include textured-button($btn-width, $btn-height, $btn-border-radius) {
-    margin: 0 $btn-margin;
+%textured-button {
+  background-image: image-url("shared/bg/bg-button.png");
+  background-size: 100%;
+
+  box-shadow: 0 0 4px 1px black;
+  border: 1px solid #4c4c4c;
+  border-bottom: 1px solid #252525;
+
+  text-align: center;
+  vertical-align: middle;
+
+  &.pressed {
+    background-color: #151515;
+    @include background-image(linear-gradient(#202020, #1b1b1b, #151515));
+    border: 1px solid #242424;
+    border-top: 1px solid #181818;
+    box-shadow: 0 0 1px 1px black;
+    color: $color-yellow;
   }
+}
+
+.btn-t {
+  @extend %textured-button;
+  @include border-radius($btn-border-radius);
+  width: $btn-width;
+  height: $btn-height;
+  line-height: $btn-height;
+  margin: 0 $btn-margin;
 }

@@ -1,3 +1,5 @@
+@import "../../shared/modules/all";
+
 %movies {
   @extend %pie-clearfix;
 
@@ -55,7 +57,7 @@
         bottom: $elements-gap;
         right: $elements-gap;
         background: rgba(0, 0, 0, 0.75);
-        color: white;
+        color: $color-white;
         padding: 0 4px;
         opacity: 1;
       }
@@ -77,7 +79,7 @@
         background: rgba(0, 0, 0, 0.75);
         width: 40px;
         height: 40px;
-        color: white;
+        color: $color-white;
       }
 
       .add-to-later {
@@ -101,12 +103,12 @@
         .title {
           display: block;
           margin: $elements-hover-gap;
-          color: white;
+          color: $color-white;
         }
 
         .added {
           margin: $elements-hover-gap;
-          color: $font-color-grey;
+          color: $color-grey;
         }
       }
     }

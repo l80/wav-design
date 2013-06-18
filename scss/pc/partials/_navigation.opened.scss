@@ -11,7 +11,6 @@ $nav-font-size: 1.2em;
   }
 
   .opened-navigation {
-    //@extend %shared-navigation;
     @include transition(left 0.35s ease-in-out);
 
     position: absolute;
@@ -96,7 +95,7 @@ $nav-font-size: 1.2em;
 
       a {
         span {
-          color: $font-color-grey;
+          color: $color-grey;
         }
       }
     }
@@ -156,7 +155,7 @@ $nav-font-size: 1.2em;
 
         .value {
           float: right;
-          color: white;
+          color: $color-white;
           font-size: $nav-font-size;
           padding-right: $label-padding;
         }

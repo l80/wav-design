@@ -68,7 +68,7 @@ header {
           @include header-search-input;
           @include border-left-radius($border-radius);
           padding: 0 5px;
-          color: $font-color-grey;
+          color: $color-grey;
         }
 
         .do-search {

@@ -39,11 +39,11 @@
       text-align: center;
 
       .name {
-        color: white;
+        color: $color-white;
       }
       
       .movies-count {
-        color: $font-color-grey;
+        color: $color-grey;
       }
     }
   }

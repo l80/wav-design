@@ -1,3 +1,5 @@
+@import "../../shared/modules/all";
+
 @mixin relative-thumbnail {
   .thumbnail {
     position: relative;
@@ -33,7 +35,7 @@
 @mixin movies-views-favourited {
   display: inline-block;
   padding-right: $margin;
-  color: $font-color-grey;
+  color: $color-grey-light;
 
   i {
     padding-right: $margin/2;
@@ -86,7 +88,7 @@
             text-align: center;
             padding: 5px 0;
             background-color: rgba(0, 0, 0, 0.75);
-            color: white;
+            color: $color-white;
           }
 
           .btn-container {

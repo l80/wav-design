@@ -37,14 +37,14 @@ $custom-search-item-height: 50px;
     height: $custom-search-item-height;
     line-height: $custom-search-item-height;
     border-bottom: 1px solid #444442;
-    color: $font-color-grey;
+    color: $color-grey;
     padding: 0 $margin;
 
     .value {
       display: block;
       height: $custom-search-item-height;
       float: right;
-      color: white;
+      color: $color-white;
       border: none;
       background: transparent;
       padding: 0;

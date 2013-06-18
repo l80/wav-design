@@ -1,19 +1,24 @@
 @import "../modules/all";
 
-header {
-  $icon-gap: 18px;
-  $header-height: 60px; //default iphone navbar height
+$header-height: 60px; //default iphone navbar height
 
+%header {
   height: $header-height;
   line-height: $header-height;
-
-  margin-bottom: $margin;
-  @include display-box;
-  @include box-align(center);
 
   background-image: image-url("mobile/bg/bg-top.png");
   background-repeat: repeat-x;
   box-shadow: 0 0 4px 1px black;
+}
+
+header {
+  $icon-gap: 18px;
+
+  @extend %header;
+  @include display-box;
+  @include box-align(center);
+
+  margin-bottom: $margin;
 
   .menu-trigger {
     @include inline-block-middle;

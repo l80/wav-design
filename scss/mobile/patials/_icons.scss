@@ -1,0 +1,16 @@
+@import "../modules/all";
+
+$icons-percents: 60;
+$icons: actresses favorites home later movies tags;
+
+@each $icon in $icons {
+  .icon-#{$icon} {
+    @include background-resized-sprite($icons-sprites, $icon, $icons-percents);
+    display: inline-block;
+    vertical-align: middle;
+
+    &:hover, .active & {
+      @include change-resized-sprite($icons-sprites, $icon + "-active", $icons-percents);
+    }
+  }
+}

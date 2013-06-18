@@ -80,14 +80,14 @@
       .name {
         $name-height: 25px;
 
-        color: white;
+        color: $color-white;
         height: $name-height;
         left: $name-height;
         overflow: hidden;
       }
 
       .movies-count {
-        color: $font-color-grey;
+        color: $color-grey;
       }
     }
   }

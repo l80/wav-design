@@ -23,13 +23,13 @@
 
   .title {
     display: inline-block;
-    color: white;
+    color: $color-white;
     font-size: 25px;
   }
 
   .added {
     display: inline-block;
-    color: $font-color-grey;
+    color: $color-grey;
   }
 
   .player {
@@ -75,7 +75,7 @@
         @extend .btn;
         display: block;
         margin-bottom: $margin;
-        color: white;
+        color: $color-white;
         width: 100%;
 
         i {
@@ -105,7 +105,7 @@
 
 .similar-movies-label {
   @include left-and-right-ads-gap;
-  color: white;
+  color: $color-white;
 }
 
 .similar-movies {

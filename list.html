@@ -5,6 +5,8 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
     <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="./css/sidetap.css"/>
+    <link rel="stylesheet" href="./css/sidetap.fix.css"/>
     <link rel="stylesheet" href="./css/scss/mobile/list.css"/>
     <script type="text/javascript" src="./js/jquery.1.7.2.js"></script>
     <script type="text/javascript" src="./js/sort.js"></script>
@@ -13,10 +15,35 @@
     <script type="text/javascript" src="./js/jquery.ba-outside-events.js"></script>
     <script type="text/javascript" src="./js/mobile.list.js"></script>
     <script type="text/javascript" src="./js/input-fix.js"></script>
+    <script type="text/javascript" src="./js/sidetap.js"></script>
+    <script type="text/javascript" src="./js/menu.js"></script>
 </head>
 <body>
 
 <div class="sidetap">
+
+    <div class="stp-nav">
+        <div>
+            <div class="header"></div>
+            <div>
+                <a href="#" class="item"><i class="icon-home"></i> Home</a>
+                <div>
+                    <span class="item active"><i class="icon-movies"></i> Top movies</span>
+                    <div class="top-movies">
+                        <a href="#" class="sub-item active">Newest Movies</a>
+                        <a href="#" class="sub-item">Most favourited</a>
+                        <a href="#" class="sub-item">Most watched</a>
+                    </div>
+                </div>
+                <a href="#" class="item"><i class="icon-actresses"></i>Actresses</a>
+                <a href="#" class="item"><i class="icon-tags"></i>Tags</a>
+                <a href="#" class="item"><i class="icon-later"></i>Watch later</a>
+                <a href="#" class="item"><i class="icon-favorites"></i>Favourited</a>
+                <a href="#" class="item"><i class="icon-language"></i>Language</a>
+            </div>
+        </div>
+    </div>
+
     <div class="stp-content">
         <header>
             <div class="menu-trigger"></div>
@@ -241,8 +268,8 @@
                     <li class="btn-t">5</li>
                 </ul>
 
-                <p class="movies-per-page">
-                    Movies shown per page <a href="#">15</a> <a href="#">25</a> <a href="#">50</a>
+                <p class="shown-per-page">
+                    Movies shown per page <span class="btn-t pressed">15</span> <a href="#" class="btn-t">25</a> <a href="#" class="btn-t">50</a>
                 </p>
             </div>
         </div>

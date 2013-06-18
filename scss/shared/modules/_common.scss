@@ -28,3 +28,16 @@
     line-height: $height;
   }
 }
+
+@mixin gradient-with-light-top-border {
+  @include background-image(linear-gradient(#2d2d2d, #171717 35%, black));
+  border-top: 1px solid #535353;
+}
+
+@mixin border-bottom-except-last-one($color) {
+  border-bottom: 1px solid $color;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}

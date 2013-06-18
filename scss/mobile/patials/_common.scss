@@ -17,8 +17,25 @@
   }
 
   .total-displayed-info {
-    color: $font-color-grey;
+    color: $color-grey;
     text-align: center;
     margin: $margin*2;
+  }
+
+  .shown-per-page {
+    color: $color-grey;
+    text-align: center;
+    margin: $margin*3 0 $margin*2 0;
+
+    .btn-t {
+      $btn-dimension: $btn-width*0.8;
+
+      @include border-radius($btn-dimension);
+      display: inline-block;
+      width: $btn-dimension;
+      height: $btn-dimension;
+      line-height: $btn-dimension;
+      margin: 0 0 0 $margin;
+    }
   }
 }

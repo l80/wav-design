@@ -1,20 +1,45 @@
 @import "../modules/all";
 
 .stp-nav {
-  .sub-item {
-    $before-width: 10px;
-    padding-left: $before-width;
+  $item-height: 55px;
+  $sub-item-height: $item-height*0.8;
 
-    &:hover {
-      padding-left: 0;
+  .header {
+    @extend %header;
+  }
+
+  .item {
+    @include gradient-with-light-top-border;
+    @include height-and-line-height($item-height);
+    display: block;
+
+    padding-left: $margin/2;
+
+    i {
+      padding-right: $margin;
+    }
+  }
+
+  .sub-item {
+    $active-border-width: 10px;
+
+    @include border-bottom-except-last-one(#171717);
+    @include height-and-line-height($sub-item-height);
+
+    display: block;
+    padding-left: $margin*2;
+    padding-right: $active-border-width;
+
+    &:hover, &.active {
+      padding-right: 0;
 
       &:before {
         content: " ";
         display: block;
-        float: left;
-        width: $before-width/2;
-        border-left: $before-width/2 solid #fa9008;
-        height: $nav-sub-item-height;
+        float: right;
+        width: $active-border-width/2;
+        border-left: $active-border-width/2 solid #fa9008;
+        height: $sub-item-height;
       }
     }
   }
