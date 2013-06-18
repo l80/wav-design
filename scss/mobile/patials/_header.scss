@@ -11,7 +11,7 @@ header {
   @include display-box;
   @include box-align(center);
 
-  background-image: image-url("mobile/menu-bg.png");
+  background-image: image-url("mobile/bg/bg-top.png");
   background-repeat: repeat-x;
   box-shadow: 0 0 4px 1px black;
 
