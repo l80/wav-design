@@ -55,37 +55,4 @@
 
     }
   }
-  .main-navigation {
-    height: $nav-height;
-    margin: $margin;
-    @include display-box;
-
-    position: relative;
-
-    .menu-top-movies {
-      @include box-flex(6);
-    }
-
-    .menu-actresses {
-      @include box-flex(5);
-    }
-
-    .menu-tags {
-      @include box-flex(3);
-    }
-
-    .menu-sites {
-      @include box-flex(3);
-    }
-
-    .trigger-sort {
-      @include box-flex(1);
-      @include hide-text;
-    }
-
-    .sort-container {
-      @include border-radius($btn-border-radius);
-      min-width: 150px;
-    }
-  }
 }
