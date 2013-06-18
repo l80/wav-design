@@ -1,7 +1,7 @@
 #content {
   .filters {
     @extend %clearfix;
-    margin: $margin;
+    margin: $margin 0;
 
     .filter {
       $filter-height: 49px;

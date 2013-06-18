@@ -43,7 +43,7 @@
 @mixin movies {
   .movies {
     @include pie-clearfix;
-    margin: $margin;
+    margin: $margin 0;
 
     .movie {
       width: 50%;
