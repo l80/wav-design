@@ -1,5 +1,21 @@
 @import "../modules/all";
 
+%dropdown-with-rows {
+  $item-height: 50px;
+
+  li {
+    height: $item-height;
+    line-height: $item-height;
+    vertical-align: middle;
+    border-bottom: 1px solid #46474b;
+    padding: 0 $margin;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
 body {
   background: inline-image("background.png") repeat;
 }

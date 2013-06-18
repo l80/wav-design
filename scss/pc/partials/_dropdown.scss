@@ -1,5 +1,9 @@
 @import "../modules/all";
 
+%dropdown {
+  @include dropdown;
+}
+
 .dropdown {
   @extend %dropdown;
 }

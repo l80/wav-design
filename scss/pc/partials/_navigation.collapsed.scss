@@ -1,0 +1,22 @@
+@import "../modules/all";
+
+.main-navigation {
+  .collapsed-navigation {
+    $items: home, tags, favorites, actresses;
+    @each $item in $items {
+      .#{$item} {
+        @include replace-text-with-dimensions("pc/menu/#{$item}.png");
+      }
+    }
+
+    .trigger {
+      @extend %navigation-trigger;
+      text-align: center;
+
+      i {
+        @include replace-text-with-dimensions("pc/menu/open.png");
+        display: inline-block;
+      }
+    }
+  }
+}

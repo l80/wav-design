@@ -2,6 +2,7 @@ $margin: 10px;
 $font-color-grey: #686868 !default;
 $z-index-level-1: 5;
 $z-index-level-2: $z-index-level-1*2;
+$z-index-max: 999;
 
 $radio-selected-image: "selected.png";
 $radio-height: image-height($radio-selected-image);

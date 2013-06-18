@@ -1,3 +1,9 @@
+@import "../modules/all";
+
+%replace-radio-or-checkbox-with-right-middle-image {
+  @include replace-radio-or-checkbox-with-image;
+}
+
 .multiple-columns-sites-selector {
   @extend %clearfix;
   @extend %replace-radio-or-checkbox-with-right-middle-image;

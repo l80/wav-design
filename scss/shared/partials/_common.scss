@@ -1,0 +1,18 @@
+@import "../modules/all";
+
+%inline-block-middle {
+  @include inline-block-middle;
+}
+
+%clearfix {
+  @include clearfix;
+}
+
+%pie-clearfix {
+  @include pie-clearfix;
+}
+
+%position-absolute {
+  position: absolute;
+  z-index: $z-index-level-1;
+}

@@ -38,10 +38,6 @@
   }
 }
 
-%replace-radio-or-checkbox-with-right-middle-image {
-  @include replace-radio-or-checkbox-with-image;
-}
-
 @mixin selectable-radio($float, $display: block) {
   input {
     height: $radio-height;
