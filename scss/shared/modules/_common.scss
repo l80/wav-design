@@ -37,7 +37,7 @@
 @mixin border-bottom-except-last-one($color) {
   border-bottom: 1px solid $color;
 
-  &:last-child {
+  &:last-child, &.last-child {
     border-bottom: none;
   }
 }

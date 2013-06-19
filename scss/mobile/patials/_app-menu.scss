@@ -1,16 +1,13 @@
 @import "../modules/all";
 
 .stp-nav {
-  $item-height: 55px;
-  $sub-item-height: $item-height*0.8;
-
   .header {
     @extend %header;
   }
 
   .item {
     @include gradient-with-light-top-border;
-    @include height-and-line-height($item-height);
+    @include height-and-line-height($app-menu-item-height);
     display: block;
 
     padding-left: $margin/2;
@@ -24,7 +21,7 @@
     $active-border-width: 10px;
 
     @include border-bottom-except-last-one(#171717);
-    @include height-and-line-height($sub-item-height);
+    @include height-and-line-height($app-menu-sub-item-height);
 
     display: block;
     padding-left: $margin*2;
@@ -39,7 +36,7 @@
         float: right;
         width: $active-border-width/2;
         border-left: $active-border-width/2 solid #fa9008;
-        height: $sub-item-height;
+        height: $app-menu-sub-item-height;
       }
     }
   }

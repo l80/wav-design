@@ -55,10 +55,21 @@
             </div>
         </header>
 
-        <div id="content" class="custom-search-opened-1">
+        <div id="content">
             <div class="custom-search-container">
                 <div class="custom-search">
                     <ul>
+                        <li class="search-input">
+                            <input type="text" placeholder="Search...">
+                            <button class="btn-search"><i></i></button>
+                        </li>
+                        <li class="search-samples">
+                            <div class="label">For example:</div>
+                            <ul>
+                                <li class="search-sample">amateur lorem ipsum</li>
+                                <li class="search-sample">other search</li>
+                            </ul>
+                        </li>
                         <li class="item">Movie length
                             <select name="custom-filter-scope" class="value" id="custom-filter-scope">
                                 <option value="all" selected="selected">全て</option>
@@ -67,8 +78,9 @@
                             </select>
                         </li>
                         <li class="item">Age <span class="value">Today</span></li>
-                        <li class="item">Show only <span class="value">All</span></li>
-                        <li class="item by-sites">
+                        <li class="item last-child">Show only <span class="value">All</span></li>
+                        <li class="by-sites">
+                            <div class="label">Sites</div>
                             <ul class="multiple-columns-sites-selector">
                                 <li>
                                     <input type="checkbox" id="site-xvideos" name="group1" value="Milk" class="styled">

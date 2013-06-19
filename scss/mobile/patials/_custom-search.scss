@@ -1,12 +1,11 @@
 @import "../modules/all";
 
-$custom-search-item-height: 50px;
-
 #content {
   position: relative;
 
   @include custom-search-opened {
     overflow: hidden;
+    margin-top: -$margin; //push dialog close to header
   }
 }
 
@@ -24,25 +23,81 @@ $custom-search-item-height: 50px;
     z-index: 999;
   }
 
-  background: rgba(0, 0, 0, 0.7);
+  background: #222222;
 }
 
 .custom-search {
-  background: #000000;
+  margin-bottom: $margin*2;
 
-  border: 1px solid transparent;
-  margin: 50px 0;
+  .search-input {
+    $search-input-height: $app-menu-item-height*0.7;
+
+    padding: 0 $margin;
+
+    @include display-box;
+    @include gradient-with-light-top-border;
+    @include height-and-line-height($app-menu-item-height);
+
+    @mixin search-row-item {
+      display: block;
+      margin: ($app-menu-item-height - $search-input-height)/2 0 0 0;
+    }
+
+    input {
+      @include box-flex(1);
+      @include search-row-item;
+      @include border-left-radius($btn-border-radius);
+      height: $search-input-height;
+      display: block;
+      padding: 0 $margin;
+    }
+
+    .btn-search {
+      @include search-row-item;
+      @extend .btn-t;
+      @include border-left-radius(0);
+      @include height-and-line-height($search-input-height);
+      box-shadow: none;
+    }
+
+    i {
+      @include background-resized-sprite($icons-sprites, search-custom, 80);
+
+      //align vertically to center... not the best solution =(
+      vertical-align: bottom;
+      margin-bottom: 7px;
+    }
+  }
+
+  .search-samples {
+    background: #000000;
+
+    .search-sample {
+      @include height-and-line-height($app-menu-sub-item-height);
+      @include border-bottom-except-last-one(#5b5b5b);
+      margin: 0 $margin;
+      padding: 0 $margin;
+    }
+  }
+
+  .label {
+    @include height-and-line-height($app-menu-sub-item-height*0.8);
+    background: #2b2b2c;
+    padding: 0 $margin*2;
+    color: $color-grey;
+    text-transform: uppercase;
+  }
 
   .item {
-    height: $custom-search-item-height;
-    line-height: $custom-search-item-height;
-    border-bottom: 1px solid #444442;
+    @include height-and-line-height($app-menu-sub-item-height);
+    @include border-bottom-except-last-one(#5b5b5b);
     color: $color-grey;
+    margin: 0 $margin;
     padding: 0 $margin;
 
     .value {
       display: block;
-      height: $custom-search-item-height;
+      height: $app-menu-sub-item-height;
       float: right;
       color: $color-white;
       border: none;
@@ -68,10 +123,16 @@ $custom-search-item-height: 50px;
   .multiple-columns-sites-selector {
     @include site-selector-column(50%);
     @include site-selector-icon-resize(70);
+
+    margin: 0 $margin*2;
+
+    li {
+      @include height-and-line-height($app-menu-sub-item-height);
+    }
   }
 
   .do-search {
-    @extend .btn;
+    @extend .btn-t;
     display: block;
     width: 90%;
     margin: $margin auto;

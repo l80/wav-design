@@ -42,12 +42,13 @@ $btn-border-color: #4c4c4c;
 
 %textured-button {
   background-image: image-url("shared/bg/bg-button.png");
-  background-size: 100%;
+  background-size: contain;
 
   box-shadow: 0 0 4px 1px black;
   border: 1px solid #4c4c4c;
   border-bottom: 1px solid #252525;
 
+  color: $color-white;
   text-align: center;
   vertical-align: middle;
 
