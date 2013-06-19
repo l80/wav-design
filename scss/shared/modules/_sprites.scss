@@ -1,3 +1,8 @@
+@function sprite-percents-for-height($map, $sprite, $height) {
+  $spriteHeight:  image-height(sprite-file($map, $sprite));
+  @return (percentage($height/$spriteHeight) / 1%);
+}
+
 //https://gist.github.com/darren131/3410875
 @mixin resize-sprite($map, $sprite, $percent, $position-only: false) {
   $spritePath:    sprite-path($map);
@@ -26,6 +31,11 @@
 @mixin background-resized-sprite($sprites, $sprite, $percents) {
   @include sprite-replace-text($sprites, $sprite);
   @include resize-sprite($sprites, $sprite, $percents);
+}
+
+@mixin background-resized-sprite-height($sprites, $sprite, $height) {
+  $percents: sprite-percents-for-height($sprites, $sprite, $height);
+  @include background-resized-sprite($sprites, $sprite, $percents);
 }
 
 @mixin change-resized-sprite($sprites, $sprite, $percents) {

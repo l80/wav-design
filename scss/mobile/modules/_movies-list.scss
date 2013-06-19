@@ -32,16 +32,6 @@
 //end add gap
 }
 
-@mixin movies-views-favourited {
-  display: inline-block;
-  padding-right: $margin;
-  color: $color-grey-light;
-
-  i {
-    padding-right: $margin/2;
-  }
-}
-
 @mixin movies {
   .movies {
     @include pie-clearfix;
@@ -123,22 +113,6 @@
 
       .additional-info {
         margin: $margin;
-
-        .views {
-          @include movies-views-favourited;
-
-          i {
-            @include sprite-replace-text-with-dimensions($icons-sprites, movie-views);
-          }
-        }
-
-        .favourited {
-          @include movies-views-favourited;
-
-          i {
-            @include sprite-replace-text-with-dimensions($icons-sprites, movie-favourited);
-          }
-        }
       }
     }
   }

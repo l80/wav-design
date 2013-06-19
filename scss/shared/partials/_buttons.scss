@@ -62,11 +62,27 @@ $btn-border-color: #4c4c4c;
   }
 }
 
-.btn-t {
+%btn-t-flex-width {
   @extend %textured-button;
   @include border-radius($btn-border-radius);
-  width: $btn-width;
   height: $btn-height;
   line-height: $btn-height;
   margin: 0 $btn-margin;
+}
+
+%btn-with-icon-and-label {
+  $btn-padding: $margin;
+
+  @extend %btn-t-flex-width ;
+  padding: 0 $btn-padding;
+
+  i {
+    padding-right: $btn-padding;
+    vertical-align: middle;
+  }
+}
+
+.btn-t {
+  @extend %btn-t-flex-width;
+  width: $btn-width;
 }

@@ -1,0 +1,26 @@
+@import "../../shared/modules/all";
+
+%movie-additional-info {
+  display: inline-block;
+  padding-right: $margin;
+  color: $color-grey-light;
+
+  i {
+    padding-right: $margin/2;
+  }
+}
+
+$movie-infos: views, favourited, duration, tag;
+@each $info in $movie-infos {
+  .movie-#{$info} {
+    @extend %movie-additional-info;
+
+    i {
+      @include background-resized-sprite-height($icons-sprites, movie-#{$info}, 14px);
+    }
+  }
+}
+
+.movie-tag {
+  @include yellow-link;
+}

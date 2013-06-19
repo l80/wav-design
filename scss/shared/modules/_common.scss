@@ -41,3 +41,7 @@
     border-bottom: none;
   }
 }
+
+@mixin yellow-link {
+  color: $color-yellow;
+}

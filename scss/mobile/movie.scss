@@ -1,4 +1,5 @@
 @import "patials/base";
+@import "patials/movie";
 
 #content {
   padding-bottom: 20px;
@@ -21,55 +22,50 @@
     }
 
     .info-and-actions {
-      @include display-box;
+      $row-gap: $margin*1.5;
+
       margin: $margin 0;
 
-      .info {
-        @include box-flex(1);
-        margin-right: $margin;
+      @mixin movie-info-row {
+        margin-bottom: $row-gap;
+      }
 
-        @include border-radius($btn-border-radius);
-        border: 1px solid #5b5b5b;
+      .additional-info {
+        @include movie-info-row;
+      }
 
-        background-color: rgba(0, 0, 0, 0.75);
-        padding: $margin;
+      .tags {
+        @include movie-info-row;
+      }
 
-        $label-width: 150px;
-
-        dt { //label
-          float: left;
-          width: $label-width;
-        }
-
-        dd { //value
-          padding-left: $label-width;
-        }
+      .first-icon {
+        width: 30px;
+        padding: 0;
+        text-align: center;
       }
 
       .actions {
-        %main-movie-button {
-          @extend .btn;
-          display: block;
-          margin-bottom: $margin;
-
-          i {
-            display: block;
-          }
-        }
+        $icon-height: $btn-height - 10;
 
         .add-to-later {
-          @extend %main-movie-button;
+          @extend %btn-with-icon-and-label;
+          margin-bottom: $row-gap;
 
           i {
-            @include sprite-replace-text-with-dimensions($menu-sprites, favorites-icon);
+            @include background-resized-sprite-height($icons-sprites, later, $icon-height);
           }
         }
 
         .add-to-favorites {
-          @extend %main-movie-button;
+          @extend %btn-with-icon-and-label;
+          margin-bottom: $row-gap;
+
+          @include min-width(360px) {
+            float: right;
+          }
 
           i {
-            @include sprite-replace-text-with-dimensions($menu-sprites, favorites-icon);
+            @include background-resized-sprite-height($icons-sprites, favorites, $icon-height);
           }
         }
       }
