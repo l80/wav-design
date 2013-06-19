@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="./css/sidetap.css"/>
+    <link rel="stylesheet" href="./css/sidetap.fix.css"/>
+    <link rel="stylesheet" href="./css/scss/mobile/tags.css"/>
+    <script type="text/javascript" src="./js/jquery.1.7.2.js"></script>
+    <script type="text/javascript" src="./js/sort.js"></script>
+    <script type="text/javascript" src="./js/jquery.customSearch.js"></script>
+    <script type="text/javascript" src="./js/jquery.dialog.js"></script>
+    <script type="text/javascript" src="./js/jquery.ba-outside-events.js"></script>
+    <script type="text/javascript" src="./js/mobile.list.js"></script>
+    <script type="text/javascript" src="./js/input-fix.js"></script>
+    <script type="text/javascript" src="./js/sidetap.js"></script>
+    <script type="text/javascript" src="./js/menu.js"></script>
+</head>
+<body>
+
+<div class="sidetap">
+
+    <div class="stp-nav">
+        <div>
+            <div class="header"></div>
+            <div>
+                <a href="#" class="item"><i class="icon-home"></i> Home</a>
+                <div>
+                    <span class="item active"><i class="icon-movies"></i> Top movies</span>
+                    <div class="top-movies">
+                        <a href="#" class="sub-item active">Newest Movies</a>
+                        <a href="#" class="sub-item">Most favourited</a>
+                        <a href="#" class="sub-item">Most watched</a>
+                    </div>
+                </div>
+                <a href="#" class="item"><i class="icon-actresses"></i>Actresses</a>
+                <a href="#" class="item"><i class="icon-tags"></i>Tags</a>
+                <a href="#" class="item"><i class="icon-later"></i>Watch later</a>
+                <a href="#" class="item"><i class="icon-favorites"></i>Favourited</a>
+                <a href="#" class="item"><i class="icon-language"></i>Language</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="stp-content">
+        <header>
+            <div class="menu-trigger"></div>
+            <div class="logo"></div>
+            <div class="right">
+                <div class="later"></div>
+                <div class="favorites"></div>
+                <div class="search"></div>
+            </div>
+        </header>
+
+        <div id="content">
+            <div class="custom-search-container">
+                <div class="custom-search">
+                    <ul>
+                        <li class="search-input">
+                            <input type="text" placeholder="Search...">
+                            <button class="btn-search"><i></i></button>
+                        </li>
+                        <li class="search-samples">
+                            <div class="label">For example:</div>
+                            <ul>
+                                <li class="search-sample">amateur lorem ipsum</li>
+                                <li class="search-sample">other search</li>
+                            </ul>
+                        </li>
+                        <li class="item">Movie length
+                            <select name="custom-filter-scope" class="value" id="custom-filter-scope">
+                                <option value="all" selected="selected">全て</option>
+                                <option value="ja">日本人</option>
+                                <option value="en">その他</option>
+                            </select>
+                        </li>
+                        <li class="item">Age <span class="value">Today</span></li>
+                        <li class="item last-child">Show only <span class="value">All</span></li>
+                        <li class="by-sites">
+                            <div class="label">Sites</div>
+                            <ul class="multiple-columns-sites-selector">
+                                <li>
+                                    <input type="checkbox" id="site-xvideos" name="group1" value="Milk" class="styled">
+                                    <label for="site-xvideos" class="site xvideos" onclick="">All<i></i></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="site-xhamster" name="group1" value="Milk" class="styled">
+                                    <label for="site-xhamster" class="site xhamster" onclick="">Other<i></i></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="site-fc2" name="group1" value="Milk" class="styled">
+                                    <label for="site-fc2" class="site fc2" onclick="">Japan<i></i></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="site-a" name="group1" value="Milk" class="styled">
+                                    <label for="site-a" class="site fc2" onclick="">Japan<i></i></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="site-b" name="group1" value="Milk" class="styled">
+                                    <label for="site-b" class="site fc2" onclick="">Japan<i></i></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="site-c" name="group1" value="Milk" class="styled">
+                                    <label for="site-c" class="site fc2" onclick="">Japan<i></i></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="site-d" name="group1" value="Milk" class="styled">
+                                    <label for="site-d" class="site fc2" onclick="">Japan<i></i></label>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <button class="do-search">Search</button>
+                </div>
+            </div>
+
+            <div class="my-ad1"></div>
+
+            <nav class="tabs">
+                <img src="./img/mobile/tabs.png" alt=""/>
+                <a href="#" class="top-movies">Top movies</a>
+                <a href="#" class="actresses">Actresses</a>
+                <a href="#" class="tags">Tags</a>
+                <a href="#" class="sites">Sites</a>
+            </nav>
+
+            <div class="main-content-wrapper">
+                <div class="tags-wrapper">
+                    <div class="column">
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                        <a href="#" class="tag">
+                            <p class="label">bang amansasd</p>
+                            <p class="count">(34,343)</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="my-ad2"></div>
+
+                <p class="total-displayed-info">
+                    Displaying 1-10 of 12345 movies
+                </p>
+
+                <ul class="pagination">
+                    <li class="btn-t">1</li>
+                    <li class="btn-t pressed">2</li>
+                    <li class="btn-t">3</li>
+                    <li class="btn-t">4</li>
+                    <li class="btn-t">5</li>
+                </ul>
+
+                <p class="shown-per-page">
+                    Tags shown per page <span class="btn-t pressed">15</span> <a href="#" class="btn-t">25</a> <a href="#" class="btn-t">50</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

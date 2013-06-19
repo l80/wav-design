@@ -1,0 +1,62 @@
+@import "patials/base";
+
+#content {
+  $single-column-gap: 360px;
+
+  @mixin one-column {
+    @include max-width($single-column-gap - 1) {
+      @content;
+    }
+  }
+
+  @mixin two-columns {
+    @include min-width($single-column-gap) {
+      @content;
+    }
+  }
+
+  .tags-wrapper {
+    padding: $margin $margin/2;
+
+    @include two-columns {
+      @include display-box;
+      @include box-align(start);
+    }
+
+    .column {
+      border: 1px solid $color-grey;
+
+      @include one-column {
+        &:first-child {
+          @include border-top-radius($btn-border-radius);
+          border-bottom: none;
+        }
+
+        &:last-child {
+          @include border-bottom-radius($btn-border-radius);
+        }
+      }
+
+      @include two-columns {
+        @include box-flex(1);
+        @include border-radius($btn-border-radius);
+        @include columns-gap($margin, margin);
+      }
+
+      .tag {
+        @include border-bottom-except-last-one($color-grey);
+        display: block;
+        padding: $margin;
+
+        .label {
+          //...
+        }
+
+        .count {
+          text-align: right;
+          color: $color-grey-light;
+        }
+      }
+    }
+  }
+}

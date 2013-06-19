@@ -19,15 +19,15 @@
   }
 }
 
-@mixin columns-gap($gap: 2px) {
+@mixin columns-gap($gap: 2px, $delimiter: padding) {
 //add gap between movies
   @include border-box;
   &:nth-child(odd) {
-    padding-right: $gap/2;
+    #{$delimiter}-right: $gap/2;
   }
 
   &:nth-child(even) {
-    padding-left: $gap/2;
+    #{$delimiter}-left: $gap/2;
   }
 //end add gap
 }
