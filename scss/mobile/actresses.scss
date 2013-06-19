@@ -1,8 +1,36 @@
 @import "patials/base";
 
 #content {
+  $version: 1;
+
+  @mixin v1 {
+    @if $version == 1 {
+      @content;
+    }
+  }
+
+  @mixin v2 {
+    @if $version == 2 {
+      @content;
+    }
+  }
+
+  $single-column-gap: 320px;
+
+  @mixin one-column {
+    @include max-width($single-column-gap - 1) {
+      @content;
+    }
+  }
+
+  @mixin two-columns {
+    @include min-width($single-column-gap) {
+      @content;
+    }
+  }
+
   .abc-index-container {
-    margin: $margin*2;
+    margin: $margin*2 $margin;
     @include display-box;
 
     .abc-slider-container {
@@ -13,30 +41,48 @@
         width: 100%;
       }
     }
+
+    .slide, .next {
+      @extend %btn-t-flex-width;
+      @include border-box;
+      width: $btn-width !important;
+    }
   }
 
   .actresses {
     @include pie-clearfix;
     margin: $margin;
 
-    .column {
-      width: 50%;
-      position: relative;
-      float: left;
+    .actress-wrapper {
       margin-bottom: $margin;
-      @include columns-gap($margin);
+
+      @include two-columns {
+        width: 50%;
+        float: left;
+        @include columns-gap($margin);
+      }
     }
 
     .actress {
       display: block;
       text-decoration: none;
+      text-align: center;
 
       @include relative-thumbnail;
 
-      @include border-radius($btn-border-radius);
-      border: 1px solid #363636;
-      padding: $margin;
-      text-align: center;
+      @include v2 {
+        .thumbnail-stub, .thumbnail-image {
+          @include border-radius($btn-border-radius);
+        }
+
+        padding: $margin $margin/2;
+      }
+
+      @include v1 {
+        @include border-radius($btn-border-radius);
+        border: 1px solid #363636;
+        padding: $margin;
+      }
 
       .name {
         color: $color-white;
