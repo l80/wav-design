@@ -3,8 +3,8 @@
 .main-content-wrapper {
   @include border-radius(5px);
 
-  background: #0c0d0e;
-  border: 1px solid #3c3b3b;
+  background: $color-background;
+  border: 1px solid $color-border;
   margin: $margin $margin/2;
   padding: 0 $margin/2;
 }

@@ -1,0 +1,87 @@
+@import "../../shared/modules/all";
+
+.movies-wrapper {
+  .movies {
+    @include pie-clearfix;
+    margin: $margin 0;
+
+    .movie {
+      width: 50%;
+      position: relative;
+      float: left;
+      @include columns-gap;
+      @include relative-thumbnail;
+
+      .thumbnail {
+        .movie-info {
+          %movie-thumbnail-btn {
+            @include border-radius($btn-border-radius);
+            background-color: rgba(0, 0, 0, 0.75);
+            width: $btn-width;
+            height: $btn-height;
+            display: block;
+
+            line-height: $btn-height;
+            text-align: center;
+          }
+
+          .site-logo {
+            @extend %position-absolute;
+            top: 2px;
+            left: 2px;
+
+            max-width: 35%;
+
+            img {
+              max-width: 100%;
+            }
+          }
+
+          .duration {
+            @extend %position-absolute;
+            bottom: 4px;
+            right: 4px;
+
+            width: $btn-width;
+            text-align: center;
+            padding: 5px 0;
+            background-color: rgba(0, 0, 0, 0.75);
+            color: $color-white;
+          }
+
+          .btn-container {
+            @extend %position-absolute;
+            top: 4px;
+            right: 4px;
+
+            .add-to-favorites {
+              @extend %movie-thumbnail-btn;
+            }
+
+            .add-to-later {
+              @extend %movie-thumbnail-btn;
+
+              i {
+                vertical-align: middle;
+                @include sprite-replace-text($icons-sprites, later);
+                @include resize-sprite($icons-sprites, later, 50);
+
+                padding-right: 2px; //correct alignment by x
+              }
+
+              //margin-top: 4px;  //why do we need this?
+            }
+          }
+        }
+      }
+
+      .title {
+        margin: $margin;
+      }
+
+      .additional-info {
+        margin: $margin;
+      }
+    }
+  }
+}

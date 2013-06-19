@@ -1,11 +1,12 @@
 @import "patials/base";
 @import "patials/movie";
+@import "patials/movies-list";
 
 #content {
   padding-bottom: 20px;
 
   .movies-wrapper {
-    background: #0b0c0d;
+    background: $color-background;
 
     .sort-by {
       padding: $margin*2 0;
@@ -26,7 +27,4 @@
       margin-top: 0;
     }
   }
-
-  @include movies;
-
 }

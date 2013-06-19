@@ -1,5 +1,6 @@
 @import "patials/base";
 @import "patials/movie";
+@import "patials/movies-list";
 
 #content {
   padding-bottom: 20px;
@@ -86,5 +87,62 @@
     }
   }
 
-  @include movies;
+  .movie-suggestion-wrapper {
+    margin: $margin $margin/2;
+
+    .label-container {
+      @extend %pie-clearfix;
+
+      $label-height: 40px;
+
+      @mixin label-item {
+        float: left;
+        height: $label-height;
+      }
+
+      .label {
+        @include label-item;
+        @include border-top-left-radius($btn-border-radius);
+        border-top: 1px solid $color-border;
+        border-left: 1px solid $color-border;
+        background: $color-background;
+
+        line-height: $label-height;
+        padding: 0 $margin 0 $margin*2;
+      }
+
+      .curve {
+        @include label-item;
+        @include background-resized-sprite-height($icons-sprites, curve-right, $label-height);
+        margin-left: -1px; //manually position element
+      }
+    }
+
+    .movies-wrapper {
+      @include border-radius($btn-border-radius);
+      @include border-top-left-radius(0);
+
+      border: 1px solid $color-border;
+      background: $color-background;
+      margin-top: -3px; //manually position element
+
+      .movies {
+        padding: 0 $margin/2;
+      }
+    }
+
+    .my-ad2 {
+      margin: $margin 0;
+    }
+  }
+
+  .load-more-container {
+    text-align: center;
+
+    .load-more {
+      @extend %btn-t-flex-width;
+      margin: $margin*2 auto;
+      padding: 0 $margin;
+    }
+  }
 }
