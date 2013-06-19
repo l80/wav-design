@@ -34,8 +34,22 @@
         @include movie-info-row;
       }
 
-      .tags {
+      .tags-wrapper {
         @include movie-info-row;
+        @include display-box;
+
+        .first-icon {
+          display: block;
+          padding-top: 2px; //push icon bottom
+        }
+
+        .tags {
+          @include box-flex(1);
+
+          .movie-tag {
+            padding-bottom: $margin*0.5;
+          }
+        }
       }
 
       .first-icon {
