@@ -8,4 +8,10 @@ body {
 
 button {
   @extend %default-font-family;
+  -webkit-appearance: none;
+
+  //activate :active state on mobile
+  //http://stackoverflow.com/questions/11885161/remove-grey-background-on-link-clicked-in-ios-safari
+  //http://stackoverflow.com/questions/3885018/active-pseudo-class-doesnt-work-in-mobile-safari
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
 }

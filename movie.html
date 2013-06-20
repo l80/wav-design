@@ -10,7 +10,7 @@
     <script type="text/javascript" src="./js/sidetap.js"></script>
     <script type="text/javascript" src="./js/menu.js"></script>
 </head>
-<body>
+<body ontouchstart="">
 
 <div class="sidetap">
     <div class="stp-nav">
@@ -62,8 +62,8 @@
                         <div class="player">this is player</div>
                         <div class="info-and-actions">
                             <div class="actions">
-                                <button class="add-to-later"><i></i>Add to later</button>
-                                <button class="add-to-favorites"><i></i>Add to favorites</button>
+                                <button class="add-to-later" ontouchstart=""><i></i>Add to later</button> <!--ontouchstart to activate :acitve mobile state-->
+                                <button class="add-to-favorites" ontouchstart=""><i></i>Add to favorites</button>
                             </div>
 
                             <ul class="additional-info">
@@ -223,6 +223,12 @@
     </div>
 </div>
 
+<script type="text/javascript">
+//    $('.actions button').click(function(e) {
+//        e.preventDefault();
+//        alert ("asd")
+//    })
+</script>
 
 </body>
 </html>

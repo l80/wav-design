@@ -9,7 +9,7 @@ $btn-border-color: #4c4c4c;
   border-bottom: $btn-border-width solid rgb(43, 43, 43);
   color: $color-white;
 
-  &.pressed {
+  &.pressed, &:active {
     @include background-image(linear-gradient(#202020, #1b1b1b, #151515));
     @include box-shadow(0 0 4px 1px black, inset 0 0 1px 1px #232324);
     border: none;
@@ -52,7 +52,7 @@ $btn-border-color: #4c4c4c;
   text-align: center;
   vertical-align: middle;
 
-  &.pressed {
+  &.pressed, &:active {
     background-color: #151515;
     @include background-image(linear-gradient(#202020, #1b1b1b, #151515));
     border: 1px solid #242424;
