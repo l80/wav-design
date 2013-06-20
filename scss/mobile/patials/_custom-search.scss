@@ -1,5 +1,34 @@
 @import "../modules/all";
 
+header {
+
+  @include custom-search-opened {
+    //display custom search header
+    .header-main {
+      display: none;
+    }
+
+    .header-custom-search {
+      display: block;
+    }
+  }
+
+  .header-custom-search {
+    display: none;
+
+    .close {
+      @extend .btn-t;
+      display: inline-block;
+      margin: $margin;
+
+      i {
+        @include background-resized-sprite-height($icons-sprites, cross, 16px);
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
 #content {
   position: relative;
 

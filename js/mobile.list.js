@@ -15,5 +15,10 @@ $(document).ready(function () {
     $('header .search').click(function(e) {
         e.preventDefault();
         $customSearch.toggle();
+    });
+
+    $('.header-custom-search .close').click(function(e) {
+        e.preventDefault();
+        $customSearch.close();
     })
 });
