@@ -5,17 +5,77 @@
 #content {
   padding-bottom: 20px;
 
+  $movie-label-height: $btn-height + $margin*2;
+
+  .movie-wrapper {
+    position: relative;
+    margin-top: $margin;
+    padding-top: $movie-label-height - 1; //push movie to display label
+
+    .movie-label-container {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+    }
+
+    .main-content-wrapper {
+      margin-top: 0;
+    }
+  }
+
+  .movie-label-container {
+    @include display-box;
+
+    //margin: $margin $main-content-side-margin 0 $main-content-side-margin;
+    margin: 0 $main-content-side-margin;
+
+    .btn-container {
+      @include height-and-line-height($movie-label-height);
+      padding-left: $main-content-side-padding;
+
+      .back {
+        @extend .btn-t;
+        margin: 0 $margin;
+        padding-top: 2px; //push icon down
+
+        i {
+          @include background-resized-sprite-height($icons-sprites, arrow-left, $btn-height/2);
+        }
+      }
+    }
+
+    .curve {
+      @include background-resized-sprite-height($icons-sprites, curve-left, $movie-label-height);
+      margin-right: -1px;
+    }
+
+    .label {
+      @include box-flex(1);
+      @include border-top-right-radius($btn-border-radius);
+      border-top: 1px solid $color-border;
+      border-right: 1px solid $color-border;
+      background: $color-background;
+      padding: 0 ($main-content-side-padding + $margin) 0 $margin/2;
+
+      .added {
+        color: $color-grey;
+      }
+
+      //vertical align to the center
+      @include display-box;
+      @include box-orient(vertical);
+      @include box-pack(center);
+    }
+  }
+
+  .main-content-wrapper {
+    @include border-top-right-radius(0);
+  }
+
   .main-movie {
     margin: $margin;
 
-    .title {
-      margin-top: $margin*2;
-    }
-    .added {
-      margin: $margin 0;
-      color: $color-grey;
-    }
-    
     .player {
       background-color: coral;
       height: 350px;
@@ -93,7 +153,7 @@
     .label-container {
       @extend %pie-clearfix;
 
-      $label-height: 40px;
+      $label-height: $movie-label-height*0.75;
 
       @mixin label-item {
         float: left;

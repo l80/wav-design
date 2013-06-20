@@ -1,10 +1,13 @@
 @import "../modules/all";
 
+$main-content-side-margin: $margin/2;
+$main-content-side-padding: $margin/2;
+
 .main-content-wrapper {
   @include border-radius(5px);
 
   background: $color-background;
   border: 1px solid $color-border;
-  margin: $margin $margin/2;
-  padding: 0 $margin/2;
+  margin: $margin $main-content-side-margin;
+  padding: 0 $main-content-side-padding;
 }

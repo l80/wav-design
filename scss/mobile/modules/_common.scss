@@ -1,0 +1,9 @@
+@mixin force-to-display-n-lines($n) {
+  //http://stackoverflow.com/questions/3922739/limit-text-length-to-n-lines-using-css
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: #{$n}em;
+  display: -webkit-box;
+  -webkit-line-clamp: $n;
+  -webkit-box-orient: vertical;
+}
