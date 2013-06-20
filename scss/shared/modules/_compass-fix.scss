@@ -1,0 +1,16 @@
+//this files should be imported after all imports
+//to override compass mixins
+
+$mobile: false !default;
+
+$prefixes: -webkit, -moz, -ms, -o;
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+
+  @if $mobile == false {
+    @each $prefixe in $prefixes {
+      #{$prefixe}-border-radius: $radius;
+    }
+  }
+}

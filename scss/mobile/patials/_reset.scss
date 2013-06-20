@@ -1,0 +1,11 @@
+%default-font-family {
+  font-family: '“ヒラギノ角ゴPro W3″', '“Hiragino Kaku Gothic Pro”', '“メイリオ”', Meiryo, '“ＭＳ Ｐゴシック”', '“MS PGothic”', '”ＭＳ ゴシック”', '“MS Gothic”', Osaka, Arial, Helvetica, Verdana, sans-serif;
+}
+
+body {
+  @extend %default-font-family;
+}
+
+button {
+  @extend %default-font-family;
+}
